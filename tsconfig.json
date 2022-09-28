@@ -1,0 +1,12 @@
+{
+  "include": ["src_tsx/**/*.ts", "src_tsx/**/*.tsx"],
+  "compilerOptions": {
+    "outDir": "src/",
+    "allowSyntheticDefaultImports": true,
+    "jsx": "react-jsx",
+    "target": "es2022",
+    "module": "es2022",
+    "moduleResolution": "node",
+    "preserveValueImports": true
+  }
+}
