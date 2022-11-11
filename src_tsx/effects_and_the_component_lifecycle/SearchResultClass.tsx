@@ -8,7 +8,6 @@ type Props = {
 }
 
 type State = {
-  searchId: number
   searchStatus: SearchStatus
 }
 
@@ -21,21 +20,15 @@ class SearchResult extends Component<Props, State> {
   constructor(props: Props) {
     super(props)
     this.state = {
-      searchId: 0,
       searchStatus: { status: "not-asked" },
     }
   }
 
   search() {
-    const searchId = this.state.searchId + 1
-    this.setState({ searchId })
-
     const loadResult = async () => {
       this.setState({ searchStatus: { status: "searching" } })
       const whale = await searchForWhale(this.props.query)
-      if (this.state.searchId === searchId) {
-        this.setState({ searchStatus: { status: "searched", whale } })
-      }
+      this.setState({ searchStatus: { status: "searched", whale } })
     }
 
     if (this.props.query) {
@@ -47,7 +40,7 @@ class SearchResult extends Component<Props, State> {
 
   render() {
     return (
-      <div className="mb-3">
+      <div className="border border-gray-300 p-3 mb-3">
         {this.state.searchStatus.status === "not-asked" ? (
           <div className="py-2">
             <p className="mb-3">Enter something into the box to search.</p>

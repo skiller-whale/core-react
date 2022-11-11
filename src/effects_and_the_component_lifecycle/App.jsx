@@ -9,12 +9,12 @@ const App = () => {
   }
 
   return (
-    <div className="m-6">
-      <h1 className="text-2xl font-semibold mb-3">Find a Whale</h1>
-      <div className="mb-3">
+    <div>
+      <div className="flex justify-between items-center mb-3">
+        <h1 className="text-2xl font-semibold">Whale Weigh Platform</h1>
         <input
           type="text"
-          placeholder="Name of whale"
+          placeholder="Search"
           value={query}
           onChange={changeQuery}
         />

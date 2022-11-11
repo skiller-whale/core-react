@@ -1,19 +1,3 @@
-export const searchForWhale = async (query) =>
-  new Promise((resolve) => {
-    const whale =
-      query === ""
-        ? undefined
-        : whales.find(
-            (x) =>
-              x.id === query.toLowerCase() ||
-              x.name.toLowerCase() === query.toLowerCase()
-          )
-    const delay = Math.random() * (1000 - 300) + 300
-    setTimeout(() => {
-      resolve(whale)
-    }, delay)
-  })
-
 export const whales = [
   {
     id: "sperm",

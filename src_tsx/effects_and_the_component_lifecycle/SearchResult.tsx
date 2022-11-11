@@ -26,7 +26,7 @@ const SearchResult: FC<Props> = ({ query }) => {
   }
 
   return (
-    <div className="mb-3">
+    <div className="border border-gray-300 p-3 mb-3">
       {searchStatus.status === "not-asked" ? (
         <div className="py-2">
           <p className="mb-3">Enter something into the box to search.</p>

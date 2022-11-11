@@ -1,6 +1,8 @@
-const Whale = ({ name, about }) => (
-  <div className="py-2">
-    <h4 className="text-lg font-bold mb-2">{name}</h4>
+const Whale = ({ name, about, weight }) => (
+  <div className="prose">
+    <h3>
+      {name}, weight {weight}kg
+    </h3>
     <p>{about}</p>
   </div>
 )

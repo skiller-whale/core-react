@@ -1,20 +1,31 @@
-export const searchForWhale = async (query) =>
+export type WhaleProps = {
+  id: string
+  name: string
+  about: string
+  weight: number
+}
+
+let index = 0
+
+export const getNextWhale = (): Promise<WhaleProps> =>
   new Promise((resolve) => {
-    const whale =
-      query === ""
-        ? undefined
-        : whales.find(
-            (x) =>
-              x.id === query.toLowerCase() ||
-              x.name.toLowerCase() === query.toLowerCase()
-          )
-    const delay = Math.random() * (1000 - 300) + 300
     setTimeout(() => {
-      resolve(whale)
-    }, delay)
+      index = (index + 1) % whales.length
+      resolve(whales[index])
+    }, 500)
   })
 
-export const whales = [
+export const initialWhales: WhaleProps[] = [
+  {
+    id: "sperm",
+    name: "Sperm Whale",
+    about:
+      "The sperm whale or cachalot is the largest of the toothed whales and the largest toothed predator. It is the only living member of the genus Physeter and one of three extant species in the sperm whale family, along with the pygmy sperm whale and dwarf sperm whale of the genus Kogia.",
+    weight: 41000,
+  },
+]
+
+export const whales: WhaleProps[] = [
   {
     id: "sperm",
     name: "Sperm Whale",

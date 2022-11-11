@@ -1,6 +1,6 @@
 import "./placeholder"
 // import "./introduction_to_react_and_jsx"
-// import "./state_and_event_listeners"
+// import "./state_and_event_handlers"
 // import "./effects_and_the_component_lifecycle"
 // import "./the_children_prop"
 // import "./error_boundaries"
