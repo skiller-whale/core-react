@@ -6,14 +6,12 @@ import { ErrorBoundary, ErrorMessage } from "./Error"
 const App = ({ whales: initialWhales }) => {
   const [whales, setWhales] = useState(initialWhales)
   const [error, setError] = useState("")
-
   const addWhale = async () => {
     setError(null)
     const nextWhaleJSON = await getNextWhale()
     const nextWhale = JSON.parse(nextWhaleJSON)
     setWhales((whales) => [...whales, nextWhale])
   }
-
   return (
     <div>
       <div className="flex items-center gap-3 mb-3">
@@ -34,5 +32,4 @@ const App = ({ whales: initialWhales }) => {
     </div>
   )
 }
-
 export default App

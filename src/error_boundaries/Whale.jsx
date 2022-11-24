@@ -3,20 +3,16 @@ import { assertIsWhale } from "./whales"
 
 const Whale = (whale) => {
   assertIsWhale(whale)
-
   const { name: initialName, weight, about } = whale
   const [name, setName] = useState(initialName)
   const [tag, setTag] = useState(null)
   const tagOptions = ["", "Light", "Medium", "Heavy", "Massive"]
-
   const changeName = (event) => {
     setName(event.currentTarget.value)
   }
-
   const changeTag = (event) => {
     setTag(event.currentTarget.value)
   }
-
   return (
     <div className="flex justify-between border border-gray-300 p-3">
       <div className="prose">
@@ -49,5 +45,4 @@ const Whale = (whale) => {
     </div>
   )
 }
-
 export default Whale

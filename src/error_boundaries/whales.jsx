@@ -10,9 +10,7 @@ export const assertIsWhale = (whale) => {
     throw new Error("Invalid Whale Data")
   }
 }
-
 let index = 0
-
 export const getNextWhale = () => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
@@ -25,7 +23,6 @@ export const getNextWhale = () => {
     }, 500)
   })
 }
-
 export const initialWhales = [
   {
     id: "sperm",
@@ -35,7 +32,6 @@ export const initialWhales = [
     weight: 41000,
   },
 ]
-
 export const whales = [
   `{
     "id": "sperm",
