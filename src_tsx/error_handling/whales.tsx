@@ -1,4 +1,11 @@
-export const assertIsWhale = (whale) => {
+export type WhaleProps = {
+  id: string
+  name: string
+  about: string
+  weight: number
+}
+
+export const assertIsWhale = (whale: any): void => {
   if (
     typeof whale !== "object" ||
     whale === null ||
@@ -13,7 +20,7 @@ export const assertIsWhale = (whale) => {
 
 let index = 0
 
-export const getNextWhale = () => {
+export const getNextWhale = (): Promise<string> => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       if (Math.random() <= 0.3333) {
@@ -26,7 +33,7 @@ export const getNextWhale = () => {
   })
 }
 
-export const initialWhales = [
+export const initialWhales: WhaleProps[] = [
   {
     id: "sperm",
     name: "Sperm Whale",
@@ -36,7 +43,7 @@ export const initialWhales = [
   },
 ]
 
-export const whales = [
+export const whales: string[] = [
   `{
     "id": "sperm",
     "name": "Sperm Whale",

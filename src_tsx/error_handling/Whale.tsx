@@ -1,7 +1,7 @@
-import { useState } from "react"
-import { assertIsWhale } from "./whales"
+import { type FC, type ChangeEventHandler, useState } from "react"
+import { type WhaleProps, assertIsWhale } from "./whales"
 
-const Whale = (whale) => {
+const Whale: FC<WhaleProps> = (whale) => {
   assertIsWhale(whale)
 
   const { name: initialName, weight, about } = whale
@@ -11,11 +11,11 @@ const Whale = (whale) => {
 
   const tagOptions = ["", "Light", "Medium", "Heavy", "Massive"]
 
-  const changeName = (event) => {
+  const changeName: ChangeEventHandler<HTMLInputElement> = (event) => {
     setName(event.currentTarget.value)
   }
 
-  const changeTag = (event) => {
+  const changeTag: ChangeEventHandler<HTMLSelectElement> = (event) => {
     setTag(event.currentTarget.value)
   }
 

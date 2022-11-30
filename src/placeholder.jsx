@@ -5,6 +5,7 @@ const App = () => (
     Hello Whale! It looks like you're all set up.
   </div>
 )
+
 const container = document.getElementById("root")
 const root = createRoot(container)
 root.render(<App />)

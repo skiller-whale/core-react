@@ -1,9 +1,13 @@
-import { useState } from "react"
-import { getNextWhale } from "./whales"
+import { type FC, useState } from "react"
+import { type WhaleProps, getNextWhale } from "./whales"
 import Whale from "./Whale"
 import { ErrorBoundary, ErrorMessage } from "./Error"
 
-const App = ({ whales: initialWhales }) => {
+type Props = {
+  whales: WhaleProps[]
+}
+
+const App: FC<Props> = ({ whales: initialWhales }) => {
   const [whales, setWhales] = useState(initialWhales)
   const [error, setError] = useState("")
 
