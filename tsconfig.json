@@ -1,7 +1,8 @@
 {
-  "include": ["src_tsx/**/*.ts", "src_tsx/**/*.tsx"],
+  "include": ["src/ts/**/*.ts", "src/ts/**/*.tsx"],
+  "exclude": ["src/ts/index.tsx", "src/ts/placeholder.tsx"],
   "compilerOptions": {
-    "outDir": "src/",
+    "outDir": "src/js/",
     "allowSyntheticDefaultImports": true,
     "jsx": "react-jsx",
     "target": "es2022",

@@ -1,0 +1,24 @@
+version: "3.7"
+services:
+  sync:
+    image: "ghcr.io/skiller-whale/learnersync:dockerize"
+    network_mode: "host"
+    environment:
+      SERVER_URL: "https://train.skillerwhale.com/"
+      WATCHER_BASE_PATH: "/app/exercises"
+      ATTENDANCE_ID_FILE: "/app/sync/attendance_id"
+      WATCHED_EXTS: "js jsx ts tsx"
+      IGNORE_DIRS: ".git"
+    volumes:
+      - "./src:/app/exercises/src"
+      - "./attendance_id:/app/sync/attendance_id"
+    tty: true
+    stdin_open: true
+  dev-server:
+    build:
+      context: .
+      dockerfile: "Dockerfile"
+    ports:
+      - "3500:3500"
+    volumes:
+      - "./src:/app/exercises/src"

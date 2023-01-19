@@ -4,11 +4,8 @@ const HTMLWebpackPlugin = require("html-webpack-plugin")
 
 const dev = process.env.NODE_ENV !== "production"
 
-const isTsx = process.env.SKILLERWHALE_LANG === "ts"
-const language = isTsx ? "tsx" : "jsx"
-
 const HTMLWebpackPluginConfig = new HTMLWebpackPlugin({
-  template: path.join(__dirname, "/src_tsx/index.html"),
+  template: path.join(__dirname, "/src/index.html"),
   filename: "index.html",
   inject: "body",
 })
@@ -27,7 +24,7 @@ module.exports = {
     historyApiFallback: true,
   },
   devtool: "source-map",
-  entry: [path.join(__dirname, `/src${isTsx ? "_tsx" : ""}/index.${language}`)],
+  entry: [path.join(__dirname, "/src/index.tsx")],
   module: {
     rules: [
       {
