@@ -45,7 +45,7 @@ const NewCustomerForm = ({ addNewCustomer }) => {
       />
       <div className="flex justify-end">
         <Button onClick={createCustomer}>
-          `Create customer ${newFirstName} ${newLastName}`
+          Create customer {newFirstName} {newLastName}
         </Button>
       </div>
     </form>

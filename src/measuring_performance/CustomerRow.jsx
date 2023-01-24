@@ -1,5 +1,5 @@
-const CustomerRow = ({ customer, index }) => (
-  <tr className={`border-b ${index % 2 === 0 ? "" : "bg-gray-100"}`}>
+const CustomerRow = ({ customer }) => (
+  <tr className={"border-b odd:bg-gray-100"}>
     <td className="py-2 px-3">
       {customer.name.first} {customer.name.last}
     </td>
