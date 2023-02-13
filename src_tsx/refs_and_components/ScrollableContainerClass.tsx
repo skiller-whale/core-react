@@ -7,7 +7,8 @@ import {
 
 class ScrollableContainerClass extends Component<PropsWithChildren<{}>> {
   private readonly divRef: RefObject<HTMLDivElement>
-  constructor(props) {
+
+  constructor(props: PropsWithChildren<{}>) {
     super(props)
     this.divRef = createRef<HTMLDivElement>()
   }
@@ -20,9 +21,10 @@ class ScrollableContainerClass extends Component<PropsWithChildren<{}>> {
       })
     }
   }
+
   render() {
     return (
-      <div ref={this.divRef} className="relative overflow-auto max-h-[60vh]">
+      <div ref={this.divRef} className="relative overflow-auto h-96">
         {this.props.children}
       </div>
     )

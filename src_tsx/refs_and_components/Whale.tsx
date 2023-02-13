@@ -1,6 +1,6 @@
 import { type FC, type ChangeEventHandler, useRef, useState } from "react"
 import { type WhaleProps } from "./whales"
-import FancyWhaleInput from "./FancyWhaleInput"
+import WhaleInput from "./WhaleInput"
 
 const Whale: FC<WhaleProps> = ({ name, weight: initialWeight, about }) => {
   const [weight, setWeight] = useState(initialWeight)
