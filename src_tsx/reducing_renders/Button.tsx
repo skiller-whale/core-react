@@ -17,11 +17,8 @@ const Button = ({ onClick, children }: ButtonProps) => {
   )
 }
 
-const doSomethingThatTakesAges = () => {
-  let i = 0
-  while (i < 10000000) {
-    i++
-  }
+const doSomethingThatTakesAges = (delay: number = 500) => {
+  for (const start = performance.now(); performance.now() < start + delay;) {}
 }
 
 export default Button
