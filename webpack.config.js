@@ -1,6 +1,7 @@
 const path = require("path")
 const webpack = require("webpack")
 const HTMLWebpackPlugin = require("html-webpack-plugin")
+const { getEndpoints } = require("./endpoints")
 
 const dev = process.env.NODE_ENV !== "production"
 
@@ -25,6 +26,10 @@ module.exports = {
       "Access-Control-Allow-Origin": "*",
     },
     historyApiFallback: true,
+    setupMiddlewares: (middlewares, devServer) => {
+      getEndpoints(devServer.app)
+      return middlewares
+    },
   },
   devtool: "source-map",
   entry: [path.join(__dirname, `/src${isTsx ? "_tsx" : ""}/index.${language}`)],
