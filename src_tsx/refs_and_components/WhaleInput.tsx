@@ -16,12 +16,7 @@ const WhaleInput = ({ type, value, onInput }: Props) => (
       <div className="absolute right-12 top-2 h-4 w-4 rounded-full border border-black">
         <div className="absolute top-1 left-1 h-2 w-2 rounded-full bg-black"></div>
       </div>
-      <input
-        className="h-10"
-        type={type}
-        value={value}
-        onInput={onInput}
-      />
+      <input className="h-10" type={type} value={value} onInput={onInput} />
     </div>
   </div>
 )

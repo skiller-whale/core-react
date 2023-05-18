@@ -1,5 +1,5 @@
 import { memo } from "react"
-import doSomethingThatTakesAges from "./doSomethingThatTakesAges"
+import doSomethingThatTakesAges from "../lib/doSomethingThatTakesAges"
 import { type AquaticAnimal } from "./whales"
 
 const ARTIFICIALLY_SLOW = false

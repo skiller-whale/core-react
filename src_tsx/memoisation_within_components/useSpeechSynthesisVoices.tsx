@@ -11,6 +11,8 @@ export default () => {
       setVoices(voices)
       setVoice(voices[0])
     }
+    loadVoices()
+    if (voices.length > 0) return
     speechSynthesis.addEventListener("voiceschanged", loadVoices)
 
     return () => {

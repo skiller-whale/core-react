@@ -1,5 +1,5 @@
 import { type FC, useEffect, useState } from "react"
-import { type Whale } from "./types"
+import { type Whale } from "../lib/apiTypes"
 import JsonFetcher from "./JsonFetcher"
 
 type Props = {
@@ -26,14 +26,11 @@ const WhaleTable: FC<Props> = ({ term }) => {
     fetchWhales()
   }, [term])
 
-  const rows = whales.map((whale, index) => {
+  const rows = whales.map((whale) => {
     const profilePicture = whale.species.includes("Dolphin") ? "🐬" : "🐳"
 
     return (
-      <tr
-        className={`border-b ${index % 2 === 0 ? "" : "bg-gray-100"}`}
-        key={whale.id}
-      >
+      <tr className="border-b even:bg-gray-100" key={whale.id}>
         <td className="py-2 px-3 text-4xl text-center">{profilePicture}</td>
         <td className="py-2 px-3 flex justify-between items-baseline">{`${whale.name} the ${whale.species}`}</td>
         <td className="py-2 px-3 text-right">{whale.weight}</td>
