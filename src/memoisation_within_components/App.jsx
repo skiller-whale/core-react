@@ -1,8 +1,8 @@
 import { useMemo, useState } from "react"
+import doSomethingThatTakesAges from "../lib/doSomethingThatTakesAges"
 import { generateAquaticAnimals } from "./whales"
 import AquaticAnimalTable from "./AquaticAnimalTable"
 import { Search } from "./Search"
-import doSomethingThatTakesAges from "./doSomethingThatTakesAges"
 
 const aquaticAnimals = generateAquaticAnimals(100)
 
@@ -31,8 +31,8 @@ const App = () => {
   )
   return (
     <div
-      className={`flex flex-col gap-3 p-6 m-[-2.5rem] ${
-        aquaticMode ? "bg-blue-300" : ""
+      className={`flex flex-col gap-3 p-6 m-[-2.5rem] bg-left-bottom bg-no-repeat ${
+        aquaticMode ? "bg-gradient-to-b from-cyan-50 to-cyan-200" : ""
       }`}
     >
       <h1 className="text-2xl font-semibold">Ada's friends </h1>

@@ -21,12 +21,9 @@ const FishTable = ({ term }) => {
     fetchFish()
   }, [term])
 
-  const rows = fish.map((f, index) => {
+  const rows = fish.map((f) => {
     return (
-      <tr
-        className={`border-b ${index % 2 === 0 ? "" : "bg-gray-100"}`}
-        key={f.id}
-      >
+      <tr className="border-b even:bg-gray-100" key={f.id}>
         <td className="py-2 px-3 text-4xl text-center">🐠</td>
         <td className="py-2 px-3 flex justify-between items-baseline">{`${f.name} the ${f.species}`}</td>
         <td className="py-2 px-3 text-4xl text-center">

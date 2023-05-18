@@ -14,4 +14,5 @@ const WhaleInput = ({ type, value, onInput }) => (
     </div>
   </div>
 )
+
 export default WhaleInput

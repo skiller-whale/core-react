@@ -13,7 +13,7 @@ const Button = ({ onClick, children }) => {
 }
 
 const doSomethingThatTakesAges = (delay = 500) => {
-  for (const start = performance.now(); performance.now() < start + delay;) {}
+  for (const start = performance.now(); performance.now() < start + delay; ) {}
 }
 
 export default Button

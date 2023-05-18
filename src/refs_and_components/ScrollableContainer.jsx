@@ -2,6 +2,7 @@ import { forwardRef, useImperativeHandle, useRef } from "react"
 
 const ScrollableContainer = ({ children }) => {
   const divRef = useRef(null)
+
   const scrollTop = () => {
     if (divRef.current) {
       divRef.current.scrollTo({
@@ -10,10 +11,12 @@ const ScrollableContainer = ({ children }) => {
       })
     }
   }
+
   return (
     <div ref={divRef} className="relative overflow-auto max-h-96">
       {children}
     </div>
   )
 }
+
 export default ScrollableContainer

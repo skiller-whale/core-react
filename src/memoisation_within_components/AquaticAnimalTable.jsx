@@ -1,6 +1,6 @@
 import { memo, useCallback, useMemo, useState } from "react"
+import doSomethingThatTakesAges from "../lib/doSomethingThatTakesAges"
 import AnimalRow from "./AquaticAnimalRow"
-import doSomethingThatTakesAges from "./doSomethingThatTakesAges"
 import { BestFriend } from "./BestFriend"
 import useSpeechSynthesisVoices from "./useSpeechSynthesisVoices"
 

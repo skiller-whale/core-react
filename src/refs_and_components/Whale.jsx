@@ -3,10 +3,13 @@ import WhaleInput from "./WhaleInput"
 
 const Whale = ({ name, weight: initialWeight, about }) => {
   const [weight, setWeight] = useState(initialWeight)
+
   const weightInput = useRef()
+
   const changeWeight = (event) => {
     setWeight(parseInt(event.currentTarget.value))
   }
+
   return (
     <div
       className="flex flex-col gap-3 border border-gray-300 p-3"
@@ -28,4 +31,5 @@ const Whale = ({ name, weight: initialWeight, about }) => {
     </div>
   )
 }
+
 export default Whale

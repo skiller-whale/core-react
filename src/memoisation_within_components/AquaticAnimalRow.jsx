@@ -1,5 +1,5 @@
 import { memo } from "react"
-import doSomethingThatTakesAges from "./doSomethingThatTakesAges"
+import doSomethingThatTakesAges from "../lib/doSomethingThatTakesAges"
 
 const ARTIFICIALLY_SLOW = false
 

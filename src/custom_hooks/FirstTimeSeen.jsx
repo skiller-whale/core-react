@@ -2,9 +2,9 @@ import { useCallback, useEffect, useRef, useState } from "react"
 
 const FirstTimeSeen = ({ render }) => {
   const [firstTimeSeen, setFirstTimeSeen] = useState(false)
-
+  
   const observer = useRef(null)
-
+  
   const refCallback = useCallback((target) => {
     if (!target) {
       observer.current?.disconnect()
@@ -23,7 +23,6 @@ const FirstTimeSeen = ({ render }) => {
     )
     observer.current?.observe(target)
   }, [])
-
   useEffect(() => {
     if (!firstTimeSeen) {
       return

@@ -22,4 +22,5 @@ const App = ({ whales }) => {
     </div>
   )
 }
+
 export default App
