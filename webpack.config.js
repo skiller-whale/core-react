@@ -22,13 +22,37 @@ module.exports = {
   devServer: {
     host: "0.0.0.0",
     port: "3500",
+    client: {
+      overlay: false,
+    },
     headers: {
       "Access-Control-Allow-Origin": "*",
     },
     historyApiFallback: true,
     setupMiddlewares: (middlewares, devServer) => {
       getEndpoints(devServer.app)
-      return middlewares
+      return middlewares.map((middleware) => {
+        if (middleware.name !== "webpack-dev-middleware") {
+          return middleware
+        }
+        return async (req, res, next) => {
+          if (
+            req.url.includes("lazy_loading") ||
+            req.url.includes("deferring_updates")
+          ) {
+            await new Promise((resolve) =>
+              setTimeout(resolve, req.url.includes("Mascot") ? 4000 : 2000)
+            )
+            if (req.url.includes("Blocked")) {
+              return res.status(503).send("Blocked")
+            }
+          }
+          return {
+            name: middleware.name,
+            middleware: middleware.middleware(req, res, next),
+          }
+        }
+      })
     },
   },
   devtool: "source-map",
