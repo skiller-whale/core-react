@@ -3,9 +3,7 @@ import WhaleInput from "./WhaleInput"
 
 const Whale = ({ name, weight: initialWeight, about }) => {
   const [weight, setWeight] = useState(initialWeight)
-
-  const weightInput = useRef()
-
+  const weightInput = useRef(null)
   const changeWeight = (event) => {
     setWeight(parseInt(event.currentTarget.value))
   }

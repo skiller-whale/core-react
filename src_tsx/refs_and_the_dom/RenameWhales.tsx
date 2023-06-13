@@ -1,5 +1,5 @@
 import { type FC, type KeyboardEventHandler, useRef } from "react"
-import { type WhaleProps } from "./whales"
+import type { WhaleProps } from "./whales"
 
 type Props = {
   whales: WhaleProps[]

@@ -1,5 +1,5 @@
 import { type FC, useEffect, useState } from "react"
-import { type Whale } from "../lib/apiTypes"
+import type { Whale } from "../lib/apiTypes"
 import JsonFetcher from "./JsonFetcher"
 
 type Props = {
@@ -17,6 +17,7 @@ const WhaleTable: FC<Props> = ({ term }) => {
         "Content-Type": "application/json",
       },
     })
+
     const { animals } = await response.json()
     setWhales(animals)
   }

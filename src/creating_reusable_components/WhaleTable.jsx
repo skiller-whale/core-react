@@ -3,7 +3,6 @@ import JsonFetcher from "./JsonFetcher"
 
 const WhaleTable = ({ term }) => {
   const [whales, setWhales] = useState([])
-
   const fetchWhales = async () => {
     const response = await fetch(`/api/aquatic-animals/whales/?term=${term}`, {
       method: "GET",
@@ -12,10 +11,10 @@ const WhaleTable = ({ term }) => {
         "Content-Type": "application/json",
       },
     })
+
     const { animals } = await response.json()
     setWhales(animals)
   }
-
   useEffect(() => {
     setWhales([])
     fetchWhales()
@@ -23,6 +22,7 @@ const WhaleTable = ({ term }) => {
 
   const rows = whales.map((whale) => {
     const profilePicture = whale.species.includes("Dolphin") ? "🐬" : "🐳"
+
     return (
       <tr className="border-b even:bg-gray-100" key={whale.id}>
         <td className="py-2 px-3 text-4xl text-center">{profilePicture}</td>

@@ -2,7 +2,6 @@ import { useRef, useState } from "react"
 
 const Whale = ({ name, weight: initialWeight, about }) => {
   const [weight, setWeight] = useState(initialWeight)
-
   const changeWeight = (event) => {
     setWeight(parseInt(event.currentTarget.value))
   }

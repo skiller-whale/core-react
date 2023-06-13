@@ -8,9 +8,11 @@ const Whale = ({ name, weight: initialWeight, about }) => {
   const changeWeight = (event) => {
     setWeight(parseInt(event.currentTarget.value))
   }
+
   const changeTag = (event) => {
     setTag(event.currentTarget.value)
   }
+
   const summary = (
     <div className="prose">
       <h4>
@@ -24,6 +26,7 @@ const Whale = ({ name, weight: initialWeight, about }) => {
       <p>{about}</p>
     </div>
   )
+
   const form = (
     <div>
       <input
@@ -43,12 +46,14 @@ const Whale = ({ name, weight: initialWeight, about }) => {
       </div>
     </div>
   )
+
   const columns = (
     <div className="flex gap-3 p-3">
       <div className="flex-1">{summary}</div>
       <div className="w-52">{form}</div>
     </div>
   )
+
   return (
     <div className="border border-gray-300 mb-3">
       <div className="flex justify-between px-3 py-2 bg-gray-200 border-b border-gray-300 cursor-pointer">
@@ -59,4 +64,5 @@ const Whale = ({ name, weight: initialWeight, about }) => {
     </div>
   )
 }
+
 export default Whale

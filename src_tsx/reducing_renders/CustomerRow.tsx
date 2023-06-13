@@ -7,11 +7,10 @@ type Props = {
   }
   email: string
   amountSpent: string
-  index: number
 }
 
-const CustomerRow = ({ name, email, amountSpent, index }: Props) => (
-  <tr className={`border-b ${index % 2 === 0 ? "" : "bg-gray-100"}`}>
+const CustomerRow = ({ name, email, amountSpent }: Props) => (
+  <tr className="border-b odd:bg-gray-100">
     <td className="py-2 px-3">
       {name.first} {name.last}
     </td>

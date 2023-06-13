@@ -7,7 +7,6 @@ const NewCustomerForm = ({ addCustomer, deleteCustomer }) => {
   const [newEmail, setNewEmail] = useState("")
   const [newAmountSpent, setNewAmountSpent] = useState("")
   const [previousNewEmails, setPreviousNewEmails] = useState([])
-
   const createCustomer = () => {
     if (newFirstName && newLastName) {
       addCustomer(newFirstName, newLastName, newEmail, newAmountSpent)

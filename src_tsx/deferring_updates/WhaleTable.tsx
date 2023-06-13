@@ -1,5 +1,5 @@
 import { type FC, memo, useState, useTransition } from "react"
-import { type Whale } from "../lib/apiTypes"
+import type { Whale } from "../lib/apiTypes"
 import WhaleRow from "./WhaleRow"
 import LoadingSpinner from "./LoadingSpinner"
 

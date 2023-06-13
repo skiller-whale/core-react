@@ -1,4 +1,4 @@
-import { type Customer } from "../lib/Customers"
+import type { Customer } from "../lib/Customers"
 
 type Props = {
   customer: Customer

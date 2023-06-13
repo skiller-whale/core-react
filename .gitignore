@@ -4,6 +4,8 @@ logs
 npm-debug.log*
 coverage
 
+!.env
+
 # Dependency directories
 node_modules
 
@@ -11,4 +13,7 @@ node_modules
 .npm
 
 # Prod Bundle
-build
+dist
+
+# Vite timestamps
+vite.config.ts.timestamp*

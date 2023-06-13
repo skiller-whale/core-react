@@ -1,12 +1,12 @@
 import {
-  useEffect,
-  useState,
+  type FC,
   Suspense,
   lazy,
-  useTransition,
   useDeferredValue,
+  useEffect,
+  useState,
+  useTransition,
 } from "react"
-import type { FC } from "react"
 import { ErrorBoundary } from "react-error-boundary"
 import LoadingSpinner from "./LoadingSpinner"
 
@@ -20,6 +20,7 @@ const PromotionContainer: FC = () => {
       () => setPromotion((current) => (current + 1) % 2),
       5000
     )
+
     return () => clearInterval(timer)
   }, [])
 

@@ -1,5 +1,5 @@
 import { type FC, type KeyboardEventHandler, useRef, useState } from "react"
-import { type WhaleProps } from "./whales"
+import type { WhaleProps } from "./whales"
 import Whale from "./Whale"
 import RenameWhales from "./RenameWhales"
 import NewWhaleForm from "./NewWhaleForm"

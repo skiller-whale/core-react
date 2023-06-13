@@ -1,5 +1,5 @@
-import { type FC } from "react"
-import { type WhaleProps } from "./whales"
+import type { FC } from "react"
+import type { WhaleProps } from "./whales"
 
 const Whale: FC<WhaleProps> = ({ name, weight, about }) => {
   return (

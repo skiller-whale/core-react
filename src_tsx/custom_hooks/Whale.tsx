@@ -1,5 +1,5 @@
 import { type KeyboardEventHandler, forwardRef } from "react"
-import { type WhaleProps } from "./whales"
+import type { WhaleProps } from "./whales"
 import WhaleRating from "./WhaleRating"
 
 type Props = WhaleProps & { firstTimeSeen: boolean }

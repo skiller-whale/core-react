@@ -1,15 +1,22 @@
-import { type FC, type MouseEventHandler, useState } from "react"
+import {
+  type FC,
+  type MouseEventHandler,
+  type SyntheticEvent,
+  useState,
+} from "react"
 import PopOver from "./PopOver"
 
 type Props = {
   info: string
   label: string
-  onPress: (event: React.SyntheticEvent) => void
+  onPress: (event: SyntheticEvent) => void
   popOverDisplayed: boolean
 }
 
 const InfoButton: FC<Props> = ({ info, label, onPress, popOverDisplayed }) => {
-  const [buttonBoundingRect, setButtonBoundingRect] = useState(null)
+  const [buttonBoundingRect, setButtonBoundingRect] = useState<DOMRect | null>(
+    null
+  )
 
   const onClickButton: MouseEventHandler<HTMLButtonElement> = (event) => {
     const buttonBoundingRect = event.currentTarget.getBoundingClientRect()

@@ -5,12 +5,9 @@ const Whale = (whale) => {
   assertIsWhale(whale)
 
   const { name: initialName, weight, about } = whale
-
   const [name, setName] = useState(initialName)
   const [tag, setTag] = useState(null)
-
   const tagOptions = ["", "Light", "Medium", "Heavy", "Massive"]
-
   const changeName = (event) => {
     setName(event.currentTarget.value)
   }

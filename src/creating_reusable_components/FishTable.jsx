@@ -3,7 +3,6 @@ import useFetchJson from "./useFetchJson"
 
 const FishTable = ({ term }) => {
   const [fish, setFish] = useState([])
-
   const fetchFish = async () => {
     const response = await fetch(`/api/aquatic-animals/fish/?term=${term}`, {
       method: "GET",
@@ -12,10 +11,10 @@ const FishTable = ({ term }) => {
         "Content-Type": "application/json",
       },
     })
+
     const { animals } = await response.json()
     setFish(animals)
   }
-
   useEffect(() => {
     setFish([])
     fetchFish()

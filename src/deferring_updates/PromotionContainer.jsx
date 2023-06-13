@@ -1,21 +1,18 @@
 import {
-  useEffect,
-  useState,
   Suspense,
   lazy,
-  useTransition,
   useDeferredValue,
+  useEffect,
+  useState,
+  useTransition,
 } from "react"
 import { ErrorBoundary } from "react-error-boundary"
 import LoadingSpinner from "./LoadingSpinner"
 
 const Promotion1 = lazy(() => import("./Promotion1"))
-
 const Promotion2 = lazy(() => import("./Promotion2"))
-
 const PromotionContainer = () => {
   const [promotion, setPromotion] = useState(1)
-
   useEffect(() => {
     const timer = setInterval(
       () => setPromotion((current) => (current + 1) % 2),

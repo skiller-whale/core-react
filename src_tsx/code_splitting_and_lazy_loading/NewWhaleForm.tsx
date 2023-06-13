@@ -1,13 +1,13 @@
-import React, {
-  type FC,
+import {
   type ChangeEventHandler,
+  type FC,
   type MouseEvent,
+  Suspense,
   lazy,
   useState,
-  Suspense,
 } from "react"
 import { ErrorBoundary } from "react-error-boundary"
-import { type WhaleProps } from "./whales"
+import type { WhaleProps } from "./whales"
 import Mascot from "./Mascot"
 import SmallPrint from "./SmallPrint"
 

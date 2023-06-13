@@ -1,10 +1,10 @@
 import { type FC, useState } from "react"
-import { type Planet } from "./planets"
+import type { Planet } from "./planets"
 import Card from "./Card"
 
 const App: FC<{ planets: Planet[] }> = ({ planets }) => {
   const [additionalPlanetInfoDisplayed, setAdditionalPlanetInfoDisplayed] =
-    useState<string>(null)
+    useState<string | null>(null)
 
   const hideAdditionalPlanetInfo = () => {
     setAdditionalPlanetInfoDisplayed(null)

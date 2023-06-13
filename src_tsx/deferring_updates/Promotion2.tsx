@@ -1,4 +1,4 @@
-import { FC } from "react"
+import type { FC } from "react"
 
 const Promotion2: FC = () => (
   <div className="flex flex-col h-full w-full">

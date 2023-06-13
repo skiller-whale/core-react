@@ -4,7 +4,6 @@ import NewWhaleForm from "./NewWhaleForm"
 
 const App = ({ whales: initialWhales }) => {
   const [whales, setWhales] = useState(initialWhales)
-
   const addWhale = (whale) => {
     if (whale.id) {
       setWhales((whales) => [...whales, whale])

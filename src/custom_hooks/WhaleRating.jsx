@@ -2,7 +2,6 @@ import { useState } from "react"
 
 const WhaleRating = ({ rating, onClick, max = 10 }) => {
   const [hoverRating, setHoverRating] = useState(null)
-
   const currentRating = hoverRating ?? rating
 
   return (

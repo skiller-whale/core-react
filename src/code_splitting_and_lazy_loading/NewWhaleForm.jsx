@@ -1,4 +1,4 @@
-import React, { lazy, useState, Suspense } from "react"
+import { Suspense, lazy, useState } from "react"
 import { ErrorBoundary } from "react-error-boundary"
 import Mascot from "./Mascot"
 import SmallPrint from "./SmallPrint"
@@ -9,7 +9,6 @@ const NewWhaleForm = ({ addWhale }) => {
   const [about, setAbout] = useState("")
   const [acceptedTC, setAcceptedTC] = useState(false)
   const [openedTC, setOpenedTC] = useState(false)
-
   const changeName = (event) => {
     setName(event.currentTarget.value)
   }

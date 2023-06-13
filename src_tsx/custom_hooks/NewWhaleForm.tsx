@@ -1,5 +1,5 @@
-import { type FC, type ChangeEventHandler, useState } from "react"
-import { type WhaleProps } from "./whales"
+import { type ChangeEventHandler, type FC, useState } from "react"
+import type { WhaleProps } from "./whales"
 import { setPageTitle } from "./hooks"
 
 type Props = {
@@ -35,12 +35,11 @@ const NewWhaleForm: FC<Props> = ({ addWhale, numberOfWhales }) => {
   const loopValue = (value: number) => {
     if (value < 0) return numberOfWhales
     if (value > numberOfWhales) return 0
+
     return value
   }
 
-  const setPosition = (
-    valueOrFunction: number | ((value: number) => number)
-  ): void => {
+  const setPosition: typeof _setPosition = (valueOrFunction) => {
     if (typeof valueOrFunction === "function") {
       _setPosition((value) => loopValue(valueOrFunction(value)))
     } else {

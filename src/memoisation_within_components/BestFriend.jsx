@@ -11,7 +11,6 @@ export const BestFriend = ({ animal, voices, voice, setVoice }) => {
   // useEffect(() => {
   //   speechSynthesis.speak(utterance)
   // }, [utterance])
-
   return (
     <div className="flex flex-col p-6 border-2 mb-6">
       <div className="flex justify-between items-baseline">

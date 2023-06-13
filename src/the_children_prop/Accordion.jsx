@@ -1,4 +1,4 @@
-import { Children, useState, cloneElement } from "react"
+import { Children, cloneElement, useState } from "react"
 
 export const AccordionChild = ({ title, open, toggle, children }) => {
   return (
@@ -16,8 +16,10 @@ export const AccordionChild = ({ title, open, toggle, children }) => {
     </div>
   )
 }
+
 export const Accordion = ({ children }) => {
   const [currentIndex, setCurrentIndex] = useState(0)
+
   return (
     <div className="border border-gray-300 border-b-0 mb-3">{children}</div>
   )

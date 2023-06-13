@@ -2,12 +2,10 @@ import { memo } from "react"
 import doSomethingThatTakesAges from "../lib/doSomethingThatTakesAges"
 
 const ARTIFICIALLY_SLOW = false
-
 const AquaticAnimalRow = ({ animal, isBestFriend, setBestFriend }) => {
   if (ARTIFICIALLY_SLOW) {
     doSomethingThatTakesAges(10)
   }
-
   const profilePicture = animal.isWhale
     ? animal.species.includes("Dolphin")
       ? "🐬"

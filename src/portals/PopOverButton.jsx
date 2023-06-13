@@ -3,7 +3,6 @@ import PopOver from "./PopOver"
 
 const InfoButton = ({ info, label, onPress, popOverDisplayed }) => {
   const [buttonBoundingRect, setButtonBoundingRect] = useState(null)
-
   const onClickButton = (event) => {
     const buttonBoundingRect = event.currentTarget.getBoundingClientRect()
     setButtonBoundingRect(buttonBoundingRect)

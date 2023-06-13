@@ -1,11 +1,11 @@
-import { useEffect, useMemo } from "react"
-import { type AquaticAnimal } from "./whales"
+import { type Dispatch, type SetStateAction, useEffect, useMemo } from "react"
+import type { AquaticAnimal } from "./whales"
 
 type Props = {
   animal: AquaticAnimal
   voices: SpeechSynthesisVoice[]
-  voice: SpeechSynthesisVoice
-  setVoice: (voice: SpeechSynthesisVoice) => void
+  voice: SpeechSynthesisVoice | null
+  setVoice: Dispatch<SetStateAction<SpeechSynthesisVoice | null>>
 }
 
 export const BestFriend = ({ animal, voices, voice, setVoice }: Props) => {
@@ -44,7 +44,9 @@ export const BestFriend = ({ animal, voices, voice, setVoice }: Props) => {
             disabled={voices.length === 0}
             onChange={(event) => {
               setVoice(
-                voices.find((voice) => voice.name === event.currentTarget.value)
+                voices.find(
+                  (voice) => voice.name === event.currentTarget.value
+                )!
               )
             }}
           >

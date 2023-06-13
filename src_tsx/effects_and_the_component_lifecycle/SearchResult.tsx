@@ -21,6 +21,7 @@ const SearchResult: FC<Props> = ({ query }) => {
 
   const loadResult = async () => {
     setSearchStatus({ status: "searching" })
+
     const whale = await searchForWhale(query)
     setSearchStatus({ status: "searched", whale })
   }

@@ -1,10 +1,10 @@
-import { type FC, type ChangeEventHandler, useState } from "react"
-import { type WhaleProps } from "./whales"
+import { type ChangeEventHandler, type FC, useState } from "react"
+import type { WhaleProps } from "./whales"
 import { CollapsibleContainer, TwoColumns } from "./styles"
 
 const Whale: FC<WhaleProps> = ({ name, weight: initialWeight, about }) => {
   const [weight, setWeight] = useState(initialWeight)
-  const [tag, setTag] = useState(null)
+  const [tag, setTag] = useState<string | null>(null)
 
   const tagOptions = ["", "Light", "Medium", "Heavy", "Massive"]
 

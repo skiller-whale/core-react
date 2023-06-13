@@ -10,10 +10,10 @@ class SearchResult extends Component {
       searchStatus: { status: "not-asked" },
     }
   }
-
   search() {
     const loadResult = async () => {
       this.setState({ searchStatus: { status: "searching" } })
+
       const whale = await searchForWhale(this.props.query)
       this.setState({ searchStatus: { status: "searched", whale } })
     }
@@ -23,7 +23,6 @@ class SearchResult extends Component {
       this.setState({ searchStatus: { status: "not-asked" } })
     }
   }
-
   render() {
     return (
       <div className="border border-gray-300 p-3 mb-3">

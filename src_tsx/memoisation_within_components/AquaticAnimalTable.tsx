@@ -1,6 +1,6 @@
 import { memo, useCallback, useMemo, useState } from "react"
 import doSomethingThatTakesAges from "../lib/doSomethingThatTakesAges"
-import { type AquaticAnimal } from "./whales"
+import type { AquaticAnimal } from "./whales"
 import AnimalRow from "./AquaticAnimalRow"
 import { BestFriend } from "./BestFriend"
 import useSpeechSynthesisVoices from "./useSpeechSynthesisVoices"
@@ -18,6 +18,7 @@ const AquaticAnimalTable = ({ animals }: Props) => {
 
   const setBestFriendAndSayHello = (animal: AquaticAnimal) => {
     setBestFriend(animal)
+
     const utterance = new SpeechSynthesisUtterance(
       `Hello ${animal.name} the ${animal.species}`
     )

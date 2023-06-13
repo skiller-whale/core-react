@@ -1,4 +1,4 @@
-import { type Customer } from "../lib/Customers"
+import type { Customer } from "../lib/Customers"
 import CustomerRow from "./CustomerRow"
 
 type Props = {

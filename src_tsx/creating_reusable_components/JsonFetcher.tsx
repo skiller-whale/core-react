@@ -1,8 +1,8 @@
-import { useState, useEffect } from "react"
+import { type ReactElement, useEffect, useState } from "react"
 
 type Props<Data> = {
   url: string
-  children: (data: Data[]) => JSX.Element
+  children: (data: Data[]) => ReactElement
 }
 
 const JsonFetcher = <Data,>({ url, children }: Props<Data>) => {

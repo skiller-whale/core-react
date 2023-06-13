@@ -1,5 +1,5 @@
 {
-  "include": ["src_tsx/**/*.ts", "src_tsx/**/*.tsx"],
+  "include": ["src_tsx/*/*.ts", "src_tsx/*/*.tsx"],
   "compilerOptions": {
     "outDir": "src/",
     "allowSyntheticDefaultImports": true,
@@ -7,6 +7,8 @@
     "target": "es2022",
     "module": "es2022",
     "moduleResolution": "node",
-    "preserveValueImports": true
+    "verbatimModuleSyntax": true,
+    "noImplicitAny": true,
+    "strict": true
   }
 }

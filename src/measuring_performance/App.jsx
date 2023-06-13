@@ -1,19 +1,18 @@
 import { useState } from "react"
-import { generateCustomers, addCustomer } from "../lib/Customers"
+import { addCustomer, generateCustomers } from "../lib/Customers"
 import CustomerTable from "./CustomerTable"
 import Button from "./Button"
 
 const App = () => {
   const initialCustomers = 200
-
   const [customers, setCustomers] = useState(
     generateCustomers(initialCustomers)
   )
+
   const [newFirstName, setNewFirstName] = useState("")
   const [newLastName, setNewLastName] = useState("")
   const [newEmail, setNewEmail] = useState("")
   const [newAmountSpent, setNewAmountSpent] = useState("")
-
   const addNewCustomer = (
     newFirstName,
     newLastName,

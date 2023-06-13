@@ -6,6 +6,7 @@ export const setPageTitle = (title: string) => {
   useEffect(() => {
     const originalTitle = originalTitleRef.current
     document.title = title
+
     return () => {
       document.title = originalTitle
     }

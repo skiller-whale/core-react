@@ -2,20 +2,19 @@ import { useCallback, useEffect, useRef, useState } from "react"
 
 const FirstTimeSeen = ({ render }) => {
   const [firstTimeSeen, setFirstTimeSeen] = useState(false)
-  
   const observer = useRef(null)
-  
   const refCallback = useCallback((target) => {
     if (!target) {
       observer.current?.disconnect()
       observer.current = null
+
       return
     }
     observer.current = new IntersectionObserver(
       ([entries]) => {
         if (entries.isIntersecting) {
           setFirstTimeSeen(true)
-          observer.current.disconnect()
+          observer.current?.disconnect()
           observer.current = null
         }
       },
@@ -30,6 +29,7 @@ const FirstTimeSeen = ({ render }) => {
     const timeout = setTimeout(() => {
       setFirstTimeSeen(false)
     }, 1000)
+
     return () => {
       clearTimeout(timeout)
     }

@@ -1,5 +1,5 @@
 import { type FC, useRef } from "react"
-import { type WhaleProps } from "./whales"
+import type { WhaleProps } from "./whales"
 import Whale from "./Whale"
 import ScrollableContainer, {
   type ScrollableContainerRef,

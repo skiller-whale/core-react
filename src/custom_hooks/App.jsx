@@ -5,7 +5,6 @@ import FirstTimeSeen from "./FirstTimeSeen"
 
 const App = ({ whales: initialWhales }) => {
   const [whales, setWhales] = useState(initialWhales)
-
   const addWhale = (whale, position) => {
     if (whale.id) {
       setWhales((whales) => [

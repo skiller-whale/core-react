@@ -1,7 +1,7 @@
-import {
-  type DetailedHTMLProps,
-  type InputHTMLAttributes,
-  type PropsWithChildren,
+import type {
+  DetailedHTMLProps,
+  InputHTMLAttributes,
+  PropsWithChildren,
 } from "react"
 
 type Props = DetailedHTMLProps<

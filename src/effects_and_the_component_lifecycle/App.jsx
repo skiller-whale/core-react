@@ -3,7 +3,6 @@ import SearchResult from "./SearchResult"
 
 const App = () => {
   const [query, setQuery] = useState("")
-
   const changeQuery = (event) => {
     setQuery(event.currentTarget.value)
   }
