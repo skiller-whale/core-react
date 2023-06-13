@@ -27,6 +27,7 @@ class SearchResult extends Component<Props, State> {
   search() {
     const loadResult = async () => {
       this.setState({ searchStatus: { status: "searching" } })
+
       const whale = await searchForWhale(this.props.query)
       this.setState({ searchStatus: { status: "searched", whale } })
     }

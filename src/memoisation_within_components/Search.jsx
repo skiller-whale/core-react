@@ -1,7 +1,7 @@
 import { useRef } from "react"
 
 export const Search = ({ setSearchTerm }) => {
-  const searchTermInput = useRef()
+  const searchTermInput = useRef(null)
 
   return (
     <div className="flex gap-3 justify-end">

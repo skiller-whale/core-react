@@ -1,4 +1,4 @@
-import { type FC, useState, ChangeEventHandler } from "react"
+import { type ChangeEventHandler, type FC, useState } from "react"
 import SearchResult from "./SearchResult"
 
 const App: FC = () => {

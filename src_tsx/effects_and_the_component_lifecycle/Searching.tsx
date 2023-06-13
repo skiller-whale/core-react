@@ -1,4 +1,4 @@
-import { type FC } from "react"
+import type { FC } from "react"
 
 const Searching: FC = () => (
   <div className="flex items-center p-2">

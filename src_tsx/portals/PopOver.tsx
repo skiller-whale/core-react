@@ -1,20 +1,20 @@
-import { type FC } from "react"
+import type { FC } from "react"
 import { createPortal } from "react-dom"
 
 type Props = {
   info: string
-  buttonBoundingRect?: DOMRect
+  buttonBoundingRect: DOMRect | null
 }
 
 const PopOver: FC<Props> = ({ info, buttonBoundingRect }) => {
   const positionStyle1 = {
-    left: buttonBoundingRect?.width / 2,
+    left: (buttonBoundingRect?.width ?? 0) / 2,
     top: 0,
   }
 
   const positionStyle2 = {
-    left: buttonBoundingRect?.x + buttonBoundingRect?.width / 2,
-    top: buttonBoundingRect?.y,
+    left: (buttonBoundingRect?.x ?? 0) + (buttonBoundingRect?.width ?? 0) / 2,
+    top: buttonBoundingRect?.y ?? 0,
   }
 
   return (

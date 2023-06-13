@@ -32,4 +32,5 @@ const Mascot = () => (
     />
   </div>
 )
+
 export default Mascot

@@ -1,5 +1,5 @@
 import { type FC, useState } from "react"
-import { type WhaleProps } from "./whales"
+import type { WhaleProps } from "./whales"
 import Whale from "./Whale"
 import NewWhaleForm from "./NewWhaleForm"
 import FirstTimeSeen from "./FirstTimeSeen"

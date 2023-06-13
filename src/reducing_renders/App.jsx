@@ -1,15 +1,14 @@
 import { useState } from "react"
 import {
-  generateCustomers,
   addCustomer,
   deleteCustomer,
+  generateCustomers,
 } from "../lib/Customers"
 import NewCustomerForm from "./NewCustomerForm"
 import CustomerTable from "./CustomerTable"
 
 const App = () => {
   const initialCustomers = 200
-
   const [customers, setCustomers] = useState(
     generateCustomers(initialCustomers)
   )

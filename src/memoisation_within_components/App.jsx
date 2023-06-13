@@ -5,9 +5,7 @@ import AquaticAnimalTable from "./AquaticAnimalTable"
 import { Search } from "./Search"
 
 const aquaticAnimals = generateAquaticAnimals(100)
-
 const ARTIFICIALLY_SLOW = true
-
 const purposefullySlowFilter = (aquaticAnimals, searchTerm) =>
   aquaticAnimals.filter((animal) => {
     if (ARTIFICIALLY_SLOW) {
@@ -19,6 +17,7 @@ const purposefullySlowFilter = (aquaticAnimals, searchTerm) =>
     const name = animal.name.toLowerCase()
     const species = animal.species.toLowerCase()
     const searchTermLower = searchTerm.toLowerCase()
+
     return name.includes(searchTermLower) || species.includes(searchTermLower)
   })
 
@@ -29,6 +28,7 @@ const App = () => {
     aquaticAnimals,
     searchTerm
   )
+
   return (
     <div
       className={`flex flex-col gap-3 p-6 m-[-2.5rem] bg-left-bottom bg-no-repeat ${

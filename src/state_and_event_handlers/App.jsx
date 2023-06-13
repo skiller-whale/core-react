@@ -4,7 +4,6 @@ import Whale from "./Whale"
 
 const App = ({ whales: initialWhales }) => {
   const [whales] = useState(initialWhales)
-
   const addWhale = async () => {
     const nextWhale = await getNextWhale()
     whales.push(nextWhale)

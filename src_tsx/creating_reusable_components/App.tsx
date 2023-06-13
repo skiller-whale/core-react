@@ -1,10 +1,10 @@
-import { useState } from "react"
+import { type FC, useState } from "react"
 import FishTable from "./FishTable"
 import WhaleTable from "./WhaleTable"
 import DebouncedInput from "./DebouncedInput"
 import WhaleInput from "./WhaleInput"
 
-const App = () => {
+const App: FC = () => {
   const [term, setTerm] = useState("")
 
   return (

@@ -1,4 +1,4 @@
-import { type Customer } from "../lib/Customers"
+import type { Customer } from "../lib/Customers"
 import CustomerRow from "./CustomerRow2"
 
 type Props = {
@@ -13,6 +13,7 @@ const CustomerTable = ({ customers }: Props) => {
       email: customer.email,
       amountSpent: customer.amountSpent,
     }
+
     return (
       <CustomerRow
         key={customer.email}

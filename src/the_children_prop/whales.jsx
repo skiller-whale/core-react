@@ -1,4 +1,5 @@
 let index = 0
+
 export const getNextWhale = () =>
   new Promise((resolve) => {
     setTimeout(() => {
@@ -6,6 +7,7 @@ export const getNextWhale = () =>
       resolve(whales[index])
     }, 500)
   })
+
 export const initialWhales = [
   {
     id: "sperm",
@@ -15,6 +17,7 @@ export const initialWhales = [
     weight: 41000,
   },
 ]
+
 export const whales = [
   {
     id: "sperm",

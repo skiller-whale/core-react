@@ -1,4 +1,5 @@
-import { type PropsWithChildren } from "react"
+import type { PropsWithChildren } from "react"
+import doSomethingThatTakesAges from "../lib/doSomethingThatTakesAges"
 
 type ButtonProps = PropsWithChildren<{
   onClick: () => void
@@ -6,6 +7,7 @@ type ButtonProps = PropsWithChildren<{
 
 const Button = ({ onClick, children }: ButtonProps) => {
   doSomethingThatTakesAges()
+
   return (
     <button
       type="button"
@@ -15,10 +17,6 @@ const Button = ({ onClick, children }: ButtonProps) => {
       {children}
     </button>
   )
-}
-
-const doSomethingThatTakesAges = (delay: number = 500) => {
-  for (const start = performance.now(); performance.now() < start + delay; ) {}
 }
 
 export default Button

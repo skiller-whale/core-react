@@ -10,7 +10,6 @@ const Card = ({
   onDisplayInfo,
 }) => {
   const showImage = false // toggle this when instructed
-
   const hideOverflow = false // toggle this when instructed
 
   return (

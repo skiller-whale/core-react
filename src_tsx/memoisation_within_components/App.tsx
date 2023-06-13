@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react"
 import doSomethingThatTakesAges from "../lib/doSomethingThatTakesAges"
-import { generateAquaticAnimals, type AquaticAnimal } from "./whales"
+import { type AquaticAnimal, generateAquaticAnimals } from "./whales"
 import AquaticAnimalTable from "./AquaticAnimalTable"
 import { Search } from "./Search"
 
@@ -22,6 +22,7 @@ const purposefullySlowFilter = (
     const name = animal.name.toLowerCase()
     const species = animal.species.toLowerCase()
     const searchTermLower = searchTerm.toLowerCase()
+
     return name.includes(searchTermLower) || species.includes(searchTermLower)
   })
 

@@ -4,7 +4,6 @@ const useFetchJson = (url) => {
   const [data, setData] = useState([])
 
   // TODO: fetch data from API
-
   return data
 }
 

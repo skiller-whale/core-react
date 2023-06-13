@@ -6,12 +6,14 @@ export const Button = ({ onClick }) => (
     onClick={onClick}
   ></button>
 )
+
 export const TwoColumns = () => (
   <div className="flex gap-3 p-3">
     <div className="flex-1"></div>
     <div className="w-52"></div>
   </div>
 )
+
 export const CollapsibleContainer = ({ title }) => {
   return (
     <div className="border border-gray-300 mb-3">

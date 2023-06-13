@@ -167,4 +167,5 @@ const SmallPrint = () => (
     per inceptos himenaeos.
   </>
 )
+
 export default SmallPrint

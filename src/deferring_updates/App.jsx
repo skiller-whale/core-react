@@ -1,24 +1,18 @@
-import { useEffect, useState, useDeferredValue } from "react"
+import { useDeferredValue, useEffect, useState } from "react"
 import WhaleTable from "./WhaleTable"
 // import PromotionContainer from "./PromotionContainer"
-
 const App = () => {
   const [term, setTerm] = useState("")
-
   const [fetching, setFetching] = useState(false)
-
   const [whales, setWhales] = useState([])
-
   const isStale = fetching
-
   const onChange = (event) => setTerm(event.target.value)
-
   useEffect(() => {
     const abortController = new AbortController()
-
     const fetchWhales = async () => {
       try {
         setFetching(true)
+
         const response = await fetch(
           `/api/aquatic-animals/whales/?term=${term}`,
           {
@@ -30,16 +24,16 @@ const App = () => {
             },
           }
         )
+
         const { animals } = await response.json()
         setWhales(animals)
         setFetching(false)
       } catch (error) {
-        if (error.name === "AbortError") return
+        if (error instanceof DOMException && error.name === "AbortError") return
         setFetching(false)
         throw error
       }
     }
-
     fetchWhales()
 
     return () => {

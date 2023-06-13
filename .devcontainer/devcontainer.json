@@ -1,0 +1,13 @@
+{
+  "name": "core_react",
+  "dockerComposeFile": "../docker-compose.yaml",
+  "service": "dev-server",
+  "workspaceFolder": "/app/exercises",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint"
+      ]
+    }
+  },
+}

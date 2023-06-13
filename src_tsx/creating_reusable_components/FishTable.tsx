@@ -1,5 +1,5 @@
 import { type FC, useEffect, useState } from "react"
-import { type Fish } from "../lib/apiTypes"
+import type { Fish } from "../lib/apiTypes"
 import useFetchJson from "./useFetchJson"
 
 type Props = {
@@ -17,6 +17,7 @@ const FishTable: FC<Props> = ({ term }) => {
         "Content-Type": "application/json",
       },
     })
+
     const { animals } = await response.json()
     setFish(animals)
   }

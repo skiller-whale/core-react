@@ -9,10 +9,11 @@ type Props = {
 
 const App: FC<Props> = ({ whales: initialWhales }) => {
   const [whales, setWhales] = useState(initialWhales)
-  const [error, setError] = useState("")
+  const [error, setError] = useState<string | null>(null)
 
   const addWhale = async () => {
     setError(null)
+
     const nextWhaleJSON = await getNextWhale()
     const nextWhale = JSON.parse(nextWhaleJSON)
     setWhales((whales) => [...whales, nextWhale])

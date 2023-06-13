@@ -2,17 +2,16 @@ import { useRef, useState } from "react"
 
 const NewWhaleForm = ({ addWhale }) => {
   const [name, setName] = useState("")
-  const [weight, setWeight] = useState(0)
-  const [about, setAbout] = useState("")
-
   const changeName = (event) => {
     setName(event.currentTarget.value)
   }
 
+  const [weight, setWeight] = useState(0)
   const changeWeight = (event) => {
     setWeight(parseInt(event.currentTarget.value))
   }
 
+  const [about, setAbout] = useState("")
   const changeAbout = (event) => {
     setAbout(event.currentTarget.value)
   }

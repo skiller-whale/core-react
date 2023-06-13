@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 
 export default () => {
-  const [voice, setVoice] = useState<SpeechSynthesisVoice>()
+  const [voice, setVoice] = useState<SpeechSynthesisVoice | null>(null)
 
   const [voices, setVoices] = useState<SpeechSynthesisVoice[]>([])
 
@@ -10,9 +10,12 @@ export default () => {
       const voices = speechSynthesis.getVoices()
       setVoices(voices)
       setVoice(voices[0])
+
+      return voices.length > 0
     }
-    loadVoices()
-    if (voices.length > 0) return
+
+    const success = loadVoices()
+    if (success) return
     speechSynthesis.addEventListener("voiceschanged", loadVoices)
 
     return () => {

@@ -1,0 +1,35 @@
+version: "3.7"
+name: "skiller-whale-core-react"
+services:
+  sync:
+    image: "ghcr.io/skiller-whale/learnersync"
+    network_mode: "host"
+    environment:
+      SERVER_URL: "https://train.skillerwhale.com/"
+      WATCHER_BASE_PATH: "/app/exercises"
+      ATTENDANCE_ID_FILE: "/app/sync/attendance_id"
+      WATCHED_EXTS: "js jsx ts tsx html"
+      IGNORE_DIRS: ".git"
+    volumes:
+      - ./src:/app/exercises/src:ro
+      - ./src_tsx:/app/exercises/src_tsx:ro
+      - ./attendance_id:/app/sync/attendance_id:ro
+    tty: true
+    stdin_open: true
+  dev-server:
+    container_name: skiller-whale-core-react-dev # needed for running in Dev Containers in VSCode
+    build:
+      context: .
+      dockerfile: "Dockerfile"
+    environment:
+      WINDIR: $WINDIR # used to determine whether the host is Windows or not
+      PREVIEW_HOST: 0.0.0.0 # used to determine whether learner is using docker or not
+    ports:
+      - "3500:3500" # used by learners to see the exercises in the browser
+      - "3501:3501" # hot module reload websocket
+      - "3502:3502" # used by learners to preview the build for the code splitting module
+    volumes:
+      - ./dist:/app/exercises/dist
+      - ./server:/app/exercises/server
+      - ./src:/app/exercises/src
+      - ./src_tsx:/app/exercises/src_tsx

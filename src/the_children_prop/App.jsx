@@ -10,6 +10,7 @@ const App = ({ whales: initialWhales }) => {
     const nextWhale = await getNextWhale()
     setWhales((whales) => [...whales, nextWhale])
   }
+
   return (
     <div>
       <div className="flex justify-between items-center mb-3">
@@ -27,4 +28,5 @@ const App = ({ whales: initialWhales }) => {
     </div>
   )
 }
+
 export default App

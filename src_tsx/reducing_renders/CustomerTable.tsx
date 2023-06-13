@@ -1,4 +1,4 @@
-import { type Customer } from "../lib/Customers"
+import type { Customer } from "../lib/Customers"
 import CustomerRow from "./CustomerRow"
 
 type Props = {
@@ -7,7 +7,7 @@ type Props = {
 
 const CustomerTable = ({ customers }: Props) => {
   const rows = customers.map((customer, index) => (
-    <CustomerRow key={index} index={index} {...customer} />
+    <CustomerRow key={index} {...customer} />
   ))
 
   return (

@@ -1,5 +1,11 @@
-import { type FC, useEffect, useState, useDeferredValue } from "react"
-import { Whale } from "../lib/apiTypes"
+import {
+  type ChangeEvent,
+  type FC,
+  useDeferredValue,
+  useEffect,
+  useState,
+} from "react"
+import type { Whale } from "../lib/apiTypes"
 import WhaleTable from "./WhaleTable"
 // import PromotionContainer from "./PromotionContainer"
 
@@ -10,7 +16,8 @@ const App: FC = () => {
   const [whales, setWhales] = useState<Whale[]>([])
 
   const isStale = fetching
-  const onChange = (event) => setTerm(event.target.value)
+  const onChange = (event: ChangeEvent<HTMLInputElement>) =>
+    setTerm(event.target.value)
 
   useEffect(() => {
     const abortController = new AbortController()
@@ -18,6 +25,7 @@ const App: FC = () => {
     const fetchWhales = async () => {
       try {
         setFetching(true)
+
         const response = await fetch(
           `/api/aquatic-animals/whales/?term=${term}`,
           {
@@ -29,11 +37,12 @@ const App: FC = () => {
             },
           }
         )
+
         const { animals } = await response.json()
         setWhales(animals)
         setFetching(false)
       } catch (error) {
-        if (error.name === "AbortError") return
+        if (error instanceof DOMException && error.name === "AbortError") return
         setFetching(false)
         throw error
       }

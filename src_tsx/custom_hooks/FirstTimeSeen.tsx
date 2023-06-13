@@ -1,27 +1,35 @@
-import { type FC, useCallback, useEffect, useRef, useState } from "react"
+import {
+  type FC,
+  type ReactElement,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from "react"
 
 type Props = {
   render: (
     refCallback: (target: HTMLElement | null) => void,
     firstTimeSeen: boolean
-  ) => JSX.Element
+  ) => ReactElement
 }
 
 const FirstTimeSeen: FC<Props> = ({ render }) => {
   const [firstTimeSeen, setFirstTimeSeen] = useState<boolean>(false)
-  const observer = useRef<IntersectionObserver>(null)
+  const observer = useRef<IntersectionObserver | null>(null)
 
   const refCallback = useCallback((target: HTMLElement | null) => {
     if (!target) {
       observer.current?.disconnect()
       observer.current = null
+
       return
     }
     observer.current = new IntersectionObserver(
       ([entries]) => {
         if (entries.isIntersecting) {
           setFirstTimeSeen(true)
-          observer.current.disconnect()
+          observer.current?.disconnect()
           observer.current = null
         }
       },
@@ -38,6 +46,7 @@ const FirstTimeSeen: FC<Props> = ({ render }) => {
     const timeout = setTimeout(() => {
       setFirstTimeSeen(false)
     }, 1000)
+
     return () => {
       clearTimeout(timeout)
     }

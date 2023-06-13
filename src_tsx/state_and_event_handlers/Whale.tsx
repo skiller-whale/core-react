@@ -1,9 +1,9 @@
-import { type FC, type ChangeEventHandler, useState } from "react"
-import { type WhaleProps } from "./whales"
+import { type ChangeEventHandler, type FC, useState } from "react"
+import type { WhaleProps } from "./whales"
 
 const Whale: FC<WhaleProps> = ({ name: initialName, weight, about }) => {
   const name = initialName
-  const tag = null
+  const tag: string | null = null
 
   const tagOptions = ["", "Light", "Medium", "Heavy", "Massive"]
 

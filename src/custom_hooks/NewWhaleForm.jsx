@@ -4,31 +4,28 @@ import { setPageTitle } from "./hooks"
 const NewWhaleForm = ({ addWhale, numberOfWhales }) => {
   //name
   const [name, setName] = useState("")
-
   const changeName = (event) => {
     setName(event.currentTarget.value)
   }
 
   // weight
   const [weight, setWeight] = useState(0)
-
   const changeWeight = (event) => {
     setWeight(parseInt(event.currentTarget.value) || 0)
   }
 
   // about
   const [about, setAbout] = useState("")
-
   const changeAbout = (event) => {
     setAbout(event.currentTarget.value)
   }
 
   // position
   const [position, _setPosition] = useState(numberOfWhales)
-
   const loopValue = (value) => {
     if (value < 0) return numberOfWhales
     if (value > numberOfWhales) return 0
+
     return value
   }
 
@@ -63,7 +60,6 @@ const NewWhaleForm = ({ addWhale, numberOfWhales }) => {
       },
       position
     )
-
     setName("")
     setWeight(0)
     setAbout("")

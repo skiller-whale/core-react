@@ -1,5 +1,10 @@
-import { FC, PropsWithChildren } from "react"
-import { Children, useState, cloneElement } from "react"
+import {
+  Children,
+  type FC,
+  type PropsWithChildren,
+  cloneElement,
+  useState,
+} from "react"
 
 type AccordionChildProps = PropsWithChildren<{
   title: string

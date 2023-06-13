@@ -1,5 +1,5 @@
-import { FC } from "react"
-import { Whale } from "../lib/apiTypes"
+import type { FC } from "react"
+import type { Whale } from "../lib/apiTypes"
 import doSomethingThatTakesAges from "../lib/doSomethingThatTakesAges"
 
 type Props = {
