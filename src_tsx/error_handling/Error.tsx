@@ -1,4 +1,9 @@
-import { Component, type FC, type PropsWithChildren } from "react"
+import {
+  Component,
+  type FC,
+  type PropsWithChildren,
+  type ReactElement,
+} from "react"
 
 type ErrorBoundaryProps = PropsWithChildren<{}>
 
