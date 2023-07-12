@@ -14,7 +14,10 @@ const App = ({ whales }) => {
               <Whale key={whale.id} {...whale} />
             ))}
           </ScrollableContainerClass>
-          <button className="self-end bg-blue-500 text-white p-2 hover:bg-blue-700">
+          <button
+            className="self-end bg-blue-500 text-white p-2 hover:bg-blue-700"
+            onClick={() => {}}
+          >
             Scroll to top of list
           </button>
         </div>

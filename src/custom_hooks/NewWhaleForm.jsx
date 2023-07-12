@@ -2,7 +2,7 @@ import { useState } from "react"
 import { setPageTitle } from "./hooks"
 
 const NewWhaleForm = ({ addWhale, numberOfWhales }) => {
-  //name
+  // name
   const [name, setName] = useState("")
   const changeName = (event) => {
     setName(event.currentTarget.value)
