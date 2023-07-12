@@ -1,22 +1,22 @@
 import path from "node:path"
 import type { AddressInfo } from "node:net"
 import express, {
+  type ErrorRequestHandler,
   type Request,
   type RequestHandler,
   type Response,
 } from "express"
 import { createServer } from "vite"
+import renderingOnTheServerRouterTS from "../src_tsx/rendering_on_the_server/server/server.ts"
 import {
-  injectContent,
-  injectPage,
+  injectSSRContent,
+  injectScript,
   readIndexHtml,
-  source_folder_js,
-  source_folder_server,
-  source_folder_ts,
-} from "../vite.config.ts"
-import createRenderingOnTheServerRouterTS from "../src_tsx/rendering_on_the_server/server.ts"
+  sourceFolder,
+} from "./serverHelpers.ts"
 import api from "./apiEndpoints.ts"
 import modules from "./modules.ts"
+import { logErrorToConsole } from "./tsServerError.ts"
 
 const port = 3500
 
@@ -53,59 +53,82 @@ app.use(async (req, res, next) => {
       })
     }
   }
-  next()
+
+  return next()
 })
 
 app.use(viteDevServer.middlewares)
 
-const getPageContent = async (page: string, req: Request, res: Response) => {
+app.use("*", (req, res, next) => {
+  // make viteDevServer available for all requests
+  res.locals.vite = viteDevServer
+
+  return next()
+})
+
+app.get("/", async (req, res) => {
+  const url = req.url
+  const indexHtml = await readIndexHtml()
+  const homePath = path.resolve(sourceFolder.server, "index.tsx")
+  const { renderHome } = await viteDevServer.ssrLoadModule(homePath)
+  const ssrHtml = renderHome({ modules })
+  const injectedHtml = injectSSRContent(ssrHtml, indexHtml)
+  const template = await viteDevServer.transformIndexHtml(url, injectedHtml)
+  res.statusCode = 200
+  res.end(template)
+})
+
+const getPageContent = async (script: string, req: Request, res: Response) => {
   const url = req.originalUrl
   const indexHtml = await readIndexHtml()
-  const injectedHtml = injectPage(page, indexHtml)
+  const injectedHtml = injectScript(script, indexHtml)
   const template = await viteDevServer.transformIndexHtml(url, injectedHtml)
   res.statusCode = 200
   res.end(template)
 }
 
 const getModuleContentTS: RequestHandler = (req, res) =>
-  getPageContent(`/${source_folder_ts}/${req.params.page}/index.tsx`, req, res)
+  getPageContent(`/${sourceFolder.ts}/${req.params.page}/index.tsx`, req, res)
 
 const getModuleContentJS: RequestHandler = (req, res) =>
-  getPageContent(`/${source_folder_js}/${req.params.page}/index.jsx`, req, res)
+  getPageContent(`/${sourceFolder.js}/${req.params.page}/index.jsx`, req, res)
 
 const redirectInvalidModule: RequestHandler = (req, res, next) => {
   if (!modules.includes(req.params.page)) {
     return res.redirect("/")
   }
-  next()
+
+  return next()
 }
 
-app.get("/", async (req, res) => {
-  const url = req.url
-  const indexHtml = await readIndexHtml()
-  const homePath = path.resolve(source_folder_server, "index.tsx")
-  const { renderHome } = await viteDevServer.ssrLoadModule(homePath)
-  const ssrHtml = renderHome({ modules })
-  const injectedHtml = injectContent(ssrHtml, indexHtml, "div")
-  const template = await viteDevServer.transformIndexHtml(url, injectedHtml)
-  res.statusCode = 200
-  res.end(template)
-})
+const handleSSRError: ErrorRequestHandler = (err, req, res, next) => {
+  if (err instanceof Error) {
+    viteDevServer.ssrFixStacktrace(err)
+  }
+  next(err)
+}
 
-app.use("/ts", createRenderingOnTheServerRouterTS(viteDevServer, "tsx"))
+app.use("/ts/rendering_on_the_server/", [
+  renderingOnTheServerRouterTS,
+  handleSSRError,
+])
 
 try {
-  const { default: createRenderingOnTheServerRouterJS } = await import(
+  const { default: renderingOnTheServerRouterJS } = await import(
     // @ts-ignore
-    "../src/rendering_on_the_server/server.js"
+    "../src/rendering_on_the_server/server/server.js"
   )
-  app.use(createRenderingOnTheServerRouterJS(viteDevServer, "jsx"))
+  app.use("/rendering_on_the_server/", [
+    renderingOnTheServerRouterJS,
+    handleSSRError,
+  ])
 } catch (e) {
   if (!(e instanceof Error && e.message.startsWith("Cannot find module"))) {
     throw e
   }
-  console.log(
-    "Cannot find module '/src/rendering_on_the_server/server.js'. Run `npm run compile` to generate it."
+  logErrorToConsole(
+    `${e.message.split(" imported")[0]}
+    Run \`npm run compile\` to generate it.`
   )
 }
 
