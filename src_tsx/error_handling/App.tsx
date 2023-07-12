@@ -15,7 +15,7 @@ const App: FC<Props> = ({ whales: initialWhales }) => {
     setError(null)
 
     const nextWhaleJSON = await getNextWhale()
-    const nextWhale = JSON.parse(nextWhaleJSON)
+    const nextWhale: WhaleProps = JSON.parse(nextWhaleJSON)
     setWhales((whales) => [...whales, nextWhale])
   }
 

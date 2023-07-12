@@ -6,7 +6,7 @@ type Props = {
 }
 
 const CustomerTable = ({ customers }: Props) => {
-  const rows = customers.map((customer, index) => {
+  const rows = customers.map((customer) => {
     const customerRowProp = {
       firstName: customer.name.first,
       lastName: customer.name.last,
@@ -14,13 +14,7 @@ const CustomerTable = ({ customers }: Props) => {
       amountSpent: customer.amountSpent,
     }
 
-    return (
-      <CustomerRow
-        key={customer.email}
-        index={index}
-        customer={customerRowProp}
-      />
-    )
+    return <CustomerRow key={customer.email} customer={customerRowProp} />
   })
 
   return (

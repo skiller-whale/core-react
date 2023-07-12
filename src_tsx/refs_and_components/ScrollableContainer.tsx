@@ -1,6 +1,6 @@
 import {
+  type ForwardedRef,
   type PropsWithChildren,
-  type Ref,
   forwardRef,
   useImperativeHandle,
   useRef,
@@ -10,7 +10,7 @@ export type ScrollableContainerRef = {
   scrollTop: () => void
 }
 
-const ScrollableContainer = ({ children }: PropsWithChildren<{}>) => {
+const ScrollableContainer = ({ children }: PropsWithChildren) => {
   const divRef = useRef<HTMLDivElement>(null)
 
   const scrollTop = () => {

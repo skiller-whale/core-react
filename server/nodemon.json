@@ -1,7 +1,8 @@
 {
+  "ext": "ts,tsx,js,jsx,json",
   "watch": [
     "server",
-    "src/rendering_on_the_server/server.js",
-    "src_tsx/rendering_on_the_server/server.ts"
+    "src/rendering_on_the_server/server/",
+    "src_tsx/rendering_on_the_server/server/"
   ]
 }
