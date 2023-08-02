@@ -5,8 +5,8 @@
   "type": "module",
   "scripts": {
     "start": "NODE_OPTIONS='--no-warnings --experimental-loader=ts-node/esm' TS_NODE_PROJECT=./server/tsconfig.json nodemon --config server/nodemon.json server/server.ts",
-    "clean:dist": "rimraf dist/",
-    "clean:src": "rimraf src/",
+    "clean:dist": "rimraf dist/*",
+    "clean:src": "rimraf src/*",
     "build": "npm run clean:dist && vite build",
     "build:ts": "npm run clean:dist && SKILLERWHALE_LANG=ts npm run build",
     "preview": "vite preview",
