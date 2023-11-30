@@ -68,7 +68,7 @@ const NewWhaleForm: FC<Props> = ({ addWhale, numberOfWhales }) => {
         weight,
         about,
       },
-      position
+      position,
     )
 
     setName("")

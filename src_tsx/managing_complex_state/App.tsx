@@ -53,7 +53,7 @@ const App = () => {
       {/*<DepthSonar whale={favWhale} />*/}
     </div>
   ) : (
-    <div>"Loading..."</div>
+    "Loading..."
   )
 }
 

@@ -8,10 +8,10 @@ type Props = {
 
 const moveFocus = (
   inputElements: HTMLInputElement[],
-  increment: number
+  increment: number,
 ): void => {
   let index = inputElements.findIndex(
-    (input) => input === document.activeElement
+    (input) => input === document.activeElement,
   )
   index += increment
   if (index >= inputElements.length) {

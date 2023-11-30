@@ -7,7 +7,7 @@ import type { Request, Response } from "express"
 export const loadTemplateFile = async (
   filePath: string,
   req: Request,
-  res: Response
+  res: Response,
 ) => {
   const url = req.originalUrl
   const viteDevServer = res.locals.vite as ViteDevServer
@@ -26,17 +26,17 @@ const source_folder = isTs ? "src_tsx" : "src"
 export const loadSSR = async (
   entryPath: string,
   viteTemplate: string,
-  res: Response
+  res: Response,
 ) => {
   const entryFullPath = fileURLToPath(
-    new URL(`${entryPath}.${fileExtension}`, import.meta.url)
+    new URL(`${entryPath}.${fileExtension}`, import.meta.url),
   )
 
   const viteDevServer = res.locals.vite as ViteDevServer
 
   // required to invalidate cache and allow lazy loading to trigger suspense on the server consistently
   const whaleCard = viteDevServer.moduleGraph.urlToModuleMap.get(
-    `/${source_folder}/rendering_on_the_server/Components/WhaleCard.${fileExtension}`
+    `/${source_folder}/rendering_on_the_server/Components/WhaleCard.${fileExtension}`,
   )
   if (whaleCard) {
     await viteDevServer.reloadModule(whaleCard)

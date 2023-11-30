@@ -26,7 +26,7 @@ const SonarDashboard: FC<SonarDashboardType> = ({
   const visibleWhales = whales.filter(
     (whale) =>
       (whale.location!.x - centerX) ** 2 + (whale.location!.y - centerY) ** 2 <=
-      radius ** 2
+      radius ** 2,
   )
 
   const zoomIn = () => setRadius((radius) => Math.max(20, radius - 10))

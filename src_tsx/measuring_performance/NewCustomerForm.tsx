@@ -6,7 +6,7 @@ type Props = {
     firstName: string,
     lastName: string,
     email: string,
-    amountSpent: string
+    amountSpent: string,
   ) => void
 }
 

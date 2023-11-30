@@ -32,7 +32,7 @@ const sortAquaticAnimals = (aquaticAnimals: AquaticAnimal[]): AquaticAnimal[] =>
 
 export const generateAquaticAnimals = (amount: number): AquaticAnimal[] => {
   const aquaticAnimals = Array.from({ length: amount }).map(() =>
-    Math.random() < 0.5 ? generateWhale() : generateFish()
+    Math.random() < 0.5 ? generateWhale() : generateFish(),
   )
 
   return sortAquaticAnimals(aquaticAnimals)
@@ -42,7 +42,7 @@ export const addAquaticAnimal = (
   aquaticAnimals: AquaticAnimal[],
   name: string,
   species: string,
-  isWhale: boolean
+  isWhale: boolean,
 ): AquaticAnimal[] => {
   return sortAquaticAnimals([
     ...aquaticAnimals,
@@ -57,7 +57,7 @@ export const addAquaticAnimal = (
 
 export const deleteAquaticAnimal = (
   aquaticAnimal: AquaticAnimal[],
-  id: string
+  id: string,
 ): AquaticAnimal[] => {
   const index = aquaticAnimal.findIndex((animal) => animal.id === id)
 

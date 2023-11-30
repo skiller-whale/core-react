@@ -7,7 +7,7 @@ type Props = WhaleProps & { firstTimeSeen: boolean }
 const Whale = forwardRef<HTMLDivElement, Props>(
   ({ name, weight, about, firstTimeSeen }, ref) => {
     const onKeyboardRating: KeyboardEventHandler<HTMLInputElement> = (
-      event
+      event,
     ) => {
       switch (event.key) {
         case "ArrowRight":
@@ -36,7 +36,7 @@ const Whale = forwardRef<HTMLDivElement, Props>(
         <WhaleRating rating={5} max={10} onClick={console.log} />
       </div>
     )
-  }
+  },
 )
 
 export default Whale

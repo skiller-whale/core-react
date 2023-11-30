@@ -23,7 +23,7 @@ export const addCustomer = (
   first: string,
   last: string,
   email: string,
-  amountSpent: string
+  amountSpent: string,
 ): Customer[] => {
   const newCustomers = customers.concat({
     name: { first, last },
@@ -36,7 +36,7 @@ export const addCustomer = (
 
 export const deleteCustomer = (
   customers: Customer[],
-  email: string
+  email: string,
 ): Customer[] => {
   const index = customers.findIndex((customer) => customer.email === email)
 

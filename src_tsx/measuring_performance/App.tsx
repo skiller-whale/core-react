@@ -7,7 +7,7 @@ const App = () => {
   const initialCustomers = 200
 
   const [customers, setCustomers] = useState(
-    generateCustomers(initialCustomers)
+    generateCustomers(initialCustomers),
   )
 
   const [newFirstName, setNewFirstName] = useState("")
@@ -19,7 +19,7 @@ const App = () => {
     newFirstName: string,
     newLastName: string,
     newEmail: string,
-    newAmountSpent: string
+    newAmountSpent: string,
   ) => {
     setCustomers(
       addCustomer(
@@ -27,8 +27,8 @@ const App = () => {
         newFirstName,
         newLastName,
         newEmail,
-        newAmountSpent
-      )
+        newAmountSpent,
+      ),
     )
   }
 
