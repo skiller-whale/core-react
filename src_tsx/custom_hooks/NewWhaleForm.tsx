@@ -8,7 +8,7 @@ type Props = {
 }
 
 const NewWhaleForm: FC<Props> = ({ addWhale, numberOfWhales }) => {
-  //name
+  // name
   const [name, setName] = useState("")
 
   const changeName: ChangeEventHandler<HTMLInputElement> = (event) => {

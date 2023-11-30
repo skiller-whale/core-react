@@ -39,7 +39,7 @@ type AccordionProps = {
 }
 
 export const Accordion: FC<AccordionProps> = ({ children }) => {
-  const [currentIndex, setCurrentIndex] = useState(0)
+  const [currentIndex, setCurrentIndex] = useState<number | null>(0)
 
   return (
     <div className="border border-gray-300 border-b-0 mb-3">{children}</div>
