@@ -10,7 +10,7 @@ import {
 type Props = {
   render: (
     refCallback: (target: HTMLElement | null) => void,
-    firstTimeSeen: boolean
+    firstTimeSeen: boolean,
   ) => ReactElement
 }
 
@@ -33,7 +33,7 @@ const FirstTimeSeen: FC<Props> = ({ render }) => {
           observer.current = null
         }
       },
-      { root: document }
+      { root: document },
     )
 
     observer.current?.observe(target)

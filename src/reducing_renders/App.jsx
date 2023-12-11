@@ -10,14 +10,14 @@ import CustomerTable from "./CustomerTable"
 const App = () => {
   const initialCustomers = 200
   const [customers, setCustomers] = useState(
-    generateCustomers(initialCustomers)
+    generateCustomers(initialCustomers),
   )
 
   const addNewCustomer = (
     newFirstName,
     newLastName,
     newEmail,
-    newAmountSpent
+    newAmountSpent,
   ) => {
     setCustomers((customers) =>
       addCustomer(
@@ -25,8 +25,8 @@ const App = () => {
         newFirstName,
         newLastName,
         newEmail,
-        newAmountSpent
-      )
+        newAmountSpent,
+      ),
     )
   }
 

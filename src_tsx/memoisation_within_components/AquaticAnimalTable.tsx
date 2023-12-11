@@ -20,7 +20,7 @@ const AquaticAnimalTable = ({ animals }: Props) => {
     setBestFriend(animal)
 
     const utterance = new SpeechSynthesisUtterance(
-      `Hello ${animal.name} the ${animal.species}`
+      `Hello ${animal.name} the ${animal.species}`,
     )
     utterance.voice = voice
     speechSynthesis.speak(utterance)

@@ -17,13 +17,13 @@ const source_folder = isTs ? "src_tsx" : "src"
 
 export const loadSSR = async (entryPath, viteTemplate, res) => {
   const entryFullPath = fileURLToPath(
-    new URL(`${entryPath}.${fileExtension}`, import.meta.url)
+    new URL(`${entryPath}.${fileExtension}`, import.meta.url),
   )
 
   const viteDevServer = res.locals.vite
   // required to invalidate cache and allow lazy loading to trigger suspense on the server consistently
   const whaleCard = viteDevServer.moduleGraph.urlToModuleMap.get(
-    `/${source_folder}/rendering_on_the_server/Components/WhaleCard.${fileExtension}`
+    `/${source_folder}/rendering_on_the_server/Components/WhaleCard.${fileExtension}`,
   )
   if (whaleCard) {
     await viteDevServer.reloadModule(whaleCard)

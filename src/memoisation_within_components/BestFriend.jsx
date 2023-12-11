@@ -2,7 +2,7 @@ import { useEffect, useMemo } from "react"
 
 export const BestFriend = ({ animal, voices, voice, setVoice }) => {
   const utterance = new SpeechSynthesisUtterance(
-    `Hello ${animal.name} the ${animal.species}`
+    `Hello ${animal.name} the ${animal.species}`,
   )
   utterance.voice = voice
 
@@ -35,7 +35,9 @@ export const BestFriend = ({ animal, voices, voice, setVoice }) => {
             disabled={voices.length === 0}
             onChange={(event) => {
               setVoice(
-                voices.find((voice) => voice.name === event.currentTarget.value)
+                voices.find(
+                  (voice) => voice.name === event.currentTarget.value,
+                ),
               )
             }}
           >

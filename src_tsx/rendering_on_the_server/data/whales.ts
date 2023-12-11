@@ -1,6 +1,12 @@
-import type { Whale } from "../../lib/apiTypes"
+export type Whale = {
+  id: string
+  name: string
+  species: string
+  weight: number
+  hasBaleen: boolean
+}
 
-const whales: Whale[] = [
+export const whales: Whale[] = [
   {
     id: "43a199d9-240f-400c-a7fc-2389f256efee",
     name: "Melyna",
@@ -107,5 +113,3 @@ const whales: Whale[] = [
     hasBaleen: true,
   },
 ]
-
-export { type Whale, whales }

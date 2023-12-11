@@ -2,7 +2,7 @@ import { useRef } from "react"
 
 const moveFocus = (inputElements, increment) => {
   let index = inputElements.findIndex(
-    (input) => input === document.activeElement
+    (input) => input === document.activeElement,
   )
   index += increment
   if (index >= inputElements.length) {

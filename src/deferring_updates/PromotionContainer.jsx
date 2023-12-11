@@ -16,7 +16,7 @@ const PromotionContainer = () => {
   useEffect(() => {
     const timer = setInterval(
       () => setPromotion((current) => (current + 1) % 2),
-      5000
+      5000,
     )
 
     return () => clearInterval(timer)

@@ -58,7 +58,7 @@ const NewWhaleForm = ({ addWhale, numberOfWhales }) => {
         weight,
         about,
       },
-      position
+      position,
     )
     setName("")
     setWeight(0)

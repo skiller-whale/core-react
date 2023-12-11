@@ -10,7 +10,7 @@ const ARTIFICIALLY_SLOW = true
 
 const purposefullySlowFilter = (
   aquaticAnimals: AquaticAnimal[],
-  searchTerm: string
+  searchTerm: string,
 ) =>
   aquaticAnimals.filter((animal) => {
     if (ARTIFICIALLY_SLOW) {
@@ -33,7 +33,7 @@ const App = () => {
 
   const filteredAquaticAnimals = purposefullySlowFilter(
     aquaticAnimals,
-    searchTerm
+    searchTerm,
   )
 
   return (

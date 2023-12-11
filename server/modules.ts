@@ -14,4 +14,5 @@ export default [
   "deferring_updates",
   "code_splitting_and_lazy_loading",
   "rendering_on_the_server",
+  "managing_complex_state",
 ]

@@ -128,7 +128,7 @@ try {
   }
   logErrorToConsole(
     `${e.message.split(" imported")[0]}
-    Run \`npm run compile\` to generate it.`
+    Run \`npm run compile\` to generate it.`,
   )
 }
 

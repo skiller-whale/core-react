@@ -15,7 +15,7 @@ type Props = {
 
 const InfoButton: FC<Props> = ({ info, label, onPress, popOverDisplayed }) => {
   const [buttonBoundingRect, setButtonBoundingRect] = useState<DOMRect | null>(
-    null
+    null,
   )
 
   const onClickButton: MouseEventHandler<HTMLButtonElement> = (event) => {

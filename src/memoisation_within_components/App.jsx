@@ -26,7 +26,7 @@ const App = () => {
   const [searchTerm, setSearchTerm] = useState("")
   const filteredAquaticAnimals = purposefullySlowFilter(
     aquaticAnimals,
-    searchTerm
+    searchTerm,
   )
 
   return (

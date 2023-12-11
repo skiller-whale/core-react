@@ -4,6 +4,7 @@ export type Whale = {
   species: string
   weight: number
   hasBaleen: boolean
+  location: Location
 }
 
 export type Fish = {
@@ -11,4 +12,10 @@ export type Fish = {
   name: string
   species: string
   isSaltwater: boolean
+}
+
+export type Location = {
+  x: number
+  y: number
+  depth: number
 }

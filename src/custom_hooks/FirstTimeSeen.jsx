@@ -18,7 +18,7 @@ const FirstTimeSeen = ({ render }) => {
           observer.current = null
         }
       },
-      { root: document }
+      { root: document },
     )
     observer.current?.observe(target)
   }, [])

@@ -9,16 +9,17 @@ const fish: Fish[] = []
 
 const filterAnimalsByTerm = <Animal extends Whale | Fish>(
   animals: Animal[],
-  req: Request
+  req: Request,
 ) => {
-  const term: string = (req.query.term as string).toLowerCase()
+  const term =
+    typeof req.query.term === "string" ? req.query.term.toLowerCase() : null
 
-  return req.query.term == null
+  return term == null
     ? animals
     : animals.filter(
         (animal) =>
           animal.name.toLowerCase().includes(term) ||
-          animal.species.toLowerCase().includes(term)
+          animal.species.toLowerCase().includes(term),
       )
 }
 
@@ -41,6 +42,11 @@ aquaticAnimalsApi.get("/whales/", (req, res) => {
           species.includes("Sperm") ||
           species.includes("Beaked")
         ),
+        location: {
+          x: faker.number.float({ min: -100, max: 100, precision: 0.01 }),
+          y: faker.number.float({ min: -100, max: 100, precision: 0.01 }),
+          depth: faker.number.float({ min: 0, max: 100, precision: 0.01 }),
+        },
       })
     }
   }

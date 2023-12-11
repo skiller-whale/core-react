@@ -6,7 +6,7 @@ export type WhaleProps = {
 }
 
 export const searchForWhale = async (
-  query: string
+  query: string,
 ): Promise<WhaleProps | undefined> =>
   new Promise((resolve) => {
     const whale =
@@ -15,7 +15,7 @@ export const searchForWhale = async (
         : whales.find(
             (x) =>
               x.id === query.toLowerCase() ||
-              x.name.toLowerCase() === query.toLowerCase()
+              x.name.toLowerCase() === query.toLowerCase(),
           )
 
     const delay = Math.random() * (1000 - 300) + 300

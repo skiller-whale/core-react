@@ -10,7 +10,7 @@ type Props = {
 
 export const BestFriend = ({ animal, voices, voice, setVoice }: Props) => {
   const utterance = new SpeechSynthesisUtterance(
-    `Hello ${animal.name} the ${animal.species}`
+    `Hello ${animal.name} the ${animal.species}`,
   )
   utterance.voice = voice
 
@@ -45,8 +45,8 @@ export const BestFriend = ({ animal, voices, voice, setVoice }: Props) => {
             onChange={(event) => {
               setVoice(
                 voices.find(
-                  (voice) => voice.name === event.currentTarget.value
-                )!
+                  (voice) => voice.name === event.currentTarget.value,
+                )!,
               )
             }}
           >

@@ -64,7 +64,7 @@ export default defineConfig(({ command, mode }) => {
             `./${
               isTs ? sourceFolder.ts : sourceFolder.js
             }/code_splitting_and_lazy_loading/index.${isTs ? "tsx" : "jsx"}`,
-            code
+            code,
           )
         },
       },

@@ -22,7 +22,7 @@ const App = () => {
               Accept: "application/json",
               "Content-Type": "application/json",
             },
-          }
+          },
         )
 
         const { animals } = await response.json()

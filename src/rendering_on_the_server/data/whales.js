@@ -1,4 +1,4 @@
-const whales = [
+export const whales = [
   {
     id: "43a199d9-240f-400c-a7fc-2389f256efee",
     name: "Melyna",
@@ -105,5 +105,3 @@ const whales = [
     hasBaleen: true,
   },
 ]
-
-export { whales }

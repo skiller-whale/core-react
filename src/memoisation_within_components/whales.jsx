@@ -25,7 +25,7 @@ const sortAquaticAnimals = (aquaticAnimals) =>
 
 export const generateAquaticAnimals = (amount) => {
   const aquaticAnimals = Array.from({ length: amount }).map(() =>
-    Math.random() < 0.5 ? generateWhale() : generateFish()
+    Math.random() < 0.5 ? generateWhale() : generateFish(),
   )
 
   return sortAquaticAnimals(aquaticAnimals)

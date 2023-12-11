@@ -35,7 +35,7 @@ const App: FC = () => {
               Accept: "application/json",
               "Content-Type": "application/json",
             },
-          }
+          },
         )
 
         const { animals } = await response.json()

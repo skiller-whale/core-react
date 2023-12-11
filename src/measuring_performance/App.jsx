@@ -6,7 +6,7 @@ import Button from "./Button"
 const App = () => {
   const initialCustomers = 200
   const [customers, setCustomers] = useState(
-    generateCustomers(initialCustomers)
+    generateCustomers(initialCustomers),
   )
 
   const [newFirstName, setNewFirstName] = useState("")
@@ -17,7 +17,7 @@ const App = () => {
     newFirstName,
     newLastName,
     newEmail,
-    newAmountSpent
+    newAmountSpent,
   ) => {
     setCustomers(
       addCustomer(
@@ -25,8 +25,8 @@ const App = () => {
         newFirstName,
         newLastName,
         newEmail,
-        newAmountSpent
-      )
+        newAmountSpent,
+      ),
     )
   }
 
