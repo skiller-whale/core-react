@@ -4,7 +4,7 @@
     "outDir": "src/",
     "allowSyntheticDefaultImports": true,
     "jsx": "react-jsx",
-    "target": "es2022",
+    "target": "esnext",
     "module": "es2022",
     "moduleResolution": "node",
     "verbatimModuleSyntax": true,
