@@ -27,4 +27,18 @@ export const whales: WhaleProps[] = [
       "The skiller whale, also known as Ada, is a species of sub-Arctic programmer. Known for its love of learning, the skiller whale is chiefly recognisable by its penchant for bad maritime puns.",
     weight: 3000,
   },
+  {
+    id: "sperm",
+    name: "Sperm Whale",
+    about:
+      "The sperm whale is the largest of the toothed whales and the largest toothed predator. Named after spermaceti, an oil collected from a gland in its head, used in candle and soap making and as a lubricant.",
+    weight: 940,
+  },
+  {
+    id: "orca",
+    name: "Orca",
+    about:
+      "The orca, or killer whale, is a species of toothed whale, recognizable by its black-and-white patterned body.",
+    weight: 3000,
+  },
 ]

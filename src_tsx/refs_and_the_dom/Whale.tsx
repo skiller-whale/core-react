@@ -9,7 +9,7 @@ const Whale: FC<WhaleProps> = ({ name, weight: initialWeight, about }) => {
   }
 
   return (
-    <div className="flex flex-col gap-3 border border-gray-300 p-3">
+    <div className="flex flex-col gap-3 p-3 bg-white">
       <div className="flex justify-between items-baseline">
         <h3 className="text-lg font-semibold">{name}</h3>
         <div className="flex gap-3 items-baseline">

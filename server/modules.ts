@@ -3,8 +3,6 @@ export default [
   "state_and_event_handlers",
   "effects_and_the_component_lifecycle",
   "refs_and_the_dom",
-  "refs_and_components",
-  "portals",
   "custom_hooks",
   "creating_reusable_components",
   "error_handling",

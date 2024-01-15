@@ -7,13 +7,13 @@ import {
 } from "react"
 
 export type ScrollableContainerRef = {
-  scrollTop: () => void
+  scrollToTop: () => void
 }
 
 const ScrollableContainer = ({ children }: PropsWithChildren) => {
   const divRef = useRef<HTMLDivElement>(null)
 
-  const scrollTop = () => {
+  const scrollToTop = () => {
     if (divRef.current) {
       divRef.current.scrollTo({
         top: 0,
@@ -23,7 +23,7 @@ const ScrollableContainer = ({ children }: PropsWithChildren) => {
   }
 
   return (
-    <div ref={divRef} className="relative overflow-auto max-h-96">
+    <div ref={divRef} className="overflow-auto flex flex-col gap-1">
       {children}
     </div>
   )

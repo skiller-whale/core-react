@@ -25,7 +25,7 @@ const RenameWhales = ({ whales, setWhaleName }) => {
   }
 
   return (
-    <div className="flex flex-col gap-3 p-3 bg-gray-100 border border-gray-300">
+    <div className="flex-1 flex flex-col justify-between p-3 bg-slate-400">
       <h2 className="text-lg font-semibold">Rename Whales</h2>
       <ul className="flex flex-col gap-2">
         {whales.map((whale) => (
