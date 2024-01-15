@@ -31,9 +31,7 @@ const App = () => {
 
   return (
     <div
-      className={`flex flex-col gap-3 p-6 m-[-2.5rem] bg-left-bottom bg-no-repeat ${
-        aquaticMode ? "bg-gradient-to-b from-cyan-50 to-cyan-200" : ""
-      }`}
+      className={`flex flex-col gap-3 p-6 m-[-2.5rem] bg-left-bottom bg-no-repeat ${aquaticMode ? "bg-gradient-to-b from-cyan-50 to-cyan-200" : ""}`}
     >
       <h1 className="text-2xl font-semibold">Ada's friends </h1>
       <div className="flex justify-between gap-3">

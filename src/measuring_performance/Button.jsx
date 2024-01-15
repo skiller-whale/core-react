@@ -6,9 +6,7 @@ const Button = ({ onClick, children }) => {
   return (
     <button
       type="button"
-      className={`py-2 px-3 text-white ${
-        hover ? "bg-blue-800" : "bg-blue-600"
-      }`}
+      className={`py-2 px-3 text-white ${hover ? "bg-blue-800" : "bg-blue-600"}`}
       onClick={onClick}
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}

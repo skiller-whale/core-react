@@ -21,9 +21,7 @@ const Sonar = ({
   const animals = whales.map((whale) => {
     const Icon = (
       <span
-        className={`text-[${100 / radius}rem] cursor-pointer ${
-          favWhale === whale ? "animate-pulse" : ""
-        }`}
+        className={`text-[${100 / radius}rem] cursor-pointer ${favWhale === whale ? "animate-pulse" : ""}`}
         onClick={() => setFavWhale(whale)}
       >
         {whale.species.includes("Dolphin") ? "🐬" : "🐋"}
