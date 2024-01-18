@@ -15,6 +15,7 @@ const App = ({ whales: initialWhales }) => {
 
   return (
     <div className="flex flex-col gap-6">
+      <dialog className="shadow-lg w-1/2"></dialog>
       <h1 className="text-2xl font-semibold">Whale Weigh Platform</h1>
       <div className="flex gap-3 max-h-96 p-3 bg-slate-100">
         <ScrollableContainer>
