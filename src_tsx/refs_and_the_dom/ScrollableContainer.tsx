@@ -14,12 +14,10 @@ const ScrollableContainer = ({ children }: PropsWithChildren) => {
   const divRef = useRef<HTMLDivElement>(null)
 
   const scrollToTop = () => {
-    if (divRef.current) {
-      divRef.current.scrollTo({
-        top: 0,
-        behavior: "smooth",
-      })
-    }
+    divRef.current?.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    })
   }
 
   return (
