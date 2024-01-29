@@ -34,7 +34,7 @@ const DestinationAndDates = ({
           type="date"
           id="checkIn"
           required
-          // defaultValue={initialFormData.get("checkIn") as string}
+          // defaultValue={initialFormData.get("checkIn")}
           value={destinationAndDates.checkIn}
           onChange={setDestinationAndDates.checkIn}
         />
@@ -43,7 +43,7 @@ const DestinationAndDates = ({
           type="date"
           id="checkOut"
           required
-          // defaultValue={initialFormData.get("checkOut") as string}
+          // defaultValue={initialFormData.get("checkOut")}
           value={destinationAndDates.checkOut}
           onChange={setDestinationAndDates.checkOut}
         />

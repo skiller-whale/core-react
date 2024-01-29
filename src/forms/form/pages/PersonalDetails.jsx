@@ -11,7 +11,7 @@ const PersonalDetails = ({ visible, personalDetails, setPersonalDetails }) => (
         type="text"
         id="fullName"
         required
-        // defaultValue={initialFormData.get("fullName") as string}
+        // defaultValue={initialFormData.get("fullName")}
         value={personalDetails.fullName}
         onChange={setPersonalDetails.fullName}
       />
@@ -21,7 +21,7 @@ const PersonalDetails = ({ visible, personalDetails, setPersonalDetails }) => (
           type="email"
           id="email"
           required
-          // defaultValue={initialFormData.get("email") as string}
+          // defaultValue={initialFormData.get("email")}
           value={personalDetails.email}
           onChange={setPersonalDetails.email}
         />
@@ -37,7 +37,7 @@ const PersonalDetails = ({ visible, personalDetails, setPersonalDetails }) => (
         label="Address"
         id="address"
         rows={4}
-        // defaultValue={initialFormData.get("address") as string}
+        // defaultValue={initialFormData.get("address")}
         value={personalDetails.address}
         onChange={setPersonalDetails.address}
       />
@@ -48,7 +48,7 @@ const PersonalDetails = ({ visible, personalDetails, setPersonalDetails }) => (
           min="1"
           id="numberOfAdults"
           required
-          // defaultValue={initialFormData.get("numberOfAdults") as string}
+          // defaultValue={initialFormData.get("numberOfAdults")}
           value={personalDetails.numberOfAdults}
           onChange={setPersonalDetails.numberOfAdults}
         />
@@ -58,7 +58,7 @@ const PersonalDetails = ({ visible, personalDetails, setPersonalDetails }) => (
           min="0"
           id="numberOfChildren"
           required
-          // defaultValue={initialFormData.get("numberOfChildren") as string}
+          // defaultValue={initialFormData.get("numberOfChildren")}
           value={personalDetails.numberOfChildren}
           onChange={setPersonalDetails.numberOfChildren}
         />
