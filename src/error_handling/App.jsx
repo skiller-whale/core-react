@@ -1,38 +1,31 @@
 import { useState } from "react"
-import { getNextWhale } from "./whales"
-import Whale from "./Whale"
-import { ErrorBoundary, ErrorMessage } from "./Error"
+import { ErrorBoundary } from "react-error-boundary"
+import DataControls from "./DataControls"
+import Whales from "./Whales"
+import ErrorDisplay from "./components/ErrorDisplay"
+import fetch from "./utils/fetch"
 
-const App = ({ whales: initialWhales }) => {
-  const [whales, setWhales] = useState(initialWhales)
-  const [error, setError] = useState(null)
-  const addWhale = async () => {
-    setError(null)
+const App = () => {
+  const [whales, setWhales] = useState([])
+  const [loading, setLoading] = useState(false)
+  const fetchWhales = async (path) => {
+    setLoading(true)
 
-    const nextWhaleJSON = await getNextWhale()
-    const nextWhale = JSON.parse(nextWhaleJSON)
-    setWhales((whales) => [...whales, nextWhale])
+    const result = await fetch(path)
+    const { animals } = await result.json()
+    setWhales(animals)
+    setLoading(false)
   }
 
   return (
-    <div>
-      <div className="flex items-center gap-3 mb-3">
-        <h1 className="text-2xl font-semibold flex-1">Whale Weigh Platform</h1>
-        {error ? <ErrorMessage message={error} /> : null}
-        <button
-          className="bg-blue-500 text-white px-4 py-2 hover:bg-blue-700"
-          onClick={addWhale}
-        >
-          Fetch Next Whale
-        </button>
-      </div>
-      <div className="flex flex-col gap-3">
-        {whales.map((whale) => (
-          <Whale {...whale} />
-        ))}
-      </div>
+    <div className="flex flex-col gap-3">
+      <h1 className="text-2xl font-semibold">Whale Location Service</h1>
+      <DataControls fetchWhales={fetchWhales} />
+      <Whales loading={loading} whales={whales} />
     </div>
   )
 }
 
-export default App
+const SafeApp = () => <App />
+
+export default SafeApp

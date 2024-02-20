@@ -8,8 +8,8 @@ import {
 } from "react"
 import { ErrorBoundary } from "react-error-boundary"
 import LoadingSpinner from "./LoadingSpinner"
+import Promotion1 from "./Promotion1"
 
-const Promotion1 = lazy(() => import("./Promotion1"))
 const Promotion2 = lazy(() => import("./Promotion2"))
 const PromotionContainer = () => {
   const [promotion, setPromotion] = useState(1)
