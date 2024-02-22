@@ -1,12 +1,13 @@
+// not edited in this exercise
 import { useEffect, useState } from "react"
-import type { Whale } from "../lib/apiTypes"
-import DepthSonar from "./DepthSonar"
-import SonarDashboard from "./SonarDashboard"
-import ColorProvider from "./state/ColorContext"
+import type { Whale } from "../../lib/apiTypes"
+import SonarDashboard from "../_exercise1/SonarDashboard"
 import WhalesProvider, {
   updateWhaleCoordinate,
   useWhalesContext,
-} from "./state/WhalesState"
+} from "../state/WhalesState"
+import DepthSonar from "./DepthSonar"
+import ColorProvider from "./state/ColorContext"
 
 const App = () => (
   <ColorProvider>
@@ -78,7 +79,7 @@ const Panel = () => {
         setSelectedWhaleX={setSelectedWhaleX}
         setSelectedWhaleY={setSelectedWhaleY}
       />
-      {/* <DepthSonar whale={selectedWhale} /> */}
+      <DepthSonar whale={selectedWhale} />
     </div>
   )
 }

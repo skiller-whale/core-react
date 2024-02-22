@@ -1,9 +1,9 @@
 import type { Dispatch, SetStateAction } from "react"
 import { useReducer, useState } from "react"
-import type { Whale } from "../lib/apiTypes"
-import SonarDisplay from "./SonarDisplay"
+import type { Whale } from "../../lib/apiTypes"
+import SonarDisplay from "../SonarDisplay"
+import WhaleCard from "../WhaleCard"
 import SonarControls from "./SonarControls"
-import WhaleCard from "./WhaleCard"
 import { initialState, reducer } from "./state/SonarState"
 
 type Props = {
@@ -21,17 +21,8 @@ const SonarDashboard = ({
   setSelectedWhaleX,
   setSelectedWhaleY,
 }: Props) => {
-  const [centerX, setCentreX] = useState(0)
-  const moveLeft = () => setCentreX(Math.max(-100, centerX - 10))
-  const moveRight = () => setCentreX(Math.min(100, centerX + 10))
-
-  const [centerY, setCentreY] = useState(0)
-  const moveUp = () => setCentreY(Math.max(-100, centerY - 10))
-  const moveDown = () => setCentreY(Math.min(100, centerY + 10))
-
-  const [radius, setRadius] = useState(50)
-  const zoomIn = () => setRadius(Math.max(20, radius - 10))
-  const zoomOut = () => setRadius(Math.min(100, radius + 10))
+  const [sonarState, dispatchSonarAction] = useReducer(reducer, initialState)
+  const { centerX, centerY, radius } = sonarState
 
   const visibleWhales = whales.filter(
     (whale) =>
@@ -49,14 +40,7 @@ const SonarDashboard = ({
         radius={radius}
         setSelectedWhaleId={setSelectedWhaleId}
       />
-      <SonarControls
-        zoomIn={zoomIn}
-        zoomOut={zoomOut}
-        moveLeft={moveLeft}
-        moveRight={moveRight}
-        moveUp={moveUp}
-        moveDown={moveDown}
-      />
+      <SonarControls dispatchSonarAction={dispatchSonarAction} />
       <WhaleCard
         whale={selectedWhale}
         setX={setSelectedWhaleX}

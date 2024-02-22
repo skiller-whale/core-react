@@ -1,8 +1,16 @@
+// not edited in this exercise
 import { useContext } from "react"
-import Filter from "./Filters/Filter"
+import type { Whale } from "../../lib/apiTypes"
+import Filter from "../Filters/Filter"
 import { ColorContext } from "./state/ColorContext"
 
-const DepthSonar = ({ whale }) => {
+type Props = {
+  whale: Whale
+}
+
+const DepthSonar = ({ whale }: Props) => {
+  const color = useContext(ColorContext)
+
   const { depth } = whale.location
   const Icon = whale.species.includes("Dolphin") ? "🐬" : "🐋"
   const animal = (
@@ -12,7 +20,7 @@ const DepthSonar = ({ whale }) => {
   return (
     <div className="shadow p-4 flex flex-col">
       <h2 className="font-semibold pb-2">Depth sonar</h2>
-      <Filter color="green">
+      <Filter color={color}>
         <div className="relative w-24 h-[90vh] overflow-hidden">
           <div className="flex flex-col h-full justify-between">{markers}</div>
           <div className="absolute top-0 bottom-0 w-full h-full bg-slate-100 opacity-30"></div>

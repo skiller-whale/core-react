@@ -1,12 +1,10 @@
 import { useSetWhalesContext } from "./state/WhalesState"
 
 const WhaleCard = ({ whale, setX, setY }) => {
-  const { name, species, location } = whale
-
   return (
-    <div className="border-2 h-48 w-full my-4 p-4 flex flex-col justify-between">
+    <div className="shadow p-4 flex flex-col gap-3">
       <h2 className="text-2xl font-semibold">
-        {name} the {species}
+        {whale.name} the {whale.species}
       </h2>
       <div>Update location:</div>
       <div className="flex justify-between">
@@ -16,7 +14,7 @@ const WhaleCard = ({ whale, setX, setY }) => {
             className="w-48 ml-2"
             id="x"
             type="number"
-            value={location.x}
+            value={whale.location.x}
             onChange={(e) => setX(Number(e.target.value))}
           />
         </label>
@@ -26,7 +24,7 @@ const WhaleCard = ({ whale, setX, setY }) => {
             className="w-48 ml-2"
             id="y"
             type="number"
-            value={location.y}
+            value={whale.location.y}
             onChange={(e) => setY(Number(e.target.value))}
           />{" "}
         </label>

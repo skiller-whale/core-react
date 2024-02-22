@@ -15,7 +15,7 @@ const DepthSonar = ({ whale }: Props) => {
   )
 
   return (
-    <div className="flex flex-col">
+    <div className="shadow p-4 flex flex-col">
       <h2 className="font-semibold pb-2">Depth sonar</h2>
       <Filter color="green">
         <div className="relative w-24 h-[90vh] overflow-hidden">

@@ -1,5 +1,4 @@
 import type { Whale } from "../lib/apiTypes"
-import { useSetWhalesContext } from "./state/WhalesState"
 
 type Props = {
   whale: Whale
@@ -8,10 +7,12 @@ type Props = {
 }
 
 const WhaleCard = ({ whale, setX, setY }: Props) => {
+  const { name, species, location } = whale
+
   return (
     <div className="shadow p-4 flex flex-col gap-3">
       <h2 className="text-2xl font-semibold">
-        {whale.name} the {whale.species}
+        {name} the {species}
       </h2>
       <div>Update location:</div>
       <div className="flex justify-between">
@@ -21,7 +22,7 @@ const WhaleCard = ({ whale, setX, setY }: Props) => {
             className="w-48 ml-2"
             id="x"
             type="number"
-            value={whale.location.x}
+            value={location.x}
             onChange={(e) => setX(Number(e.target.value))}
           />
         </label>
@@ -31,9 +32,9 @@ const WhaleCard = ({ whale, setX, setY }: Props) => {
             className="w-48 ml-2"
             id="y"
             type="number"
-            value={whale.location.y}
+            value={location.y}
             onChange={(e) => setY(Number(e.target.value))}
-          />{" "}
+          />
         </label>
       </div>
     </div>

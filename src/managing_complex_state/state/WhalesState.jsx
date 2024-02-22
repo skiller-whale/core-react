@@ -4,7 +4,7 @@ const initialState = {
   initialising: true,
 }
 
-const updateWhaleCoordinate = (whale, coordinate, value) => ({
+export const updateWhaleCoordinate = (whale, coordinate, value) => ({
   ...whale,
   location: {
     ...whale.location,
@@ -14,32 +14,34 @@ const updateWhaleCoordinate = (whale, coordinate, value) => ({
 
 const reducer = (state, action) => {
   switch (action.type) {
-    case "initialised":
+    case "initialise":
       return {
         initialising: false,
         whales: action.whales,
-        favWhaleId: action.whales[0].id,
+        selectedWhaleId: action.whales[0].id,
       }
-    case "setFavWhale":
-      return state.initialising ? state : { ...state, favWhaleId: action.id }
-    case "setFavWhaleX":
+    case "setSelectedWhaleId":
+      return state.initialising
+        ? state
+        : { ...state, selectedWhaleId: action.id }
+    case "setSelectedWhaleX":
       return state.initialising
         ? state
         : {
             ...state,
             whales: state.whales.map((whale) =>
-              whale.id === state.favWhaleId
+              whale.id === state.selectedWhaleId
                 ? updateWhaleCoordinate(whale, "x", action.x)
                 : whale,
             ),
           }
-    case "setFavWhaleY":
+    case "setSelectedWhaleY":
       return state.initialising
         ? state
         : {
             ...state,
             whales: state.whales.map((whale) =>
-              whale.id === state.favWhaleId
+              whale.id === state.selectedWhaleId
                 ? updateWhaleCoordinate(whale, "y", action.y)
                 : whale,
             ),
@@ -56,9 +58,16 @@ export const useWhalesContext = () => useContext(WhalesContext)
 
 export const useSetWhalesContext = () => useContext(SetWhalesContext)
 
-const WhalesStateProvider = ({ children }) => {
-  // implement this component
-  return <>{children}</>
+const WhalesProvider = ({ children }) => {
+  const [state, dispatch] = useReducer(reducer, initialState)
+
+  return (
+    <WhalesContext.Provider value={state}>
+      <SetWhalesContext.Provider value={dispatch}>
+        {children}
+      </SetWhalesContext.Provider>
+    </WhalesContext.Provider>
+  )
 }
 
-export default WhalesStateProvider
+export default WhalesProvider

@@ -1,12 +1,13 @@
+// not edited in this exercise
 import { useEffect, useState } from "react"
-import type { Whale } from "../lib/apiTypes"
-import DepthSonar from "./DepthSonar"
-import SonarDashboard from "./SonarDashboard"
-import ColorProvider from "./state/ColorContext"
+import type { Whale } from "../../lib/apiTypes"
+import DepthSonar from "../DepthSonar"
+import ColorProvider from "../state/ColorContext"
 import WhalesProvider, {
   updateWhaleCoordinate,
   useWhalesContext,
-} from "./state/WhalesState"
+} from "../state/WhalesState"
+import SonarDashboard from "./SonarDashboard"
 
 const App = () => (
   <ColorProvider>

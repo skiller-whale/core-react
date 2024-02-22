@@ -1,5 +1,3 @@
-import type { Reducer } from "react"
-
 export type SonarState = {
   centerX: number
   centerY: number
@@ -20,10 +18,7 @@ export const initialState: SonarState = {
   radius: 50,
 }
 
-export const reducer: Reducer<typeof initialState, SonarAction> = (
-  state,
-  action,
-) => {
+export const reducer = (state: SonarState, action: SonarAction): SonarState => {
   // complete the implementation of this function
   return state
 }

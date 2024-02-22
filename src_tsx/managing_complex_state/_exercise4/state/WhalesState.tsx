@@ -6,7 +6,7 @@ import {
   useEffect,
   useReducer,
 } from "react"
-import type { Whale } from "../../lib/apiTypes"
+import type { Whale } from "../../../lib/apiTypes"
 
 export type WhalesState =
   | { initialising: true }
@@ -18,7 +18,7 @@ export type WhalesState =
 
 type WhalesAction =
   | { type: "initialise"; whales: Whale[] }
-  | { type: "setSelectedWhaleId"; id: string }
+  | { type: "setSelectedWhale"; id: string }
   | { type: "setSelectedWhaleX"; x: number }
   | { type: "setSelectedWhaleY"; y: number }
 
@@ -46,7 +46,7 @@ const reducer = (state: WhalesState, action: WhalesAction): WhalesState => {
         whales: action.whales,
         selectedWhaleId: action.whales[0].id,
       }
-    case "setSelectedWhaleId":
+    case "setSelectedWhale":
       return state.initialising
         ? state
         : { ...state, selectedWhaleId: action.id }
@@ -87,6 +87,15 @@ export const useSetWhalesContext = () => useContext(SetWhalesContext)
 
 const WhalesProvider = ({ children }: PropsWithChildren) => {
   const [state, dispatch] = useReducer(reducer, initialState)
+
+  useEffect(() => {
+    const fetchWhales = async () => {
+      const response = await fetch("/api/aquatic-animals/whales")
+      const { animals } = await response.json()
+      dispatch({ type: "initialise", whales: animals })
+    }
+    fetchWhales()
+  }, [])
 
   return (
     <WhalesContext.Provider value={state}>

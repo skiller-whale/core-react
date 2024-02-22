@@ -2,44 +2,58 @@ import { useEffect, useState } from "react"
 import DepthSonar from "./DepthSonar"
 import SonarDashboard from "./SonarDashboard"
 import ColorProvider from "./state/ColorContext"
-import WhalesProvider, { useWhalesContext } from "./state/WhalesState"
+import WhalesProvider, {
+  updateWhaleCoordinate,
+  useWhalesContext,
+} from "./state/WhalesState"
 
-const App = () => <Panel />
+const App = () => (
+  <ColorProvider>
+    <Panel />
+  </ColorProvider>
+)
+
 const Panel = () => {
+  // state values
   const [initialising, setInitialising] = useState(true)
   const [whales, setWhales] = useState([])
-  const [favWhale, setFavWhale] = useState(whales[0])
-  const fetchWhales = async () => {
-    const response = await fetch("/api/aquatic-animals/whales/", {
-      method: "GET",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-    })
-
-    const { animals } = await response.json()
+  const [selectedWhaleId, setSelectedWhaleId] = useState("")
+  // state update functions
+  const initialise = (whales) => {
     setInitialising(false)
-    setWhales(animals)
-    setFavWhale(animals[0])
+    setWhales(whales)
+    setSelectedWhaleId(whales[0].id)
   }
+
+  const setSelectedWhaleX = (x) => {
+    setWhales(
+      whales.map((whale) =>
+        whale.id === selectedWhaleId
+          ? updateWhaleCoordinate(whale, "x", x)
+          : whale,
+      ),
+    )
+  }
+
+  const setSelectedWhaleY = (y) => {
+    setWhales(
+      whales.map((whale) =>
+        whale.id === selectedWhaleId
+          ? updateWhaleCoordinate(whale, "y", y)
+          : whale,
+      ),
+    )
+  }
+  // fetch whales from server on mount
   useEffect(() => {
+    const fetchWhales = async () => {
+      const response = await fetch("/api/aquatic-animals/whales/")
+      const { animals } = await response.json()
+      initialise(animals)
+    }
     fetchWhales()
   }, [])
-
-  const updateWhaleCoordinate = (whale, coordinate, value) => ({
-    ...whale,
-    location: {
-      ...whale.location,
-      [coordinate]: Math.min(100, Math.max(-100, value)),
-    },
-  })
-
-  const setFavWhaleX = (x) =>
-    setFavWhale(updateWhaleCoordinate(favWhale, "x", x))
-
-  const setFavWhaleY = (y) =>
-    setFavWhale(updateWhaleCoordinate(favWhale, "y", y))
+  // render placeholder until initialisation is complete
   if (initialising) {
     return (
       <div className="flex justify-center">
@@ -47,17 +61,19 @@ const Panel = () => {
       </div>
     )
   }
+  // render the panel when initialisation is complete
+  const selectedWhale = whales.find((whale) => whale.id === selectedWhaleId)
 
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center gap-3">
       <SonarDashboard
         whales={whales}
-        favWhale={favWhale}
-        setFavWhale={setFavWhale}
-        setFavWhaleX={setFavWhaleX}
-        setFavWhaleY={setFavWhaleY}
+        selectedWhale={selectedWhale}
+        setSelectedWhaleId={setSelectedWhaleId}
+        setSelectedWhaleX={setSelectedWhaleX}
+        setSelectedWhaleY={setSelectedWhaleY}
       />
-      {/* <DepthSonar whale={favWhale} /> */}
+      {/* <DepthSonar whale={selectedWhale} /> */}
     </div>
   )
 }
