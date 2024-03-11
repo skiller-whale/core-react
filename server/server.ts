@@ -94,7 +94,7 @@ const getModuleContentJS: RequestHandler = (req, res) =>
   getPageContent(`/${sourceFolder.js}/${req.params.page}/index.jsx`, req, res)
 
 const redirectInvalidModule: RequestHandler = (req, res, next) => {
-  if (!modules.includes(req.params.page)) {
+  if (!Object.keys(modules).includes(req.params.page)) {
     return res.redirect("/")
   }
 

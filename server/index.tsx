@@ -20,13 +20,12 @@ const App: FC<Props> = ({ modules }) => (
         </tr>
       </thead>
       <tbody>
-        {modules.map((module) => (
-          <tr key={module} className="border-b even:bg-gray-100">
+        {Object.entries(modules).map(([id, title]) => (
+          <tr key={id} className="border-b even:bg-gray-100">
             {["/", "/ts/"].map((ext) => (
               <td key={ext}>
-                <a className="block py-1 odd:pl-1" href={`${ext}${module}`}>
-                  🔗 {ext}
-                  {module}
+                <a className="block py-1 odd:pl-1" href={`${ext}${id}`}>
+                  🔗 {title}
                 </a>
               </td>
             ))}
