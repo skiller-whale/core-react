@@ -1,5 +1,6 @@
 export default {
   introduction_to_react_and_jsx: "Introduction to React and JSX",
+  rendering_cycle: "Understanding React's Rendering Cycle",
   state_and_event_handlers: "Making Components Interactive",
   custom_hooks: "Custom Hooks",
   creating_reusable_components: "Creating Reusable Components",
