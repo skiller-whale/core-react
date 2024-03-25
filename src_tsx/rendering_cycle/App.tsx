@@ -21,7 +21,6 @@ const App = ({ whales: initialWhales }: Props) => {
 
   const createWhale = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
-
     const formData = new FormData(event.currentTarget)
     const name = formData.get("name") as string
     const species = formData.get("species") as string
@@ -64,8 +63,18 @@ const App = ({ whales: initialWhales }: Props) => {
           </div>
           <div className="flex gap-3">
             <Input name="name" placeholder="name" />
-            <Input type="number" name="x" placeholder="x-coordinate" />
-            <Input type="number" name="y" placeholder="y-coordinate" />
+            <Input
+              type="number"
+              name="x"
+              placeholder="x-coordinate"
+              defaultValue="0"
+            />
+            <Input
+              type="number"
+              name="y"
+              placeholder="y-coordinate"
+              defaultValue="0"
+            />
           </div>
           <div className="flex gap-3 justify-end">
             {whalesHaveBeenAdded ? (

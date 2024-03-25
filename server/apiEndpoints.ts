@@ -70,7 +70,6 @@ const filterAnimalsByTerm = <Animal extends Whale | Fish>(
 
 aquaticAnimalsApi.get("/whales/", (req, res) => {
   setupWhalesDatabase()
-
   const animals = filterAnimalsByTerm(whales, req)
   randomlyDelay(() => {
     res.json({ animals: animals.slice(0, 15) })
@@ -79,7 +78,6 @@ aquaticAnimalsApi.get("/whales/", (req, res) => {
 
 aquaticAnimalsApi.get("/fish/", (req, res) => {
   setupFishDatabase()
-
   const animals = filterAnimalsByTerm(fish, req)
   randomlyDelay(() => {
     res.json({ animals: animals.slice(0, 15) })
@@ -88,7 +86,6 @@ aquaticAnimalsApi.get("/fish/", (req, res) => {
 
 aquaticAnimalsApi.get("/whales/bad", (req, res) => {
   setupWhalesDatabase()
-
   const animals = [
     { ...whales[0], location: undefined },
     ...whales.slice(1, 5),

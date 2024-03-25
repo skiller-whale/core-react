@@ -46,8 +46,18 @@ const WhaleForm = ({ addWhale, removeLastWhale, whalesHaveBeenAdded }) => {
         </div>
         <div className="flex gap-3">
           <Input name="name" placeholder="name" />
-          <Input type="number" name="x" placeholder="x-coordinate" />
-          <Input type="number" name="y" placeholder="y-coordinate" />
+          <Input
+            type="number"
+            name="x"
+            placeholder="x-coordinate"
+            defaultValue="0"
+          />
+          <Input
+            type="number"
+            name="y"
+            placeholder="y-coordinate"
+            defaultValue="0"
+          />
         </div>
         <div className="flex gap-3 justify-end">
           {whalesHaveBeenAdded ? (

@@ -36,7 +36,6 @@ const App = () => {
     numberOfAdults: initialFormData.get("numberOfAdults") as string,
     numberOfChildren: initialFormData.get("numberOfChildren") as string,
   })
-
   const [destinationAndDates, setDestinationAndDates] = useFormState({
     location: "",
     accommodation: "",
@@ -44,7 +43,6 @@ const App = () => {
     checkOut: initialFormData.get("checkOut") as string,
     flexibleOnDates: false,
   })
-
   const [preferredActivities, setPreferredActivities] = useFormState({
     whaleWatching: false,
     snorkelling: false,
@@ -62,7 +60,6 @@ const App = () => {
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
     setFormStatus("submitting")
-
     const result = await saveToBackend(formData)
     setPage("submitted")
     setFormStatus(result.ok ? "success" : "error")

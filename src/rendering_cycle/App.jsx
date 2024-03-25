@@ -8,10 +8,12 @@ import Select from "./components/Select"
 
 const App = ({ whales: initialWhales }) => {
   const [formColour] = useState("blue")
+
   const [whales, setWhales] = useState(initialWhales)
   const addWhale = (whale) => setWhales([...whales, whale])
   const removeLastWhale = () => setWhales(whales.slice(0, -1))
   const whalesHaveBeenAdded = whales.length > initialWhales.length
+
   const createWhale = (event) => {
     event.preventDefault()
 
@@ -28,19 +30,20 @@ const App = ({ whales: initialWhales }) => {
       addWhale({ id, name, species, weight, hasBaleen, location })
     }
   }
+
   // replace these two lines with the commented out code when instructed
   let isValid = true
   const validate = () => {}
-
   // const [isValid, setIsValid] = useState(false)
-  // const validate = (event: FormEvent<HTMLFormElement>) => {
+  // const validate = (event) => {
   //   const formData = new FormData(event.currentTarget)
-  //   const name = formData.get("name") as string
-  //   const species = formData.get("species") as string
-  //   const x = parseFloat(formData.get("x") as string)
-  //   const y = parseFloat(formData.get("y") as string)
+  //   const name = formData.get("name")
+  //   const species = formData.get("species")
+  //   const x = parseFloat(formData.get("x"))
+  //   const y = parseFloat(formData.get("y"))
   //   setIsValid(name !== "" && species !== "" && !isNaN(x) && !isNaN(y))
   // }
+
   return (
     <div className="flex flex-col gap-6">
       <h1 className="text-2xl font-semibold">Whale Location Service</h1>
@@ -56,8 +59,18 @@ const App = ({ whales: initialWhales }) => {
           </div>
           <div className="flex gap-3">
             <Input name="name" placeholder="name" />
-            <Input type="number" name="x" placeholder="x-coordinate" />
-            <Input type="number" name="y" placeholder="y-coordinate" />
+            <Input
+              type="number"
+              name="x"
+              placeholder="x-coordinate"
+              defaultValue="0"
+            />
+            <Input
+              type="number"
+              name="y"
+              placeholder="y-coordinate"
+              defaultValue="0"
+            />
           </div>
           <div className="flex gap-3 justify-end">
             {whalesHaveBeenAdded ? (

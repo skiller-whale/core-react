@@ -10,7 +10,6 @@ const App = () => {
   const [loading, setLoading] = useState(false)
   const fetchWhales = async (path) => {
     setLoading(true)
-
     const result = await fetch(path)
     const { animals } = await result.json()
     setWhales(animals)

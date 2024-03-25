@@ -11,21 +11,18 @@ import WhaleTable from "./WhaleTable"
 
 const App: FC = () => {
   const [term, setTerm] = useState("")
-  const [fetching, setFetching] = useState(false)
-
-  const [whales, setWhales] = useState<Whale[]>([])
-
-  const isStale = fetching
   const onChange = (event: ChangeEvent<HTMLInputElement>) =>
     setTerm(event.target.value)
 
+  const [whales, setWhales] = useState<Whale[]>([])
+  const [fetching, setFetching] = useState(false)
+  const isStale = fetching
   useEffect(() => {
     const abortController = new AbortController()
 
     const fetchWhales = async () => {
       try {
         setFetching(true)
-
         const response = await fetch(
           `/api/aquatic-animals/whales/?term=${term}`,
           {
@@ -37,7 +34,6 @@ const App: FC = () => {
             },
           },
         )
-
         const { animals } = await response.json()
         setWhales(animals)
         setFetching(false)

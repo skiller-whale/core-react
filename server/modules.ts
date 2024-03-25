@@ -9,10 +9,9 @@ export default {
   effects_and_the_component_lifecycle: "Effects and the Component Lifecycle",
   managing_complex_state: "Managing Complex State",
   forms: "Working with Forms",
-  measuring_performance: "Measuring Performance",
+  deferring_updates: "Deferring Updates",
   reducing_renders: "Reducing Renders",
   memoisation_within_components: "Memoisation within Components",
   code_splitting_and_lazy_loading: "Code Splitting and Lazy Loading",
-  deferring_updates: "Deferring Updates",
   rendering_on_the_server: "Rendering on the Server",
 }

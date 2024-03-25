@@ -5,12 +5,15 @@ const Sonar = ({ whales }) => {
   const [centerX, setCentreX] = useState(0)
   const moveLeft = () => setCentreX((centerX) => Math.max(-100, centerX - 10))
   const moveRight = () => setCentreX((centerX) => Math.min(100, centerX + 10))
+
   const [centerY, setCentreY] = useState(0)
   const moveUp = () => setCentreY((centerY) => Math.max(-100, centerY - 10))
   const moveDown = () => setCentreY((centerY) => Math.min(100, centerY + 10))
+
   const [radius, setRadius] = useState(50)
   const zoomIn = () => setRadius((radius) => Math.max(20, radius - 10))
   const zoomOut = () => setRadius((radius) => Math.min(100, radius + 10))
+
   const visibleWhales = whales.filter(
     (whale) =>
       (whale.location.x - centerX) ** 2 + (whale.location.y - centerY) ** 2 <=
