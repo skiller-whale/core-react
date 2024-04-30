@@ -8,7 +8,7 @@ type Props = {
 
 const App: FC<Props> = ({ modules }) => (
   <>
-    <div className="mb-6 p-3 bg-green-200 text-green-700 border border-green-700">
+    <div className="mb-6 p-3 bg-green-100 text-green-700 border border-green-600">
       Hello Whale! It looks like you're all set up.
     </div>
     <h2 className="text-2xl font-semibold my-2">Module links: </h2>

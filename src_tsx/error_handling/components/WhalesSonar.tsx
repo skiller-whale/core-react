@@ -44,7 +44,13 @@ const Sonar = ({ whales }: Props) => {
 
   return (
     <div className="flex flex-col gap-3 w-96 mx-auto my-6">
-      <div className="relative">
+      <div
+        className="relative"
+        style={{
+          filter:
+            "invert(48%) sepia(51%) saturate(1516%) hue-rotate(86deg) brightness(97%) contrast(96%)",
+        }}
+      >
         <div className="relative w-96 h-96 rounded-full overflow-hidden border-2">
           <div className="absolute top-0 bottom-0 w-full h-full bg-slate-100 opacity-30"></div>
           {animals}

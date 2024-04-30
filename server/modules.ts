@@ -9,6 +9,7 @@ export default {
   effects_and_the_component_lifecycle: "Effects and the Component Lifecycle",
   managing_complex_state: "Managing Complex State",
   forms: "Working with Forms",
+  accessibility: "Writing Accessible Web Apps",
   deferring_updates: "Deferring Updates",
   reducing_renders: "Reducing Renders",
   memoisation_within_components: "Memoisation within Components",
