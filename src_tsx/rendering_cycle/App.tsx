@@ -1,43 +1,46 @@
-import { type FormEvent, useState } from "react"
-import type { Whale } from "../lib/apiTypes"
-import WhaleForm from "./WhaleForm/WhaleForm"
-import WhaleTable from "./WhaleTable/WhaleTable"
-import cetaceans from "./cetaceans"
-import Button from "./components/Button"
-import Input from "./components/Input"
-import Select from "./components/Select"
+import { type FormEvent, useState } from "react";
+import type { Whale } from "../lib/apiTypes";
+import WhaleForm from "./WhaleForm/WhaleForm";
+import WhaleTable from "./WhaleTable/WhaleTable";
+import cetaceans from "./cetaceans";
+import Button from "./components/Button";
+import Input from "./components/Input";
+import Select from "./components/Select";
 
 type Props = {
-  whales: Whale[]
-}
+  whales: Whale[];
+};
 
 const App = ({ whales: initialWhales }: Props) => {
-  const [formColour] = useState("blue")
+  const [formColour] = useState("blue");
 
-  const [whales, setWhales] = useState(initialWhales)
-  const addWhale = (whale: Whale) => setWhales([...whales, whale])
-  const removeLastWhale = () => setWhales(whales.slice(0, -1))
-  const whalesHaveBeenAdded = whales.length > initialWhales.length
+  const [whales, setWhales] = useState(initialWhales);
+  const addWhale = (whale: Whale) => setWhales([...whales, whale]);
+  const removeLastWhale = () => setWhales(whales.slice(0, -1));
+  const whalesHaveBeenAdded = whales.length > initialWhales.length;
 
   const createWhale = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault()
-    const formData = new FormData(event.currentTarget)
-    const name = formData.get("name") as string
-    const species = formData.get("species") as string
-    const x = parseFloat(formData.get("x") as string)
-    const y = parseFloat(formData.get("y") as string)
+    event.preventDefault();
+
+    const formData = new FormData(event.currentTarget);
+    const name = formData.get("name") as string;
+    const species = formData.get("species") as string;
+    const x = parseFloat(formData.get("x") as string);
+    const y = parseFloat(formData.get("y") as string);
     if (name !== "" && species !== "" && !isNaN(x) && !isNaN(y)) {
-      const id = crypto.randomUUID()
-      const weight = 0
-      const hasBaleen = species.includes("Dolphin") || species.includes("Sperm")
-      const location = { x, y, depth: 0 }
-      addWhale({ id, name, species, weight, hasBaleen, location })
+      const id = crypto.randomUUID();
+      const weight = 0;
+      const hasBaleen =
+        species.includes("Dolphin") || species.includes("Sperm");
+
+      const location = { x, y, depth: 0 };
+      addWhale({ id, name, species, weight, hasBaleen, location });
     }
-  }
+  };
 
   // replace these two lines with the commented out code when instructed
-  let isValid = true
-  const validate = () => {}
+  let isValid = true;
+  const validate = () => {};
   // const [isValid, setIsValid] = useState(false)
   // const validate = (event: FormEvent<HTMLFormElement>) => {
   //   const formData = new FormData(event.currentTarget)
@@ -92,7 +95,7 @@ const App = ({ whales: initialWhales }: Props) => {
       </div>
       <WhaleTable whales={whales} />
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;

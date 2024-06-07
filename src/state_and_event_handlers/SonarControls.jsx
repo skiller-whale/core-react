@@ -1,15 +1,15 @@
-import { useState } from "react"
+import { useState } from "react";
 
 const SonarControls = () => {
-  const [centerX, setCentreX] = useState(0)
-  const [centerY, setCentreY] = useState(0)
-  const [radius, setRadius] = useState(50)
-  const moveLeft = () => setCentreX(Math.max(-100, centerX - 10))
-  const moveRight = () => setCentreX(Math.min(100, centerX + 10))
-  const moveUp = () => setCentreY(Math.max(-100, centerY - 10))
-  const moveDown = () => setCentreY(Math.min(100, centerY + 10))
-  const zoomIn = () => setRadius(Math.max(20, radius - 10))
-  const zoomOut = () => setRadius(Math.min(100, radius + 10))
+  const [centerX, setCentreX] = useState(0);
+  const [centerY, setCentreY] = useState(0);
+  const [radius, setRadius] = useState(50);
+  const moveLeft = () => setCentreX(Math.max(-100, centerX - 10));
+  const moveRight = () => setCentreX(Math.min(100, centerX + 10));
+  const moveUp = () => setCentreY(Math.max(-100, centerY - 10));
+  const moveDown = () => setCentreY(Math.min(100, centerY + 10));
+  const zoomIn = () => setRadius(Math.max(20, radius - 10));
+  const zoomOut = () => setRadius(Math.min(100, radius + 10));
 
   return (
     <div className="shadow p-4 flex flex-col gap-3">
@@ -28,8 +28,8 @@ const SonarControls = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 const Button = ({ onClick, children }) => (
   <button
@@ -38,6 +38,6 @@ const Button = ({ onClick, children }) => (
   >
     {children}
   </button>
-)
+);
 
-export default SonarControls
+export default SonarControls;

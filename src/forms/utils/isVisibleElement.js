@@ -1,2 +1,2 @@
 export default (element) =>
-  element.offsetWidth !== 0 || element.offsetHeight !== 0
+  element.offsetWidth !== 0 || element.offsetHeight !== 0;

@@ -1,9 +1,7 @@
-import type { FC } from "react"
-
-const LoadingSpinner: FC = () => {
+const LoadingSpinner = () => {
   const sunset = (
     <div className="flex absolute -bottom-10 mx-auto w-24 h-24 rounded-t-full bg-orange-500"></div>
-  )
+  );
 
   const dolphins = (
     <div className="flex relative bottom-3 right-6">
@@ -14,7 +12,7 @@ const LoadingSpinner: FC = () => {
         <span className="-scale-x-100">🐬</span>
       </div>
     </div>
-  )
+  );
 
   const waves = (
     <span className="absolute sepia-[.5] -bottom-3">
@@ -31,7 +29,7 @@ const LoadingSpinner: FC = () => {
         🌊
       </span>
     </span>
-  )
+  );
 
   return (
     <div className="relative h-24 flex flex-1 flex-col justify-center items-center pt-8 text-5xl overflow-hidden my-auto">
@@ -39,7 +37,7 @@ const LoadingSpinner: FC = () => {
       {dolphins}
       {waves}
     </div>
-  )
-}
+  );
+};
 
-export default LoadingSpinner
+export default LoadingSpinner;

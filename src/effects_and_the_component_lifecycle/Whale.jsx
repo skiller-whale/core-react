@@ -5,6 +5,6 @@ const Whale = ({ name, about, weight }) => (
     </h3>
     <p>{about}</p>
   </div>
-)
+);
 
-export default Whale
+export default Whale;

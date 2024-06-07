@@ -1,15 +1,11 @@
-import type { FC, PropsWithChildren } from "react"
+import type { PropsWithChildren } from "react";
 
 type Props = {
-  href: string
-  callToAction: string
-}
+  href: string;
+  callToAction: string;
+};
 
-const Header: FC<PropsWithChildren<Props>> = ({
-  href,
-  callToAction,
-  children,
-}) => {
+const Header = ({ href, callToAction, children }: PropsWithChildren<Props>) => {
   return (
     <div className="flex flex-col gap-6">
       <a
@@ -20,7 +16,7 @@ const Header: FC<PropsWithChildren<Props>> = ({
       </a>
       <h1 className="text-2xl font-semibold">{children}</h1>
     </div>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

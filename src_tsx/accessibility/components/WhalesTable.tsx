@@ -1,9 +1,9 @@
-import type { Whale } from "../../lib/apiTypes"
-import Link from "./Link"
+import type { Whale } from "../../lib/apiTypes";
+import Link from "./Link";
 
 type Props = {
-  whales: Whale[]
-}
+  whales: Whale[];
+};
 
 const WhalesTable = ({ whales }: Props) => (
   <table className="min-w-full">
@@ -21,11 +21,11 @@ const WhalesTable = ({ whales }: Props) => (
       ))}
     </tbody>
   </table>
-)
+);
 
 type WhaleRowProps = {
-  whale: Whale
-}
+  whale: Whale;
+};
 
 const WhaleRow = ({ whale }: WhaleRowProps) => (
   <tr className="border-b even:bg-gray-100">
@@ -44,6 +44,6 @@ const WhaleRow = ({ whale }: WhaleRowProps) => (
       ({whale.location?.x}, {whale.location?.y})
     </td>
   </tr>
-)
+);
 
-export default WhalesTable
+export default WhalesTable;

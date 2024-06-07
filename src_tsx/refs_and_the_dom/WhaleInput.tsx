@@ -1,10 +1,10 @@
-import { type ChangeEventHandler, type ForwardedRef, forwardRef } from "react"
+import { type ChangeEventHandler, forwardRef } from "react";
 
 type Props = {
-  type: string
-  value: number
-  onInput: ChangeEventHandler<HTMLInputElement>
-}
+  type: string;
+  value: number;
+  onInput: ChangeEventHandler<HTMLInputElement>;
+};
 
 const WhaleInput = ({ type, value, onInput }: Props) => (
   <div className="relative pl-20 pb-12">
@@ -19,6 +19,6 @@ const WhaleInput = ({ type, value, onInput }: Props) => (
       <input className="h-10" type={type} value={value} onInput={onInput} />
     </div>
   </div>
-)
+);
 
-export default WhaleInput
+export default WhaleInput;

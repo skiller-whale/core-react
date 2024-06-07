@@ -1,30 +1,30 @@
-import { type FC, useEffect, useState } from "react"
-import { type WhaleProps, searchForWhale, whales } from "./whales"
-import Searching from "./Searching"
-import Whale from "./Whale"
+import { useEffect, useState } from "react";
+import { type WhaleProps, searchForWhale, whales } from "./whales";
+import Searching from "./Searching";
+import Whale from "./Whale";
 
 type Props = {
-  query: string
-}
+  query: string;
+};
 
 type SearchStatus =
   | { status: "not-asked" }
   | { status: "searching" }
-  | { status: "searched"; whale?: WhaleProps }
+  | { status: "searched"; whale?: WhaleProps };
 
-let renders = 0
+let renders = 0;
 
-const SearchResult: FC<Props> = ({ query }) => {
+const SearchResult = ({ query }: Props) => {
   const [searchStatus, setSearchStatus] = useState<SearchStatus>({
     status: "not-asked",
-  })
+  });
 
   const loadResult = async () => {
-    setSearchStatus({ status: "searching" })
+    setSearchStatus({ status: "searching" });
 
-    const whale = await searchForWhale(query)
-    setSearchStatus({ status: "searched", whale })
-  }
+    const whale = await searchForWhale(query);
+    setSearchStatus({ status: "searched", whale });
+  };
 
   return (
     <div className="border border-gray-300 p-3 mb-3">
@@ -44,7 +44,7 @@ const SearchResult: FC<Props> = ({ query }) => {
         <p className="py-2">No matching whale.</p>
       )}
     </div>
-  )
-}
+  );
+};
 
-export default SearchResult
+export default SearchResult;

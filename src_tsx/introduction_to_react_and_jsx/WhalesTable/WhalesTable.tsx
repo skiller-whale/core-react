@@ -1,9 +1,9 @@
-import type { Whale } from "../../lib/apiTypes"
-import WhalesTableRow from "./WhalesTableRow"
+import type { Whale } from "../../lib/apiTypes";
+import WhalesTableRow from "./WhalesTableRow";
 
 type Props = {
-  whales: Whale[]
-}
+  whales: Whale[];
+};
 
 const WhalesTable = ({ whales }: Props) => (
   <table className="min-w-full">
@@ -21,6 +21,6 @@ const WhalesTable = ({ whales }: Props) => (
       )}
     </tbody>
   </table>
-)
+);
 
-export default WhalesTable
+export default WhalesTable;

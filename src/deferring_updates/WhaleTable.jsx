@@ -1,14 +1,14 @@
-import { memo, useState, useTransition } from "react"
-import WhaleRow from "./WhaleRow"
-import LoadingSpinner from "./LoadingSpinner"
+import { memo, useState, useTransition } from "react";
+import LoadingSpinner from "./LoadingSpinner";
+import WhaleRow from "./WhaleRow";
 
 const WhaleTable = ({ whales }) => {
-  const [hideDolphins, setHideDolphins] = useState(false)
+  const [hideDolphins, setHideDolphins] = useState(false);
   const whalesToDisplay = hideDolphins
     ? whales.filter((whale) => !whale.species.includes("Dolphin"))
-    : whales
+    : whales;
 
-  const onChange = () => setHideDolphins((hideDolphins) => !hideDolphins)
+  const onChange = () => setHideDolphins((hideDolphins) => !hideDolphins);
 
   return (
     <div className="w-full">
@@ -42,7 +42,7 @@ const WhaleTable = ({ whales }) => {
         </tbody>
       </table>
     </div>
-  )
-}
+  );
+};
 
-export default WhaleTable
+export default WhaleTable;

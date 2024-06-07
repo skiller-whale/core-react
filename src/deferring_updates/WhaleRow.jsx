@@ -1,9 +1,9 @@
-import doSomethingThatTakesAges from "../lib/doSomethingThatTakesAges"
+import doSomethingThatTakesAges from "../lib/doSomethingThatTakesAges";
 
 const WhaleRow = ({ whale }) => {
-  doSomethingThatTakesAges(100)
+  doSomethingThatTakesAges(100);
 
-  const profilePicture = whale.species.includes("Dolphin") ? "🐬" : "🐳"
+  const profilePicture = whale.species.includes("Dolphin") ? "🐬" : "🐳";
 
   return (
     <tr className="border-b even:bg-gray-100">
@@ -14,7 +14,7 @@ const WhaleRow = ({ whale }) => {
         {whale.hasBaleen ? "❌" : "✅"}
       </td>
     </tr>
-  )
-}
+  );
+};
 
-export default WhaleRow
+export default WhaleRow;

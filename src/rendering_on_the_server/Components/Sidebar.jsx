@@ -1,4 +1,4 @@
-import WhaleCard from "./WhaleCard"
+import WhaleCard from "./WhaleCard";
 
 const Sidebar = ({ favoriteWhale, unsetFavoriteWhale }) => {
   return (
@@ -18,7 +18,7 @@ const Sidebar = ({ favoriteWhale, unsetFavoriteWhale }) => {
         )}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Sidebar
+export default Sidebar;

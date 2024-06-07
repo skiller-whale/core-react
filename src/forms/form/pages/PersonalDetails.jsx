@@ -1,7 +1,7 @@
-import Fieldset from "../../components/Fieldset"
-import Input from "../../inputs/Input"
-import TextArea from "../../inputs/TextArea"
-import { initialFormData } from "../state"
+import Fieldset from "../../components/Fieldset";
+import Input from "../../inputs/Input";
+import TextArea from "../../inputs/TextArea";
+import { initialFormData } from "../state";
 
 const PersonalDetails = ({ visible, personalDetails, setPersonalDetails }) => (
   <div className={visible ? "" : "hidden"}>
@@ -65,6 +65,6 @@ const PersonalDetails = ({ visible, personalDetails, setPersonalDetails }) => (
       </div>
     </Fieldset>
   </div>
-)
+);
 
-export default PersonalDetails
+export default PersonalDetails;

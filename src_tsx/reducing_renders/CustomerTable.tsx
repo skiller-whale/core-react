@@ -1,14 +1,14 @@
-import type { Customer } from "../lib/Customers"
-import CustomerRow from "./CustomerRow"
+import type { Customer } from "../lib/Customers";
+import CustomerRow from "./CustomerRow";
 
 type Props = {
-  customers: Customer[]
-}
+  customers: Customer[];
+};
 
 const CustomerTable = ({ customers }: Props) => {
   const rows = customers.map((customer, index) => (
     <CustomerRow key={index} {...customer} />
-  ))
+  ));
 
   return (
     <table className="min-w-full">
@@ -21,7 +21,7 @@ const CustomerTable = ({ customers }: Props) => {
       </thead>
       <tbody>{rows}</tbody>
     </table>
-  )
-}
+  );
+};
 
-export default CustomerTable
+export default CustomerTable;

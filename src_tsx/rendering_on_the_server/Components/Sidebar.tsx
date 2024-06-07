@@ -1,13 +1,13 @@
-import type { Dispatch, FC, SetStateAction } from "react"
-import type { Whale } from "../data/whales"
-import WhaleCard from "./WhaleCard"
+import type { Dispatch, SetStateAction } from "react";
+import type { Whale } from "../data/whales";
+import WhaleCard from "./WhaleCard";
 
 type Props = {
-  favoriteWhale?: Whale
-  unsetFavoriteWhale: () => void
-}
+  favoriteWhale?: Whale;
+  unsetFavoriteWhale: () => void;
+};
 
-const Sidebar: FC<Props> = ({ favoriteWhale, unsetFavoriteWhale }) => {
+const Sidebar = ({ favoriteWhale, unsetFavoriteWhale }: Props) => {
   return (
     <div className="w-80">
       <h2 className="text-2xl font-bold text-center p-2 mb-2">
@@ -25,7 +25,7 @@ const Sidebar: FC<Props> = ({ favoriteWhale, unsetFavoriteWhale }) => {
         )}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Sidebar
+export default Sidebar;

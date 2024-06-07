@@ -1,20 +1,20 @@
-import { useEffect, useState } from "react"
-import { searchForWhale, whales } from "./whales"
-import Searching from "./Searching"
-import Whale from "./Whale"
+import { useEffect, useState } from "react";
+import Searching from "./Searching";
+import Whale from "./Whale";
+import { searchForWhale, whales } from "./whales";
 
-let renders = 0
+let renders = 0;
 const SearchResult = ({ query }) => {
   const [searchStatus, setSearchStatus] = useState({
     status: "not-asked",
-  })
+  });
 
   const loadResult = async () => {
-    setSearchStatus({ status: "searching" })
+    setSearchStatus({ status: "searching" });
 
-    const whale = await searchForWhale(query)
-    setSearchStatus({ status: "searched", whale })
-  }
+    const whale = await searchForWhale(query);
+    setSearchStatus({ status: "searched", whale });
+  };
 
   return (
     <div className="border border-gray-300 p-3 mb-3">
@@ -34,7 +34,7 @@ const SearchResult = ({ query }) => {
         <p className="py-2">No matching whale.</p>
       )}
     </div>
-  )
-}
+  );
+};
 
-export default SearchResult
+export default SearchResult;

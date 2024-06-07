@@ -1,14 +1,14 @@
-import { useState } from "react"
-import Button from "../components/Button"
-import WhalesSonarIcon from "./WhalesSonarIcon"
+import { useState } from "react";
+import Button from "../components/Button";
+import WhalesSonarIcon from "./WhalesSonarIcon";
 
 const Sonar = ({ whales }) => {
-  const [centerX, setCentreX] = useState(0)
-  const [centerY, setCentreY] = useState(0)
-  const [radius, setRadius] = useState(50)
+  const [centerX, setCentreX] = useState(0);
+  const [centerY, setCentreY] = useState(0);
+  const [radius, setRadius] = useState(50);
   const isVisible = (whale) =>
     (whale.location.x - centerX) ** 2 + (whale.location.y - centerY) ** 2 <=
-    radius ** 2
+    radius ** 2;
 
   return (
     <div className="flex flex-col gap-3 w-96 mx-auto my-6">
@@ -60,7 +60,7 @@ const Sonar = ({ whales }) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Sonar
+export default Sonar;

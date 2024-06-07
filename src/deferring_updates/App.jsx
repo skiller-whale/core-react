@@ -1,19 +1,21 @@
-import { useDeferredValue, useEffect, useState } from "react"
-import WhaleTable from "./WhaleTable"
-// import PromotionContainer from "./PromotionContainer"
-const App = () => {
-  const [term, setTerm] = useState("")
-  const onChange = (event) => setTerm(event.target.value)
+import { useDeferredValue, useEffect, useState } from "react";
+import PromotionContainer from "./PromotionContainer";
+import WhaleTable from "./WhaleTable";
 
-  const [whales, setWhales] = useState([])
-  const [fetching, setFetching] = useState(false)
-  const isStale = fetching
+const App = () => {
+  const [term, setTerm] = useState("");
+  const onChange = (event) => setTerm(event.target.value);
+
+  const [whales, setWhales] = useState([]);
+  const [fetching, setFetching] = useState(false);
+  const isStale = fetching;
   useEffect(() => {
-    const abortController = new AbortController()
+    const abortController = new AbortController();
 
     const fetchWhales = async () => {
       try {
-        setFetching(true)
+        setFetching(true);
+
         const response = await fetch(
           `/api/aquatic-animals/whales/?term=${term}`,
           {
@@ -24,23 +26,25 @@ const App = () => {
               "Content-Type": "application/json",
             },
           },
-        )
-        const { animals } = await response.json()
-        setWhales(animals)
-        setFetching(false)
-      } catch (error) {
-        if (error instanceof DOMException && error.name === "AbortError") return
-        setFetching(false)
-        throw error
-      }
-    }
+        );
 
-    fetchWhales()
+        const { animals } = await response.json();
+        setWhales(animals);
+        setFetching(false);
+      } catch (error) {
+        if (error instanceof DOMException && error.name === "AbortError")
+          return;
+        setFetching(false);
+        throw error;
+      }
+    };
+
+    fetchWhales();
 
     return () => {
-      abortController.abort()
-    }
-  }, [term])
+      abortController.abort();
+    };
+  }, [term]);
 
   return (
     <div className="flex flex-col gap-3 p-6 m-[-2.5rem]">
@@ -70,7 +74,7 @@ const App = () => {
         {/*</div>*/}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;

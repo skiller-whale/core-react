@@ -1,16 +1,16 @@
-import { memo } from "react"
-import doSomethingThatTakesAges from "../lib/doSomethingThatTakesAges"
+import { memo } from "react";
+import doSomethingThatTakesAges from "../lib/doSomethingThatTakesAges";
 
-const ARTIFICIALLY_SLOW = false
+const ARTIFICIALLY_SLOW = false;
 const AquaticAnimalRow = ({ animal, isBestFriend, setBestFriend }) => {
   if (ARTIFICIALLY_SLOW) {
-    doSomethingThatTakesAges(10)
+    doSomethingThatTakesAges(10);
   }
   const profilePicture = animal.isWhale
     ? animal.species.includes("Dolphin")
       ? "🐬"
       : "🐳"
-    : "🐠"
+    : "🐠";
 
   return (
     <tr className="border-b even:bg-gray-100">
@@ -30,7 +30,7 @@ const AquaticAnimalRow = ({ animal, isBestFriend, setBestFriend }) => {
         )}
       </td>
     </tr>
-  )
-}
+  );
+};
 
-export default memo(AquaticAnimalRow)
+export default memo(AquaticAnimalRow);

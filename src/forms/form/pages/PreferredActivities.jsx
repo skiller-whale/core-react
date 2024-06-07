@@ -1,7 +1,7 @@
-import Fieldset from "../../components/Fieldset"
-import Checkbox from "../../inputs/Checkbox"
-import camelCaseToString from "../../utils/camelCaseToString"
-import { preferredActivities } from "../data"
+import Fieldset from "../../components/Fieldset";
+import Checkbox from "../../inputs/Checkbox";
+import camelCaseToString from "../../utils/camelCaseToString";
+import { preferredActivities } from "../data";
 
 const PreferredActivities = ({
   visible,
@@ -21,6 +21,6 @@ const PreferredActivities = ({
       ))}
     </Fieldset>
   </div>
-)
+);
 
-export default PreferredActivities
+export default PreferredActivities;

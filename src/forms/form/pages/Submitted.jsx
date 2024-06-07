@@ -1,4 +1,4 @@
-import Button from "../../components/Button"
+import Button from "../../components/Button";
 
 const Submitted = ({ visible, formStatus }) => (
   <div className={visible ? "flex flex-col gap-12 items-center" : "hidden"}>
@@ -14,6 +14,6 @@ const Submitted = ({ visible, formStatus }) => (
     )}
     <Button type="reset">Make Another Enquiry</Button>
   </div>
-)
+);
 
-export default Submitted
+export default Submitted;

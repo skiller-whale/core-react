@@ -1,42 +1,42 @@
-import { useCallback, useEffect, useRef, useState } from "react"
+import { useCallback, useEffect, useRef, useState } from "react";
 
 const FirstTimeSeen = ({ render }) => {
-  const [firstTimeSeen, setFirstTimeSeen] = useState(false)
-  const observer = useRef(null)
+  const [firstTimeSeen, setFirstTimeSeen] = useState(false);
+  const observer = useRef(null);
   const refCallback = useCallback((target) => {
     if (!target) {
-      observer.current?.disconnect()
-      observer.current = null
+      observer.current?.disconnect();
+      observer.current = null;
 
-      return
+      return;
     }
     observer.current = new IntersectionObserver(
       ([entries]) => {
         if (entries.isIntersecting) {
-          setFirstTimeSeen(true)
-          observer.current?.disconnect()
-          observer.current = null
+          setFirstTimeSeen(true);
+          observer.current?.disconnect();
+          observer.current = null;
         }
       },
       { root: document },
-    )
-    observer.current?.observe(target)
-  }, [])
+    );
+    observer.current?.observe(target);
+  }, []);
   useEffect(() => {
     if (!firstTimeSeen) {
-      return
+      return;
     }
     const timeout = setTimeout(() => {
-      setFirstTimeSeen(false)
-    }, 1000)
+      setFirstTimeSeen(false);
+    }, 1000);
 
     return () => {
-      clearTimeout(timeout)
-    }
-  }, [firstTimeSeen])
+      clearTimeout(timeout);
+    };
+  }, [firstTimeSeen]);
 
-  return render(refCallback, false)
+  return render(refCallback, false);
   // return render(refCallback, firstTimeSeen)
-}
+};
 
-export default FirstTimeSeen
+export default FirstTimeSeen;

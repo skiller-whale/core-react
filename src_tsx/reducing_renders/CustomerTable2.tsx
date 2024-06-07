@@ -1,9 +1,9 @@
-import type { Customer } from "../lib/Customers"
-import CustomerRow from "./CustomerRow2"
+import type { Customer } from "../lib/Customers";
+import CustomerRow from "./CustomerRow2";
 
 type Props = {
-  customers: Customer[]
-}
+  customers: Customer[];
+};
 
 const CustomerTable = ({ customers }: Props) => {
   const rows = customers.map((customer) => {
@@ -12,10 +12,10 @@ const CustomerTable = ({ customers }: Props) => {
       lastName: customer.name.last,
       email: customer.email,
       amountSpent: customer.amountSpent,
-    }
+    };
 
-    return <CustomerRow key={customer.email} customer={customerRowProp} />
-  })
+    return <CustomerRow key={customer.email} customer={customerRowProp} />;
+  });
 
   return (
     <table className="min-w-full">
@@ -28,7 +28,7 @@ const CustomerTable = ({ customers }: Props) => {
       </thead>
       <tbody>{rows}</tbody>
     </table>
-  )
-}
+  );
+};
 
-export default CustomerTable
+export default CustomerTable;

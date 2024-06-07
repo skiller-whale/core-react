@@ -1,5 +1,5 @@
-import { faker } from "@faker-js/faker"
-import Link from "../components/Link"
+import { faker } from "@faker-js/faker";
+import Link from "../components/Link";
 
 const Whalepedia = ({ cetaceans, cetacean }) => {
   return (
@@ -29,7 +29,7 @@ const Whalepedia = ({ cetaceans, cetacean }) => {
         )}
       </div>
     </main>
-  )
-}
+  );
+};
 
-export default Whalepedia
+export default Whalepedia;

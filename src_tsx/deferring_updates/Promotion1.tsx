@@ -1,6 +1,4 @@
-import type { FC } from "react"
-
-const Promotion1: FC = () => (
+const Promotion1 = () => (
   <div className="flex flex-col h-full w-full text-l">
     <div className="text-xl font-bold">SQL: Ess-queue-ell or sequel?</div>
     <div className="my-auto flex flex-col justify-evenly grow">
@@ -25,6 +23,6 @@ const Promotion1: FC = () => (
       Vote Now!
     </button>
   </div>
-)
+);
 
-export default Promotion1
+export default Promotion1;

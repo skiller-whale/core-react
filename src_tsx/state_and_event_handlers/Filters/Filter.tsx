@@ -1,25 +1,25 @@
-import type { FC, PropsWithChildren } from "react"
-import GreenFilter from "./GreenFilter"
-import BlueFilter from "./BlueFilter"
-import RedFilter from "./RedFilter"
+import type { PropsWithChildren } from "react";
+import BlueFilter from "./BlueFilter";
+import GreenFilter from "./GreenFilter";
+import RedFilter from "./RedFilter";
 
 type FilterProps = {
-  color: Color
-}
+  color: Color;
+};
 
-export type Color = "green" | "blue" | "red"
+export type Color = "green" | "blue" | "red";
 
-const Filter: FC<PropsWithChildren<FilterProps>> = ({ color, children }) => {
-  let FilterComponent
+const Filter = ({ color, children }: PropsWithChildren<FilterProps>) => {
+  let FilterComponent;
   if (color === "green") {
-    FilterComponent = GreenFilter
+    FilterComponent = GreenFilter;
   } else if (color === "blue") {
-    FilterComponent = BlueFilter
+    FilterComponent = BlueFilter;
   } else {
-    FilterComponent = RedFilter
+    FilterComponent = RedFilter;
   }
 
-  return <FilterComponent>{children}</FilterComponent>
-}
+  return <FilterComponent>{children}</FilterComponent>;
+};
 
-export default Filter
+export default Filter;

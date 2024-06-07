@@ -1,18 +1,18 @@
-import GreenFilter from "./GreenFilter"
-import BlueFilter from "./BlueFilter"
-import RedFilter from "./RedFilter"
+import BlueFilter from "./BlueFilter";
+import GreenFilter from "./GreenFilter";
+import RedFilter from "./RedFilter";
 
 const Filter = ({ color, children }) => {
-  let FilterComponent
+  let FilterComponent;
   if (color === "green") {
-    FilterComponent = GreenFilter
+    FilterComponent = GreenFilter;
   } else if (color === "blue") {
-    FilterComponent = BlueFilter
+    FilterComponent = BlueFilter;
   } else {
-    FilterComponent = RedFilter
+    FilterComponent = RedFilter;
   }
 
-  return <FilterComponent>{children}</FilterComponent>
-}
+  return <FilterComponent>{children}</FilterComponent>;
+};
 
-export default Filter
+export default Filter;

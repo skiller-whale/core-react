@@ -5,6 +5,6 @@ const TextArea = ({ label, id, ...rest }) => (
     </label>
     <textarea id={id} {...rest}></textarea>
   </div>
-)
+);
 
-export default TextArea
+export default TextArea;

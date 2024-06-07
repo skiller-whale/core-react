@@ -1,7 +1,6 @@
-import type { FC } from "react"
-import type { WhaleProps } from "./whales"
+import type { WhaleProps } from "./whales";
 
-const Whale: FC<WhaleProps> = ({ name, weight, about }) => {
+const Whale = ({ name, weight, about }: WhaleProps) => {
   return (
     <div className="flex justify-between border border-gray-300 p-3">
       <div className="prose">
@@ -14,7 +13,7 @@ const Whale: FC<WhaleProps> = ({ name, weight, about }) => {
         🐋
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Whale
+export default Whale;

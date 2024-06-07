@@ -1,13 +1,13 @@
-import { type FC, useEffect, useState } from "react"
-import type { Whale } from "../lib/apiTypes"
-import JsonFetcher from "./JsonFetcher"
+import { useEffect, useState } from "react";
+import type { Whale } from "../lib/apiTypes";
+import JsonFetcher from "./JsonFetcher";
 
 type Props = {
-  term: string
-}
+  term: string;
+};
 
-const WhaleTable: FC<Props> = ({ term }) => {
-  const [whales, setWhales] = useState<Whale[]>([])
+const WhaleTable = ({ term }: Props) => {
+  const [whales, setWhales] = useState<Whale[]>([]);
 
   const fetchWhales = async () => {
     const response = await fetch(`/api/aquatic-animals/whales/?term=${term}`, {
@@ -16,19 +16,19 @@ const WhaleTable: FC<Props> = ({ term }) => {
         Accept: "application/json",
         "Content-Type": "application/json",
       },
-    })
+    });
 
-    const { animals } = await response.json()
-    setWhales(animals)
-  }
+    const { animals } = await response.json();
+    setWhales(animals);
+  };
 
   useEffect(() => {
-    setWhales([])
-    fetchWhales()
-  }, [term])
+    setWhales([]);
+    fetchWhales();
+  }, [term]);
 
   const rows = whales.map((whale) => {
-    const profilePicture = whale.species.includes("Dolphin") ? "🐬" : "🐳"
+    const profilePicture = whale.species.includes("Dolphin") ? "🐬" : "🐳";
 
     return (
       <tr className="border-b even:bg-gray-100" key={whale.id}>
@@ -39,8 +39,8 @@ const WhaleTable: FC<Props> = ({ term }) => {
           {whale.hasBaleen ? "❌" : "✅"}
         </td>
       </tr>
-    )
-  })
+    );
+  });
 
   return (
     <div className="basis-6/12">
@@ -59,7 +59,7 @@ const WhaleTable: FC<Props> = ({ term }) => {
         <tbody>{rows}</tbody>
       </table>
     </div>
-  )
-}
+  );
+};
 
-export default WhaleTable
+export default WhaleTable;

@@ -8,4 +8,4 @@ export default [
   "Short-Beaked Common Dolphin",
   "Bottlenose Dolphin",
   "Indo-Pacific Bottlenose Dolphin",
-]
+];

@@ -11,7 +11,7 @@ const WhaleFact = ({ name, weight, about }) => {
         🐋
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default WhaleFact
+export default WhaleFact;

@@ -1,6 +1,4 @@
-import type { FC } from "react"
-
-const SmallPrint: FC = () => (
+const SmallPrint = () => (
   <>
     Interdum et malesuada fames ac ante ipsum primis in faucibus. Proin ut nunc
     risus. Curabitur ut dictum mauris, eget varius quam. Aliquam pharetra in
@@ -168,6 +166,6 @@ const SmallPrint: FC = () => (
     nibh. Class aptent taciti sociosqu ad litora torquent per conubia nostra,
     per inceptos himenaeos.
   </>
-)
+);
 
-export default SmallPrint
+export default SmallPrint;

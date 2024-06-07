@@ -1,3 +1,3 @@
-const Blocked = () => <span>Will error</span>
+const Blocked = () => <span>Will error</span>;
 
-export default Blocked
+export default Blocked;

@@ -18,12 +18,10 @@ services:
     tty: true
     stdin_open: true
   dev-server:
-    container_name: skiller-whale-core-react-dev # needed for running in Dev Containers in VSCode
     build:
       context: .
       dockerfile: "Dockerfile"
     environment:
-      WINDIR: $WINDIR # used to determine whether the host is Windows or not
       PREVIEW_HOST: 0.0.0.0 # used to determine whether learner is using docker or not
     ports:
       - "3500:3500" # used by learners to see the exercises in the browser

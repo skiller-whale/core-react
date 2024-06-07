@@ -1,17 +1,17 @@
-import { useRef, useState } from "react"
-import RenameWhales from "./RenameWhales"
-import ScrollableContainer from "./ScrollableContainer"
-import Whale from "./Whale"
-import WhaleInput from "./WhaleInput"
+import { useRef, useState } from "react";
+import RenameWhales from "./RenameWhales";
+import ScrollableContainer from "./ScrollableContainer";
+import Whale from "./Whale";
+import WhaleInput from "./WhaleInput";
 
 const App = ({ whales: initialWhales }) => {
-  const [whales, setWhales] = useState(initialWhales)
+  const [whales, setWhales] = useState(initialWhales);
   const setWhaleName = (id, name) => {
-    const index = whales.findIndex((whale) => whale.id === id)
-    const newWhale = { ...whales[index], name }
-    const newWhales = whales.with(index, newWhale)
-    setWhales(newWhales)
-  }
+    const index = whales.findIndex((whale) => whale.id === id);
+    const newWhale = { ...whales[index], name };
+    const newWhales = whales.with(index, newWhale);
+    setWhales(newWhales);
+  };
 
   return (
     <div className="flex flex-col gap-6">
@@ -31,7 +31,7 @@ const App = ({ whales: initialWhales }) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;

@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState } from "react";
 
 const useFetchJson = (url) => {
-  const [data, setData] = useState([])
+  const [data, setData] = useState([]);
 
   // TODO: fetch data from API
-  return data
-}
+  return data;
+};
 
-export default useFetchJson
+export default useFetchJson;

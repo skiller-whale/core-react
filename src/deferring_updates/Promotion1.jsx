@@ -23,6 +23,6 @@ const Promotion1 = () => (
       Vote Now!
     </button>
   </div>
-)
+);
 
-export default Promotion1
+export default Promotion1;

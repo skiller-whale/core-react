@@ -1,25 +1,25 @@
-import { memo } from "react"
-import doSomethingThatTakesAges from "../lib/doSomethingThatTakesAges"
-import type { AquaticAnimal } from "./whales"
+import { memo } from "react";
+import doSomethingThatTakesAges from "../lib/doSomethingThatTakesAges";
+import type { AquaticAnimal } from "./whales";
 
-const ARTIFICIALLY_SLOW = false
+const ARTIFICIALLY_SLOW = false;
 
 type Props = {
-  animal: AquaticAnimal
-  isBestFriend: boolean
-  setBestFriend: (animal: AquaticAnimal) => void
-}
+  animal: AquaticAnimal;
+  isBestFriend: boolean;
+  setBestFriend: (animal: AquaticAnimal) => void;
+};
 
 const AquaticAnimalRow = ({ animal, isBestFriend, setBestFriend }: Props) => {
   if (ARTIFICIALLY_SLOW) {
-    doSomethingThatTakesAges(10)
+    doSomethingThatTakesAges(10);
   }
 
   const profilePicture = animal.isWhale
     ? animal.species.includes("Dolphin")
       ? "🐬"
       : "🐳"
-    : "🐠"
+    : "🐠";
 
   return (
     <tr className="border-b even:bg-gray-100">
@@ -39,7 +39,7 @@ const AquaticAnimalRow = ({ animal, isBestFriend, setBestFriend }: Props) => {
         )}
       </td>
     </tr>
-  )
-}
+  );
+};
 
-export default memo(AquaticAnimalRow)
+export default memo(AquaticAnimalRow);

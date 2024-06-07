@@ -20,4 +20,4 @@ export const initialWhales = [
       "The skiller whale, also known as Ada, is a species of sub-Arctic programmer. Known for its love of learning, the skiller whale is chiefly recognisable by its penchant for bad maritime puns.",
     weight: 3000,
   },
-]
+];

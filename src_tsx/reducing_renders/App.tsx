@@ -1,18 +1,18 @@
-import { useState } from "react"
+import { useState } from "react";
 import {
   addCustomer,
   deleteCustomer,
   generateCustomers,
-} from "../lib/Customers"
-import NewCustomerForm from "./NewCustomerForm"
-import CustomerTable from "./CustomerTable"
+} from "../lib/Customers";
+import CustomerTable from "./CustomerTable";
+import NewCustomerForm from "./NewCustomerForm";
 
 const App = () => {
-  const initialCustomers = 200
+  const initialCustomers = 200;
 
   const [customers, setCustomers] = useState(
     generateCustomers(initialCustomers),
-  )
+  );
 
   const addNewCustomer = (
     newFirstName: string,
@@ -28,12 +28,12 @@ const App = () => {
         newEmail,
         newAmountSpent,
       ),
-    )
-  }
+    );
+  };
 
   const deleteLastCustomer = (email: string) => {
-    setCustomers((customers) => deleteCustomer(customers, email))
-  }
+    setCustomers((customers) => deleteCustomer(customers, email));
+  };
 
   return (
     <div className="flex flex-col gap-3">
@@ -50,7 +50,7 @@ const App = () => {
         <CustomerTable customers={customers} />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;

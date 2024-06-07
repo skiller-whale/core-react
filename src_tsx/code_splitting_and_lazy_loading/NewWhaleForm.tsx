@@ -5,39 +5,39 @@ import {
   Suspense,
   lazy,
   useState,
-} from "react"
-import { ErrorBoundary } from "react-error-boundary"
-import type { WhaleProps } from "./whales"
-import Mascot from "./Mascot"
-import SmallPrint from "./SmallPrint"
+} from "react";
+import { ErrorBoundary } from "react-error-boundary";
+import Mascot from "./Mascot";
+import SmallPrint from "./SmallPrint";
+import type { WhaleProps } from "./whales";
 
 type Props = {
-  addWhale: (whale: WhaleProps) => void
-}
+  addWhale: (whale: WhaleProps) => void;
+};
 
 const NewWhaleForm: FC<Props> = ({ addWhale }) => {
-  const [name, setName] = useState("")
-  const [weight, setWeight] = useState(0)
-  const [about, setAbout] = useState("")
-  const [acceptedTC, setAcceptedTC] = useState(false)
-  const [openedTC, setOpenedTC] = useState(false)
+  const [name, setName] = useState("");
+  const [weight, setWeight] = useState(0);
+  const [about, setAbout] = useState("");
+  const [acceptedTC, setAcceptedTC] = useState(false);
+  const [openedTC, setOpenedTC] = useState(false);
 
   const changeName: ChangeEventHandler<HTMLInputElement> = (event) => {
-    setName(event.currentTarget.value)
-  }
+    setName(event.currentTarget.value);
+  };
 
   const changeWeight: ChangeEventHandler<HTMLInputElement> = (event) => {
-    setWeight(parseInt(event.currentTarget.value))
-  }
+    setWeight(parseInt(event.currentTarget.value));
+  };
 
   const changeAbout: ChangeEventHandler<HTMLTextAreaElement> = (event) => {
-    setAbout(event.currentTarget.value)
-  }
+    setAbout(event.currentTarget.value);
+  };
 
   const onClickDetails = (event: MouseEvent<HTMLElement>) => {
-    event.preventDefault()
-    setOpenedTC((prevState) => !prevState)
-  }
+    event.preventDefault();
+    setOpenedTC((prevState) => !prevState);
+  };
 
   const createNewWhale = () => {
     addWhale({
@@ -45,11 +45,11 @@ const NewWhaleForm: FC<Props> = ({ addWhale }) => {
       name,
       weight,
       about,
-    })
-    setName("")
-    setWeight(0)
-    setAbout("")
-  }
+    });
+    setName("");
+    setWeight(0);
+    setAbout("");
+  };
 
   return (
     <div className="flex flex-col gap-3 border border-gray-300 p-3 bg-gray-100">
@@ -105,7 +105,7 @@ const NewWhaleForm: FC<Props> = ({ addWhale }) => {
         </div>
       </details>
     </div>
-  )
-}
+  );
+};
 
-export default NewWhaleForm
+export default NewWhaleForm;

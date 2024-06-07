@@ -1,21 +1,21 @@
-import { useState } from "react"
-import { ErrorBoundary } from "react-error-boundary"
-import type { Whale } from "../lib/apiTypes"
-import ErrorDisplay from "./components/ErrorDisplay"
-import WhalesSonar from "./components/WhalesSonar"
-import WhalesTable from "./components/WhalesTable"
+import { useState } from "react";
+import { ErrorBoundary } from "react-error-boundary";
+import type { Whale } from "../lib/apiTypes";
+import ErrorDisplay from "./components/ErrorDisplay";
+import WhalesSonar from "./components/WhalesSonar";
+import WhalesTable from "./components/WhalesTable";
 
 type Props = {
-  loading: boolean
-  whales: Whale[]
-}
+  loading: boolean;
+  whales: Whale[];
+};
 
-type Tab = "table" | "sonar"
+type Tab = "table" | "sonar";
 
 const Whales = ({ loading, whales }: Props) => {
-  const [tab, setTab] = useState<Tab>("table")
-  const showTable = () => setTab("table")
-  const showSonar = () => setTab("sonar")
+  const [tab, setTab] = useState<Tab>("table");
+  const showTable = () => setTab("table");
+  const showSonar = () => setTab("sonar");
 
   return (
     <div className="shadow">
@@ -45,7 +45,7 @@ const Whales = ({ loading, whales }: Props) => {
         )}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Whales
+export default Whales;

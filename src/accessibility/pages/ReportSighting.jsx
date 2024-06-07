@@ -1,18 +1,18 @@
-import { useRef, useState } from "react"
+import { useRef, useState } from "react";
 
 const ReportSighting = ({ cetaceans }) => {
-  const alertRef = useRef(null)
-  const [submitted, setSubmitted] = useState(false)
+  const alertRef = useRef(null);
+  const [submitted, setSubmitted] = useState(false);
   const submitHandler = (event) => {
-    event.preventDefault()
-    setSubmitted(true)
-  }
+    event.preventDefault();
+    setSubmitted(true);
+  };
 
-  const [error, setError] = useState("")
+  const [error, setError] = useState("");
   const validate = (event) => {
-    const name = event.currentTarget.value
-    setError(name === "" ? "Name is required" : "")
-  }
+    const name = event.currentTarget.value;
+    setError(name === "" ? "Name is required" : "");
+  };
 
   return (
     <>
@@ -90,7 +90,7 @@ const ReportSighting = ({ cetaceans }) => {
         </form>
       </main>
     </>
-  )
-}
+  );
+};
 
-export default ReportSighting
+export default ReportSighting;

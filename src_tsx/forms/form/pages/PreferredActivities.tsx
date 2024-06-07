@@ -1,23 +1,23 @@
-import type { ChangeEventHandler } from "react"
-import Fieldset from "../../components/Fieldset"
-import Checkbox from "../../inputs/Checkbox"
-import camelCaseToString from "../../utils/camelCaseToString"
+import type { ChangeEventHandler } from "react";
+import Fieldset from "../../components/Fieldset";
+import Checkbox from "../../inputs/Checkbox";
+import camelCaseToString from "../../utils/camelCaseToString";
 import {
   type PreferredActivitiesData,
   type PreferredActivity,
   preferredActivities,
-} from "../data"
+} from "../data";
 
 type Props = {
-  visible: boolean
-  preferredActivities: PreferredActivitiesData
+  visible: boolean;
+  preferredActivities: PreferredActivitiesData;
   setPreferredActivities: Record<
     PreferredActivity,
     ChangeEventHandler<
       HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
     >
-  >
-}
+  >;
+};
 
 const PreferredActivities = ({
   visible,
@@ -39,6 +39,6 @@ const PreferredActivities = ({
       ))}
     </Fieldset>
   </div>
-)
+);
 
-export default PreferredActivities
+export default PreferredActivities;

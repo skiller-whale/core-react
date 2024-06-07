@@ -1,5 +1,3 @@
-import type { FC } from "react"
+const Blocked = () => <span>Will error</span>;
 
-const Blocked: FC = () => <span>Will error</span>
-
-export default Blocked
+export default Blocked;

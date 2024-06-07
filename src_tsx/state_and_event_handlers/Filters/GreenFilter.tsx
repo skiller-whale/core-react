@@ -1,6 +1,6 @@
-import type { FC, PropsWithChildren } from "react"
+import type { PropsWithChildren } from "react";
 
-const GreenFilter: FC<PropsWithChildren> = ({ children }) => (
+const GreenFilter = ({ children }: PropsWithChildren) => (
   <div
     style={{
       filter:
@@ -9,6 +9,6 @@ const GreenFilter: FC<PropsWithChildren> = ({ children }) => (
   >
     {children}
   </div>
-)
+);
 
-export default GreenFilter
+export default GreenFilter;

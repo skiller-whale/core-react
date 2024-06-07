@@ -1,9 +1,9 @@
-import type { FallbackProps } from "react-error-boundary"
-import { FaXmark } from "react-icons/fa6"
+import type { FallbackProps } from "react-error-boundary";
+import { FaXmark } from "react-icons/fa6";
 
 type Props = Partial<FallbackProps> & {
-  component: string
-}
+  component: string;
+};
 
 const ErrorDisplay = ({ component, error }: Props) => (
   <div className="shadow">
@@ -18,6 +18,6 @@ const ErrorDisplay = ({ component, error }: Props) => (
       <p className="p-3 border bg-gray-100 monospace">{error.message}</p>
     </div>
   </div>
-)
+);
 
-export default ErrorDisplay
+export default ErrorDisplay;

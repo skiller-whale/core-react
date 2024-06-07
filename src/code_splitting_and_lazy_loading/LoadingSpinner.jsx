@@ -1,7 +1,7 @@
 const LoadingSpinner = () => {
   const sunset = (
     <div className="flex absolute -bottom-10 mx-auto w-24 h-24 rounded-t-full bg-orange-500"></div>
-  )
+  );
 
   const dolphins = (
     <div className="flex relative bottom-3 right-6">
@@ -12,7 +12,7 @@ const LoadingSpinner = () => {
         <span className="-scale-x-100">🐬</span>
       </div>
     </div>
-  )
+  );
 
   const waves = (
     <span className="absolute sepia-[.5] -bottom-3">
@@ -29,7 +29,7 @@ const LoadingSpinner = () => {
         🌊
       </span>
     </span>
-  )
+  );
 
   return (
     <div className="relative flex flex-1 flex-col justify-center items-center pt-8 text-5xl overflow-hidden my-8">
@@ -37,7 +37,7 @@ const LoadingSpinner = () => {
       {dolphins}
       {waves}
     </div>
-  )
-}
+  );
+};
 
-export default LoadingSpinner
+export default LoadingSpinner;

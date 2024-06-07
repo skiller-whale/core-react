@@ -1,11 +1,11 @@
-import { useState } from "react"
-import FishTable from "./FishTable"
-import WhaleTable from "./WhaleTable"
-import DebouncedInput from "./DebouncedInput"
-import WhaleInput from "./WhaleInput"
+import { useState } from "react";
+import DebouncedInput from "./DebouncedInput";
+import FishTable from "./FishTable";
+import WhaleInput from "./WhaleInput";
+import WhaleTable from "./WhaleTable";
 
 const App = () => {
-  const [term, setTerm] = useState("")
+  const [term, setTerm] = useState("");
 
   return (
     <div className="flex flex-col gap-3 p-6 m-[-2.5rem]">
@@ -26,7 +26,7 @@ const App = () => {
         <FishTable term={term} />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;

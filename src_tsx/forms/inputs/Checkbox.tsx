@@ -1,8 +1,8 @@
-import type { InputHTMLAttributes } from "react"
+import type { InputHTMLAttributes } from "react";
 
 type Props = InputHTMLAttributes<HTMLInputElement> & {
-  label: string
-}
+  label: string;
+};
 
 const Checkbox = ({ label, id, ...rest }: Props) => (
   <label
@@ -12,6 +12,6 @@ const Checkbox = ({ label, id, ...rest }: Props) => (
     <input id={id} type="checkbox" className="flex-none" {...rest} />
     {label}
   </label>
-)
+);
 
-export default Checkbox
+export default Checkbox;

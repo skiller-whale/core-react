@@ -14,6 +14,6 @@ const Header = () => (
       of excitement begin!
     </p>
   </div>
-)
+);
 
-export default Header
+export default Header;

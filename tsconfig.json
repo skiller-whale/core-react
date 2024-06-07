@@ -1,5 +1,10 @@
 {
-  "include": ["src_tsx/**/*.ts", "src_tsx/**/*.tsx"],
+  "include": [
+    "server/**/*.ts",
+    "server/**/*.tsx",
+    "src_tsx/**/*.ts",
+    "src_tsx/**/*.tsx"
+  ],
   "compilerOptions": {
     "outDir": "src/",
     "allowSyntheticDefaultImports": true,

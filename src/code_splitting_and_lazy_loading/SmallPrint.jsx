@@ -166,6 +166,6 @@ const SmallPrint = () => (
     nibh. Class aptent taciti sociosqu ad litora torquent per conubia nostra,
     per inceptos himenaeos.
   </>
-)
+);
 
-export default SmallPrint
+export default SmallPrint;

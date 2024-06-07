@@ -1,22 +1,22 @@
-import { faker } from "@faker-js/faker"
+import { faker } from "@faker-js/faker";
 
 export type Customer = {
   name: {
-    first: string
-    last: string
-  }
-  email: string
-  amountSpent: string
-}
+    first: string;
+    last: string;
+  };
+  email: string;
+  amountSpent: string;
+};
 
 export const generateCustomers = (amount: number): Customer[] => {
-  const customers = []
+  const customers = [];
   for (let i = 0; i < amount; i += 1) {
-    customers.push(generateCustomer())
+    customers.push(generateCustomer());
   }
 
-  return sortCustomers(customers)
-}
+  return sortCustomers(customers);
+};
 
 export const addCustomer = (
   customers: Customer[],
@@ -29,21 +29,21 @@ export const addCustomer = (
     name: { first, last },
     email,
     amountSpent,
-  })
+  });
 
-  return sortCustomers(newCustomers)
-}
+  return sortCustomers(newCustomers);
+};
 
 export const deleteCustomer = (
   customers: Customer[],
   email: string,
 ): Customer[] => {
-  const index = customers.findIndex((customer) => customer.email === email)
+  const index = customers.findIndex((customer) => customer.email === email);
 
   return index > -1
     ? [...customers.slice(0, index), ...customers.slice(index + 1)]
-    : customers
-}
+    : customers;
+};
 
 const generateCustomer = (): Customer => ({
   name: {
@@ -52,13 +52,13 @@ const generateCustomer = (): Customer => ({
   },
   email: faker.internet.email(),
   amountSpent: faker.finance.amount(),
-})
+});
 
 const sortCustomers = (customers: Customer[]): Customer[] =>
   [...customers].sort((p1, p2) => {
     if (p1.name.last === p2.name.last) {
-      return p1.name.first.localeCompare(p2.name.first)
+      return p1.name.first.localeCompare(p2.name.first);
     }
 
-    return p1.name.last.localeCompare(p2.name.last)
-  })
+    return p1.name.last.localeCompare(p2.name.last);
+  });

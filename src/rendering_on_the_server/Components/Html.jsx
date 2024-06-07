@@ -29,7 +29,7 @@ const Html = ({ children }) => {
         </div>
       </body>
     </html>
-  )
-}
+  );
+};
 
-export default Html
+export default Html;

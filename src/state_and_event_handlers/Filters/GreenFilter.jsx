@@ -7,6 +7,6 @@ const GreenFilter = ({ children }) => (
   >
     {children}
   </div>
-)
+);
 
-export default GreenFilter
+export default GreenFilter;

@@ -1,24 +1,24 @@
-import usePrefersReducedMotion from "../hooks/usePrefersReducedMotion"
-import useBoundedValue from "../hooks/useBoundedValue"
-import Button from "./Button"
-import WhalesSonarIcon from "./WhalesSonarIcon"
+import useBoundedValue from "../hooks/useBoundedValue";
+import usePrefersReducedMotion from "../hooks/usePrefersReducedMotion";
+import Button from "./Button";
+import WhalesSonarIcon from "./WhalesSonarIcon";
 
 const Sonar = ({ whales }) => {
-  const prefersReducedMotion = usePrefersReducedMotion()
+  const prefersReducedMotion = usePrefersReducedMotion();
 
-  const [centerX, moveLeft, moveRight] = useBoundedValue(0)
-  const [centerY, moveUp, moveDown] = useBoundedValue(0)
-  const [radius, zoomIn, zoomOut] = useBoundedValue(50, 20, 100)
+  const [centerX, moveLeft, moveRight] = useBoundedValue(0);
+  const [centerY, moveUp, moveDown] = useBoundedValue(0);
+  const [radius, zoomIn, zoomOut] = useBoundedValue(50, 20, 100);
 
   const visibleWhales = whales.filter(
     (whale) =>
       (whale.location.x - centerX) ** 2 + (whale.location.y - centerY) ** 2 <=
       radius ** 2,
-  )
+  );
 
   const handleKeyPress = (event) => {
     // complete this function
-  }
+  };
 
   return (
     <div className="flex flex-col gap-3 w-96 mx-auto my-6">
@@ -73,7 +73,7 @@ const Sonar = ({ whales }) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Sonar
+export default Sonar;

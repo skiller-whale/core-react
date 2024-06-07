@@ -7,6 +7,6 @@ const BlueFilter = ({ children }) => (
   >
     {children}
   </span>
-)
+);
 
-export default BlueFilter
+export default BlueFilter;

@@ -31,6 +31,6 @@ const Mascot = () => (
       alt="Skillerwhale"
     />
   </div>
-)
+);
 
-export default Mascot
+export default Mascot;

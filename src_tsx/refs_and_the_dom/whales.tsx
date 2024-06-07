@@ -1,9 +1,9 @@
 export type WhaleProps = {
-  id: string
-  name: string
-  about: string
-  weight: number
-}
+  id: string;
+  name: string;
+  about: string;
+  weight: number;
+};
 
 export const whales: WhaleProps[] = [
   {
@@ -41,4 +41,4 @@ export const whales: WhaleProps[] = [
       "The orca, or killer whale, is a species of toothed whale, recognizable by its black-and-white patterned body.",
     weight: 3000,
   },
-]
+];

@@ -1,30 +1,30 @@
-import { useState } from "react"
-import Button from "./Button"
+import { useState } from "react";
+import Button from "./Button";
 
 const NewCustomerForm = ({ addCustomer, deleteCustomer }) => {
-  const [newFirstName, setNewFirstName] = useState("")
-  const [newLastName, setNewLastName] = useState("")
-  const [newEmail, setNewEmail] = useState("")
-  const [newAmountSpent, setNewAmountSpent] = useState("")
-  const [previousNewEmails, setPreviousNewEmails] = useState([])
+  const [newFirstName, setNewFirstName] = useState("");
+  const [newLastName, setNewLastName] = useState("");
+  const [newEmail, setNewEmail] = useState("");
+  const [newAmountSpent, setNewAmountSpent] = useState("");
+  const [previousNewEmails, setPreviousNewEmails] = useState([]);
   const createCustomer = () => {
     if (newFirstName && newLastName) {
-      addCustomer(newFirstName, newLastName, newEmail, newAmountSpent)
+      addCustomer(newFirstName, newLastName, newEmail, newAmountSpent);
       setPreviousNewEmails((previousNewEmails) => [
         ...previousNewEmails,
         newEmail,
-      ])
-      setNewFirstName("")
-      setNewLastName("")
-      setNewEmail("")
-      setNewAmountSpent("")
+      ]);
+      setNewFirstName("");
+      setNewLastName("");
+      setNewEmail("");
+      setNewAmountSpent("");
     }
-  }
+  };
 
   const undo = () => {
-    deleteCustomer(previousNewEmails[previousNewEmails.length - 1])
-    setPreviousNewEmails((previousNewEmails) => previousNewEmails.slice(0, -1))
-  }
+    deleteCustomer(previousNewEmails[previousNewEmails.length - 1]);
+    setPreviousNewEmails((previousNewEmails) => previousNewEmails.slice(0, -1));
+  };
 
   return (
     <form className="flex flex-col gap-2">
@@ -63,7 +63,7 @@ const NewCustomerForm = ({ addCustomer, deleteCustomer }) => {
         </div>
       )}
     </form>
-  )
-}
+  );
+};
 
-export default NewCustomerForm
+export default NewCustomerForm;

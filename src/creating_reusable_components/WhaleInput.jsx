@@ -13,6 +13,6 @@ const WhaleInput = (props) => (
       </div>
     </div>
   </div>
-)
+);
 
-export default WhaleInput
+export default WhaleInput;

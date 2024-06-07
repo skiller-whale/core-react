@@ -1,32 +1,32 @@
-import { forwardRef, useImperativeHandle, useRef, useState } from "react"
+import { forwardRef, useImperativeHandle, useRef, useState } from "react";
 
 const Dropdown = forwardRef(({ name, children }, dropdownRef) => {
-  const [expanded, setExpanded] = useState(false)
+  const [expanded, setExpanded] = useState(false);
 
-  const menuRef = useRef(null)
+  const menuRef = useRef(null);
   useImperativeHandle(dropdownRef, () => ({
     open: () => setExpanded(true),
     close: () => setExpanded(false),
-  }))
+  }));
 
   const toggleMenu = (event) => {
-    event.stopPropagation()
-    setExpanded((expanded) => !expanded)
-  }
+    event.stopPropagation();
+    setExpanded((expanded) => !expanded);
+  };
 
   const enterMenu = (event) => {
-    const firstChild = menuRef.current?.firstElementChild
+    const firstChild = menuRef.current?.firstElementChild;
     if (event.key === "ArrowDown" && firstChild instanceof HTMLElement) {
-      event.stopPropagation()
-      firstChild.focus()
+      event.stopPropagation();
+      firstChild.focus();
     }
-  }
+  };
 
   const moveUpOrDown = (event) => {
-    const previous = document.activeElement?.previousElementSibling
-    const next = document.activeElement?.nextElementSibling
+    const previous = document.activeElement?.previousElementSibling;
+    const next = document.activeElement?.nextElementSibling;
     // complete this function
-  }
+  };
 
   return (
     <div className="relative flex flex-1" onKeyUp={moveUpOrDown}>
@@ -47,7 +47,7 @@ const Dropdown = forwardRef(({ name, children }, dropdownRef) => {
         </nav>
       )}
     </div>
-  )
-})
+  );
+});
 
-export default Dropdown
+export default Dropdown;

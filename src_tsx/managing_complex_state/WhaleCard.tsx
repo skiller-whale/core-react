@@ -1,11 +1,11 @@
-import type { Whale } from "../lib/apiTypes"
-import { useSetWhalesContext } from "./state/WhalesState"
+import type { Whale } from "../lib/apiTypes";
+import { useSetWhalesContext } from "./state/WhalesState";
 
 type Props = {
-  whale: Whale
-  setX: (x: number) => void
-  setY: (y: number) => void
-}
+  whale: Whale;
+  setX: (x: number) => void;
+  setY: (y: number) => void;
+};
 
 const WhaleCard = ({ whale, setX, setY }: Props) => {
   return (
@@ -37,7 +37,7 @@ const WhaleCard = ({ whale, setX, setY }: Props) => {
         </label>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default WhaleCard
+export default WhaleCard;

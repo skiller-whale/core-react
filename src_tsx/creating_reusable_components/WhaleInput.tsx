@@ -2,12 +2,12 @@ import type {
   DetailedHTMLProps,
   InputHTMLAttributes,
   PropsWithChildren,
-} from "react"
+} from "react";
 
 type Props = DetailedHTMLProps<
   InputHTMLAttributes<HTMLInputElement>,
   HTMLInputElement
->
+>;
 
 const WhaleInput = (props: Props) => (
   <div className="relative pl-20 pb-12">
@@ -24,6 +24,6 @@ const WhaleInput = (props: Props) => (
       </div>
     </div>
   </div>
-)
+);
 
-export default WhaleInput
+export default WhaleInput;

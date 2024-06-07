@@ -1,4 +1,4 @@
-import { forwardRef } from "react"
+import { forwardRef } from "react";
 
 const WhaleInput = ({ type, value, onInput }) => (
   <div className="relative pl-20 pb-12">
@@ -13,6 +13,6 @@ const WhaleInput = ({ type, value, onInput }) => (
       <input className="h-10" type={type} value={value} onInput={onInput} />
     </div>
   </div>
-)
+);
 
-export default WhaleInput
+export default WhaleInput;

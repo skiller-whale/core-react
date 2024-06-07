@@ -1,6 +1,6 @@
-import { useEffect, useRef, useState } from "react"
-import doSomethingThatTakesAges from "../../lib/doSomethingThatTakesAges"
-import Tooltip from "./Tooltip"
+import { useEffect, useRef, useState } from "react";
+import doSomethingThatTakesAges from "../../lib/doSomethingThatTakesAges";
+import Tooltip from "./Tooltip";
 
 const WhaleCard = ({
   name,
@@ -10,25 +10,27 @@ const WhaleCard = ({
   setFavorite,
   openTooltipInitially = false,
 }) => {
-  const profilePicture = species.includes("Dolphin") ? "🐬" : "🐋"
-  const [hover, setHover] = useState(null)
-  const showFavorite = hover ?? isFavorite
-  const ref = useRef(null)
-  const [tooltipDisplayed, setTooltipDisplayed] = useState(openTooltipInitially)
+  const profilePicture = species.includes("Dolphin") ? "🐬" : "🐋";
+  const [hover, setHover] = useState(null);
+  const showFavorite = hover ?? isFavorite;
+  const ref = useRef(null);
+  const [tooltipDisplayed, setTooltipDisplayed] =
+    useState(openTooltipInitially);
+
   const onMouseEnterButton = () => {
-    setHover(!isFavorite)
-    setTooltipDisplayed((value) => !value)
-  }
+    setHover(!isFavorite);
+    setTooltipDisplayed((value) => !value);
+  };
 
   const resetState = () => {
-    setHover(null)
-    setTooltipDisplayed(false)
-  }
+    setHover(null);
+    setTooltipDisplayed(false);
+  };
 
   const onClick = () => {
-    resetState()
-    setFavorite()
-  }
+    resetState();
+    setFavorite();
+  };
 
   return (
     <div className="flex flex-col gap-3 border border-gray-300 p-3 w-80 h-80">
@@ -59,7 +61,7 @@ const WhaleCard = ({
         {profilePicture}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default WhaleCard
+export default WhaleCard;

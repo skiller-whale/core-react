@@ -1,14 +1,14 @@
-import { type FC, useState } from "react"
+import { useState } from "react";
 
 type Props = {
-  rating: number
-  onClick: (rating: number) => void
-  max?: number
-}
+  rating: number;
+  onClick: (rating: number) => void;
+  max?: number;
+};
 
-const WhaleRating: FC<Props> = ({ rating, onClick, max = 10 }) => {
-  const [hoverRating, setHoverRating] = useState<number | null>(null)
-  const currentRating = hoverRating ?? rating
+const WhaleRating = ({ rating, onClick, max = 10 }: Props) => {
+  const [hoverRating, setHoverRating] = useState<number | null>(null);
+  const currentRating = hoverRating ?? rating;
 
   return (
     <div
@@ -33,10 +33,10 @@ const WhaleRating: FC<Props> = ({ rating, onClick, max = 10 }) => {
           >
             {i < currentRating ? "🐳" : <span className="grayscale">🐋</span>}{" "}
           </span>
-        )
+        );
       })}
     </div>
-  )
-}
+  );
+};
 
-export default WhaleRating
+export default WhaleRating;

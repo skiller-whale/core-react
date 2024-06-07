@@ -1,4 +1,4 @@
-import type { ButtonHTMLAttributes } from "react"
+import type { ButtonHTMLAttributes } from "react";
 
 const Button = ({
   className,
@@ -11,6 +11,6 @@ const Button = ({
   >
     {children}
   </button>
-)
+);
 
-export default Button
+export default Button;

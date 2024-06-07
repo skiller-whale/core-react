@@ -1,18 +1,18 @@
-import { type Dispatch, type SetStateAction, useEffect, useMemo } from "react"
-import type { AquaticAnimal } from "./whales"
+import { type Dispatch, type SetStateAction, useEffect, useMemo } from "react";
+import type { AquaticAnimal } from "./whales";
 
 type Props = {
-  animal: AquaticAnimal
-  voices: SpeechSynthesisVoice[]
-  voice: SpeechSynthesisVoice | null
-  setVoice: Dispatch<SetStateAction<SpeechSynthesisVoice | null>>
-}
+  animal: AquaticAnimal;
+  voices: SpeechSynthesisVoice[];
+  voice: SpeechSynthesisVoice | null;
+  setVoice: Dispatch<SetStateAction<SpeechSynthesisVoice | null>>;
+};
 
 export const BestFriend = ({ animal, voices, voice, setVoice }: Props) => {
   const utterance = new SpeechSynthesisUtterance(
     `Hello ${animal.name} the ${animal.species}`,
-  )
-  utterance.voice = voice
+  );
+  utterance.voice = voice;
 
   // uncomment this code when instructed
   // -----------------------------------
@@ -47,7 +47,7 @@ export const BestFriend = ({ animal, voices, voice, setVoice }: Props) => {
                 voices.find(
                   (voice) => voice.name === event.currentTarget.value,
                 )!,
-              )
+              );
             }}
           >
             {voices.length > 0 ? (
@@ -63,5 +63,5 @@ export const BestFriend = ({ animal, voices, voice, setVoice }: Props) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};

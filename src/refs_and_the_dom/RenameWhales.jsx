@@ -1,28 +1,28 @@
-import { useRef } from "react"
+import { useRef } from "react";
 
 const moveFocus = (inputElements, increment) => {
   let index = inputElements.findIndex(
     (input) => input === document.activeElement,
-  )
-  index += increment
+  );
+  index += increment;
   if (index >= inputElements.length) {
-    index %= inputElements.length
+    index %= inputElements.length;
   } else if (index < 0) {
-    index += inputElements.length
+    index += inputElements.length;
   }
-  inputElements[index].focus()
-  inputElements[index].select()
-}
+  inputElements[index].focus();
+  inputElements[index].select();
+};
 
 const RenameWhales = ({ whales, setWhaleName }) => {
   const moveCursor = (event) => {
     switch (event.key) {
       case "ArrowUp":
-        break
+        break;
       case "ArrowDown":
-        break
+        break;
     }
-  }
+  };
 
   return (
     <div className="flex-1 flex flex-col justify-between p-3 bg-slate-400">
@@ -35,14 +35,14 @@ const RenameWhales = ({ whales, setWhaleName }) => {
               value={whale.name}
               className="border-0"
               onInput={(event) => {
-                setWhaleName(whale.id, event.currentTarget.value)
+                setWhaleName(whale.id, event.currentTarget.value);
               }}
             />
           </li>
         ))}
       </ul>
     </div>
-  )
-}
+  );
+};
 
-export default RenameWhales
+export default RenameWhales;

@@ -6,6 +6,6 @@ const Checkbox = ({ label, id, ...rest }) => (
     <input id={id} type="checkbox" className="flex-none" {...rest} />
     {label}
   </label>
-)
+);
 
-export default Checkbox
+export default Checkbox;

@@ -1,6 +1,6 @@
 const WhaleRow = ({ whale }) => {
   // artificially slow down rendering
-  const start = performance.now()
+  const start = performance.now();
   while (performance.now() < start + 20) {}
 
   return (
@@ -14,7 +14,7 @@ const WhaleRow = ({ whale }) => {
         ({whale.location.x}, {whale.location.y})
       </td>
     </tr>
-  )
-}
+  );
+};
 
-export default WhaleRow
+export default WhaleRow;

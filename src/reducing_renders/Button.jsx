@@ -1,7 +1,7 @@
-import doSomethingThatTakesAges from "../lib/doSomethingThatTakesAges"
+import doSomethingThatTakesAges from "../lib/doSomethingThatTakesAges";
 
 const Button = ({ onClick, children }) => {
-  doSomethingThatTakesAges()
+  doSomethingThatTakesAges();
 
   return (
     <button
@@ -11,7 +11,7 @@ const Button = ({ onClick, children }) => {
     >
       {children}
     </button>
-  )
-}
+  );
+};
 
-export default Button
+export default Button;

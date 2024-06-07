@@ -1,20 +1,20 @@
-import path from "node:path"
-import { fileURLToPath } from "node:url"
-import typescriptEslintParser from "@typescript-eslint/parser"
-import typescriptEslintPlugin from "@typescript-eslint/eslint-plugin"
-import reactHooksPlugin from "eslint-plugin-react-hooks"
-import importPlugin from "eslint-plugin-import"
-import { FlatCompat } from "@eslint/eslintrc"
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+import typescriptEslintParser from "@typescript-eslint/parser";
+import typescriptEslintPlugin from "@typescript-eslint/eslint-plugin";
+import reactHooksPlugin from "eslint-plugin-react-hooks";
+import importPlugin from "eslint-plugin-import";
+import { FlatCompat } from "@eslint/eslintrc";
 
-const ENABLE_REACT_HOOKS_JS = false
-const ENABLE_REACT_HOOKS_TS = false
+const ENABLE_REACT_HOOKS_JS = false;
+const ENABLE_REACT_HOOKS_TS = false;
 
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = path.dirname(__filename)
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const compat = new FlatCompat({
   baseDirectory: __dirname,
-})
+});
 
 export default [
   ...compat.extends("plugin:prettier/recommended"),
@@ -92,4 +92,4 @@ export default [
       ],
     },
   },
-]
+];

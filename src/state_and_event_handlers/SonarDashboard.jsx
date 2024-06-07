@@ -1,7 +1,7 @@
-import { useState } from "react"
-import SonarDisplay from "./SonarDisplay"
-import SonarControls from "./SonarControls"
-import WhaleCard from "./WhaleCard"
+import { useState } from "react";
+import SonarControls from "./SonarControls";
+import SonarDisplay from "./SonarDisplay";
+import WhaleCard from "./WhaleCard";
 
 const SonarDashboard = ({
   whales,
@@ -10,14 +10,14 @@ const SonarDashboard = ({
   setSelectedWhaleX,
   setSelectedWhaleY,
 }) => {
-  const centerX = 0
-  const centerY = 0
-  const radius = 50
+  const centerX = 0;
+  const centerY = 0;
+  const radius = 50;
   const visibleWhales = whales.filter(
     (whale) =>
       (whale.location.x - centerX) ** 2 + (whale.location.y - centerY) ** 2 <=
       radius ** 2,
-  )
+  );
 
   return (
     <div className="flex flex-col gap-6">
@@ -36,7 +36,7 @@ const SonarDashboard = ({
         setY={setSelectedWhaleY}
       />
     </div>
-  )
-}
+  );
+};
 
-export default SonarDashboard
+export default SonarDashboard;

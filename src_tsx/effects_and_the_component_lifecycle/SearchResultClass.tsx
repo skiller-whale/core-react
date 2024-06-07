@@ -1,41 +1,41 @@
-import { Component } from "react"
-import { type WhaleProps, searchForWhale, whales } from "./whales"
-import Searching from "./Searching"
-import Whale from "./Whale"
+import { Component } from "react";
+import Searching from "./Searching";
+import Whale from "./Whale";
+import { type WhaleProps, searchForWhale, whales } from "./whales";
 
 type Props = {
-  query: string
-}
+  query: string;
+};
 
 type State = {
-  searchStatus: SearchStatus
-}
+  searchStatus: SearchStatus;
+};
 
 type SearchStatus =
   | { status: "not-asked" }
   | { status: "searching" }
-  | { status: "searched"; whale?: WhaleProps }
+  | { status: "searched"; whale?: WhaleProps };
 
 class SearchResult extends Component<Props, State> {
   constructor(props: Props) {
-    super(props)
+    super(props);
     this.state = {
       searchStatus: { status: "not-asked" },
-    }
+    };
   }
 
   search() {
     const loadResult = async () => {
-      this.setState({ searchStatus: { status: "searching" } })
+      this.setState({ searchStatus: { status: "searching" } });
 
-      const whale = await searchForWhale(this.props.query)
-      this.setState({ searchStatus: { status: "searched", whale } })
-    }
+      const whale = await searchForWhale(this.props.query);
+      this.setState({ searchStatus: { status: "searched", whale } });
+    };
 
     if (this.props.query) {
-      loadResult()
+      loadResult();
     } else {
-      this.setState({ searchStatus: { status: "not-asked" } })
+      this.setState({ searchStatus: { status: "not-asked" } });
     }
   }
 
@@ -58,8 +58,8 @@ class SearchResult extends Component<Props, State> {
           <p className="py-2">No matching whale.</p>
         )}
       </div>
-    )
+    );
   }
 }
 
-export default SearchResult
+export default SearchResult;

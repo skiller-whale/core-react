@@ -1,13 +1,13 @@
-import { type FC, useEffect, useState } from "react"
-import type { Fish } from "../lib/apiTypes"
-import useFetchJson from "./useFetchJson"
+import { useEffect, useState } from "react";
+import type { Fish } from "../lib/apiTypes";
+import useFetchJson from "./useFetchJson";
 
 type Props = {
-  term: string
-}
+  term: string;
+};
 
-const FishTable: FC<Props> = ({ term }) => {
-  const [fish, setFish] = useState<Fish[]>([])
+const FishTable = ({ term }: Props) => {
+  const [fish, setFish] = useState<Fish[]>([]);
 
   const fetchFish = async () => {
     const response = await fetch(`/api/aquatic-animals/fish/?term=${term}`, {
@@ -16,16 +16,16 @@ const FishTable: FC<Props> = ({ term }) => {
         Accept: "application/json",
         "Content-Type": "application/json",
       },
-    })
+    });
 
-    const { animals } = await response.json()
-    setFish(animals)
-  }
+    const { animals } = await response.json();
+    setFish(animals);
+  };
 
   useEffect(() => {
-    setFish([])
-    fetchFish()
-  }, [term])
+    setFish([]);
+    fetchFish();
+  }, [term]);
 
   const rows = fish.map((f) => {
     return (
@@ -36,8 +36,8 @@ const FishTable: FC<Props> = ({ term }) => {
           {f.isSaltwater ? "🌊" : "🏞️"}
         </td>
       </tr>
-    )
-  })
+    );
+  });
 
   return (
     <div className="basis-6/12">
@@ -57,7 +57,7 @@ const FishTable: FC<Props> = ({ term }) => {
         <tbody>{rows}</tbody>
       </table>
     </div>
-  )
-}
+  );
+};
 
-export default FishTable
+export default FishTable;

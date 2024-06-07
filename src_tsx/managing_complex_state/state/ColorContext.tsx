@@ -5,16 +5,16 @@ import {
   createContext,
   useContext,
   useState,
-} from "react"
+} from "react";
 
-export type Color = "blue" | "green" | "red"
+export type Color = "blue" | "green" | "red";
 
-export const ColorContext = null
+export const ColorContext = null;
 
-export const SetColorContext = null
+export const SetColorContext = null;
 
 const ColorProvider = ({ children }: PropsWithChildren) => {
-  return <>{children}</>
-}
+  return <>{children}</>;
+};
 
-export default ColorProvider
+export default ColorProvider;

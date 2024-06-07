@@ -1,10 +1,10 @@
-import Button from "../../components/Button"
-import type { FormStatus } from "../state"
+import Button from "../../components/Button";
+import type { FormStatus } from "../state";
 
 type Props = {
-  visible: boolean
-  formStatus: FormStatus
-}
+  visible: boolean;
+  formStatus: FormStatus;
+};
 
 const Submitted = ({ visible, formStatus }: Props) => (
   <div className={visible ? "flex flex-col gap-12 items-center" : "hidden"}>
@@ -20,6 +20,6 @@ const Submitted = ({ visible, formStatus }: Props) => (
     )}
     <Button type="reset">Make Another Enquiry</Button>
   </div>
-)
+);
 
-export default Submitted
+export default Submitted;

@@ -1,9 +1,9 @@
-import CustomerRow from "./CustomerRow"
+import CustomerRow from "./CustomerRow";
 
 const CustomerTable = ({ customers }) => {
   const rows = customers.map((customer, index) => (
     <CustomerRow key={index} {...customer} />
-  ))
+  ));
 
   return (
     <table className="min-w-full">
@@ -16,7 +16,7 @@ const CustomerTable = ({ customers }) => {
       </thead>
       <tbody>{rows}</tbody>
     </table>
-  )
-}
+  );
+};
 
-export default CustomerTable
+export default CustomerTable;

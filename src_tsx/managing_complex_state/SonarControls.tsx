@@ -1,16 +1,16 @@
-import type { Dispatch } from "react"
-import type { SonarAction } from "./state/SonarState"
+import type { Dispatch } from "react";
+import type { SonarAction } from "./state/SonarState";
 
 type Props = {
-  zoomIn: () => void
-  zoomOut: () => void
-  moveLeft: () => void
-  moveUp: () => void
-  moveRight: () => void
-  moveDown: () => void
-}
+  zoomIn: () => void;
+  zoomOut: () => void;
+  moveLeft: () => void;
+  moveUp: () => void;
+  moveRight: () => void;
+  moveDown: () => void;
+};
 
-const Sonar = ({
+const SonarControls = ({
   zoomIn,
   zoomOut,
   moveLeft,
@@ -34,12 +34,12 @@ const Sonar = ({
       </div>
     </div>
   </div>
-)
+);
 
 type ButtonProps = {
-  onClick: () => void
-  children: string
-}
+  onClick: () => void;
+  children: string;
+};
 
 const Button = ({ onClick, children }: ButtonProps) => (
   <button
@@ -48,6 +48,6 @@ const Button = ({ onClick, children }: ButtonProps) => (
   >
     {children}
   </button>
-)
+);
 
-export default Sonar
+export default SonarControls;

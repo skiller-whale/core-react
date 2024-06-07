@@ -14,7 +14,7 @@ const WhalesTable = ({ whales }) => (
       ))}
     </tbody>
   </table>
-)
+);
 
 const WhaleRow = ({ whale }) => (
   <tr className="border-b even:bg-gray-100">
@@ -27,6 +27,6 @@ const WhaleRow = ({ whale }) => (
       ({whale.location?.x}, {whale.location?.y})
     </td>
   </tr>
-)
+);
 
-export default WhalesTable
+export default WhalesTable;

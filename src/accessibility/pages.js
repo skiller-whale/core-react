@@ -1,7 +1,7 @@
-import { createContext } from "react"
+import { createContext } from "react";
 
-const pages = ["Whale Tracker", "Report a Sighting", "Whalepedia"]
+const pages = ["Whale Tracker", "Report a Sighting", "Whalepedia"];
 
-export const PageContext = createContext(() => {})
+export const PageContext = createContext(() => {});
 
-export default pages
+export default pages;

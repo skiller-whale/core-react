@@ -1,11 +1,11 @@
-import { useState } from "react"
-import SearchResult from "./SearchResult"
+import { useState } from "react";
+import SearchResult from "./SearchResult";
 
 const App = () => {
-  const [query, setQuery] = useState("")
+  const [query, setQuery] = useState("");
   const changeQuery = (event) => {
-    setQuery(event.currentTarget.value)
-  }
+    setQuery(event.currentTarget.value);
+  };
 
   return (
     <div>
@@ -20,7 +20,7 @@ const App = () => {
       </div>
       <SearchResult query={query} />
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;

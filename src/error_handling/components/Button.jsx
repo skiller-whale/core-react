@@ -5,6 +5,6 @@ const Button = ({ className, children, ...rest }) => (
   >
     {children}
   </button>
-)
+);
 
-export default Button
+export default Button;

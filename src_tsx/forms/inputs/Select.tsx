@@ -1,10 +1,10 @@
-import type { SelectHTMLAttributes } from "react"
-import camelCaseToString from "../utils/camelCaseToString"
+import type { SelectHTMLAttributes } from "react";
+import camelCaseToString from "../utils/camelCaseToString";
 
 type Props = SelectHTMLAttributes<HTMLSelectElement> & {
-  label: string
-  options: readonly string[]
-}
+  label: string;
+  options: readonly string[];
+};
 
 const Select = ({ label, id, options, ...rest }: Props) => (
   <div className="flex-1 flex flex-col gap-2">
@@ -19,6 +19,6 @@ const Select = ({ label, id, options, ...rest }: Props) => (
       ))}
     </select>
   </div>
-)
+);
 
-export default Select
+export default Select;

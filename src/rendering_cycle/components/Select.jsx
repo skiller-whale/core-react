@@ -6,6 +6,6 @@ const Select = ({ options, ...rest }) => (
       </option>
     ))}
   </select>
-)
+);
 
-export default Select
+export default Select;

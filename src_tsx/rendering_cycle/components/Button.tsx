@@ -1,8 +1,8 @@
-import type { ComponentProps } from "react"
+import type { ComponentProps } from "react";
 
 const Button = ({ children, ...rest }: ComponentProps<"button">) => {
   // artificially slow down rendering
-  const start = performance.now()
+  const start = performance.now();
   while (performance.now() < start + 20) {}
 
   return (
@@ -12,7 +12,7 @@ const Button = ({ children, ...rest }: ComponentProps<"button">) => {
     >
       {children}
     </button>
-  )
-}
+  );
+};
 
-export default Button
+export default Button;

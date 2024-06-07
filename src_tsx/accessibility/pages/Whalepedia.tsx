@@ -1,10 +1,10 @@
-import { faker } from "@faker-js/faker"
-import Link from "../components/Link"
+import { faker } from "@faker-js/faker";
+import Link from "../components/Link";
 
 type Props = {
-  cetaceans: string[]
-  cetacean: string | null
-}
+  cetaceans: string[];
+  cetacean: string | null;
+};
 
 const Whalepedia = ({ cetaceans, cetacean }: Props) => {
   return (
@@ -34,7 +34,7 @@ const Whalepedia = ({ cetaceans, cetacean }: Props) => {
         )}
       </div>
     </main>
-  )
-}
+  );
+};
 
-export default Whalepedia
+export default Whalepedia;

@@ -1,7 +1,7 @@
-import type { FC, PropsWithChildren } from "react"
+import type { PropsWithChildren } from "react";
 
 // https://vitejs.dev/guide/backend-integration.html
-const Html: FC<PropsWithChildren> = ({ children }) => {
+const Html = ({ children }: PropsWithChildren) => {
   return (
     <html lang="en-US">
       <head>
@@ -31,7 +31,7 @@ const Html: FC<PropsWithChildren> = ({ children }) => {
         </div>
       </body>
     </html>
-  )
-}
+  );
+};
 
-export default Html
+export default Html;

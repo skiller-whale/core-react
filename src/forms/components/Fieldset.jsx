@@ -3,6 +3,6 @@ const Fieldset = ({ legend, children }) => (
     <legend className="text-2xl font-semibold mb-6">{legend}</legend>
     {children}
   </fieldset>
-)
+);
 
-export default Fieldset
+export default Fieldset;

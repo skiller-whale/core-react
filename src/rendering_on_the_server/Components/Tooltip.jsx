@@ -1,27 +1,27 @@
-import { useLayoutEffect, useRef, useState } from "react"
+import { useLayoutEffect, useRef, useState } from "react";
 
 const Tooltip = ({ children }) => {
-  const ref = useRef(null)
-  const anchorRef = useRef(null)
-  const [x, setX] = useState(0)
-  const [y, setY] = useState(0)
+  const ref = useRef(null);
+  const anchorRef = useRef(null);
+  const [x, setX] = useState(0);
+  const [y, setY] = useState(0);
   useLayoutEffect(() => {
-    const height = ref.current?.getBoundingClientRect().height ?? 0
-    const boundingRect = anchorRef.current?.getBoundingClientRect()
+    const height = ref.current?.getBoundingClientRect().height ?? 0;
+    const boundingRect = anchorRef.current?.getBoundingClientRect();
     if (boundingRect) {
-      setX(boundingRect.right)
+      setX(boundingRect.right);
       if (boundingRect.top > height) {
-        setY(boundingRect.top + window.scrollY - height)
+        setY(boundingRect.top + window.scrollY - height);
       } else {
-        setY(boundingRect.bottom + window.scrollY)
+        setY(boundingRect.bottom + window.scrollY);
       }
     }
-  }, [])
+  }, []);
 
   const style = {
     left: x,
     top: y,
-  }
+  };
 
   return (
     <div ref={anchorRef}>
@@ -33,7 +33,7 @@ const Tooltip = ({ children }) => {
         <div className="p-3">{children}</div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Tooltip
+export default Tooltip;

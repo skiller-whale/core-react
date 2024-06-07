@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react"
-import useFetchJson from "./useFetchJson"
+import { useEffect, useState } from "react";
+import useFetchJson from "./useFetchJson";
 
 const FishTable = ({ term }) => {
-  const [fish, setFish] = useState([])
+  const [fish, setFish] = useState([]);
   const fetchFish = async () => {
     const response = await fetch(`/api/aquatic-animals/fish/?term=${term}`, {
       method: "GET",
@@ -10,15 +10,15 @@ const FishTable = ({ term }) => {
         Accept: "application/json",
         "Content-Type": "application/json",
       },
-    })
+    });
 
-    const { animals } = await response.json()
-    setFish(animals)
-  }
+    const { animals } = await response.json();
+    setFish(animals);
+  };
   useEffect(() => {
-    setFish([])
-    fetchFish()
-  }, [term])
+    setFish([]);
+    fetchFish();
+  }, [term]);
 
   const rows = fish.map((f) => {
     return (
@@ -29,8 +29,8 @@ const FishTable = ({ term }) => {
           {f.isSaltwater ? "🌊" : "🏞️"}
         </td>
       </tr>
-    )
-  })
+    );
+  });
 
   return (
     <div className="basis-6/12">
@@ -50,7 +50,7 @@ const FishTable = ({ term }) => {
         <tbody>{rows}</tbody>
       </table>
     </div>
-  )
-}
+  );
+};
 
-export default FishTable
+export default FishTable;

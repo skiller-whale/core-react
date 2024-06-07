@@ -1,6 +1,6 @@
-import type { FC, PropsWithChildren } from "react"
+import type { PropsWithChildren } from "react";
 
-const BlueFilter: FC<PropsWithChildren> = ({ children }) => (
+const BlueFilter = ({ children }: PropsWithChildren) => (
   <span
     style={{
       filter:
@@ -9,6 +9,6 @@ const BlueFilter: FC<PropsWithChildren> = ({ children }) => (
   >
     {children}
   </span>
-)
+);
 
-export default BlueFilter
+export default BlueFilter;

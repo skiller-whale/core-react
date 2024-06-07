@@ -5,6 +5,6 @@ const Input = ({ label, id, ...rest }) => (
     </label>
     <input id={id} {...rest} />
   </div>
-)
+);
 
-export default Input
+export default Input;

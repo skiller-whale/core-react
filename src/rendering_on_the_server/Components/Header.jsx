@@ -9,7 +9,7 @@ const Header = ({ href, callToAction, children }) => {
       </a>
       <h1 className="text-2xl font-semibold">{children}</h1>
     </div>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

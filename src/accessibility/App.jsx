@@ -1,27 +1,27 @@
-import { useRef, useState } from "react"
-import Dropdown from "./components/Dropdown"
-import DropdownWrapper from "./components/DropdownWrapper"
-import Link from "./components/Link"
-import pages, { PageContext } from "./pages"
-import ReportSighting from "./pages/ReportSighting"
-import Tracker from "./pages/Tracker"
-import Whalepedia from "./pages/Whalepedia"
+import { useRef, useState } from "react";
+import Dropdown from "./components/Dropdown";
+import DropdownWrapper from "./components/DropdownWrapper";
+import Link from "./components/Link";
+import pages, { PageContext } from "./pages";
+import ReportSighting from "./pages/ReportSighting";
+import Tracker from "./pages/Tracker";
+import Whalepedia from "./pages/Whalepedia";
 
 const App = ({ whales }) => {
   const cetaceans = [...new Set(whales.map((whale) => whale.species))].toSorted(
     (a, b) => a.localeCompare(b),
-  )
+  );
 
-  const [page, _setPage] = useState(pages[0])
-  const [cetacean, setCetacean] = useState(null)
+  const [page, _setPage] = useState(pages[0]);
+  const [cetacean, setCetacean] = useState(null);
   const setPage = (page, cetacean) => {
-    _setPage(page)
+    _setPage(page);
     if (cetacean) {
-      setCetacean(cetacean)
+      setCetacean(cetacean);
     }
-  }
+  };
 
-  const dropdownRef = useRef(null)
+  const dropdownRef = useRef(null);
 
   return (
     <PageContext.Provider value={setPage}>
@@ -58,7 +58,7 @@ const App = ({ whales }) => {
         ) : null}
       </DropdownWrapper>
     </PageContext.Provider>
-  )
-}
+  );
+};
 
-export default App
+export default App;

@@ -1,6 +1,6 @@
-import { renderToString } from "react-dom/server"
-import App from "../Components/App"
+import { renderToString } from "react-dom/server";
+import App from "../Components/App";
 
 export const render = (initialProps, res) => {
-  return renderToString(<App {...initialProps} />)
-}
+  return renderToString(<App {...initialProps} />);
+};

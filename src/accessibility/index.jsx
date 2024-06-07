@@ -1,5 +1,5 @@
-import { createRoot } from "react-dom/client"
-import App from "./App"
+import { createRoot } from "react-dom/client";
+import App from "./App";
 
 const response = await fetch("/api/aquatic-animals/whales/", {
   method: "GET",
@@ -7,10 +7,10 @@ const response = await fetch("/api/aquatic-animals/whales/", {
     Accept: "application/json",
     "Content-Type": "application/json",
   },
-})
+});
 
-const { animals } = await response.json()
+const { animals } = await response.json();
 
-const container = document.getElementById("root")
-const root = createRoot(container)
-root.render(<App whales={animals} />)
+const container = document.getElementById("root");
+const root = createRoot(container);
+root.render(<App whales={animals} />);

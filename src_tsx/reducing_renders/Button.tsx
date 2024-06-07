@@ -1,12 +1,12 @@
-import type { PropsWithChildren } from "react"
-import doSomethingThatTakesAges from "../lib/doSomethingThatTakesAges"
+import type { PropsWithChildren } from "react";
+import doSomethingThatTakesAges from "../lib/doSomethingThatTakesAges";
 
 type ButtonProps = PropsWithChildren<{
-  onClick: () => void
-}>
+  onClick: () => void;
+}>;
 
 const Button = ({ onClick, children }: ButtonProps) => {
-  doSomethingThatTakesAges()
+  doSomethingThatTakesAges();
 
   return (
     <button
@@ -16,7 +16,7 @@ const Button = ({ onClick, children }: ButtonProps) => {
     >
       {children}
     </button>
-  )
-}
+  );
+};
 
-export default Button
+export default Button;

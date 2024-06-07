@@ -1,4 +1,4 @@
-import Button from "./components/Button"
+import Button from "./components/Button";
 
 const DataControls = ({ fetchWhales }) => (
   <div className="flex gap-3 space-around">
@@ -27,6 +27,6 @@ const DataControls = ({ fetchWhales }) => (
       Fetch Over Bad Connection
     </Button>
   </div>
-)
+);
 
-export default DataControls
+export default DataControls;

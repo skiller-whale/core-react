@@ -1,8 +1,8 @@
-import { type KeyboardEventHandler, forwardRef } from "react"
-import type { WhaleProps } from "./whales"
-import WhaleRating from "./WhaleRating"
+import { type KeyboardEventHandler, forwardRef } from "react";
+import WhaleRating from "./WhaleRating";
+import type { WhaleProps } from "./whales";
 
-type Props = WhaleProps & { firstTimeSeen: boolean }
+type Props = WhaleProps & { firstTimeSeen: boolean };
 
 const Whale = forwardRef<HTMLDivElement, Props>(
   ({ name, weight, about, firstTimeSeen }, ref) => {
@@ -11,11 +11,11 @@ const Whale = forwardRef<HTMLDivElement, Props>(
     ) => {
       switch (event.key) {
         case "ArrowRight":
-          break
+          break;
         case "ArrowLeft":
-          break
+          break;
       }
-    }
+    };
 
     return (
       <div
@@ -35,8 +35,8 @@ const Whale = forwardRef<HTMLDivElement, Props>(
         <p>{about}</p>
         <WhaleRating rating={5} max={10} onClick={console.log} />
       </div>
-    )
+    );
   },
-)
+);
 
-export default Whale
+export default Whale;

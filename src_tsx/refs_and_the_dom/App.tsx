@@ -1,25 +1,25 @@
-import { type FC, useRef, useState } from "react"
-import RenameWhales from "./RenameWhales"
+import { useRef, useState } from "react";
+import RenameWhales from "./RenameWhales";
 import ScrollableContainer, {
   type ScrollableContainerRef,
-} from "./ScrollableContainer"
-import Whale from "./Whale"
-import WhaleInput from "./WhaleInput"
-import type { WhaleProps } from "./whales"
+} from "./ScrollableContainer";
+import Whale from "./Whale";
+import WhaleInput from "./WhaleInput";
+import type { WhaleProps } from "./whales";
 
 type Props = {
-  whales: WhaleProps[]
-}
+  whales: WhaleProps[];
+};
 
-const App: FC<Props> = ({ whales: initialWhales }) => {
-  const [whales, setWhales] = useState(initialWhales)
+const App = ({ whales: initialWhales }: Props) => {
+  const [whales, setWhales] = useState(initialWhales);
 
   const setWhaleName = (id: string, name: string) => {
-    const index = whales.findIndex((whale) => whale.id === id)
-    const newWhale = { ...whales[index], name }
-    const newWhales = whales.with(index, newWhale)
-    setWhales(newWhales)
-  }
+    const index = whales.findIndex((whale) => whale.id === id);
+    const newWhale = { ...whales[index], name };
+    const newWhales = whales.with(index, newWhale);
+    setWhales(newWhales);
+  };
 
   return (
     <div className="flex flex-col gap-6">
@@ -39,7 +39,7 @@ const App: FC<Props> = ({ whales: initialWhales }) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;

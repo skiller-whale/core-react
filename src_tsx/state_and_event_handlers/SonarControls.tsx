@@ -1,25 +1,25 @@
-import { useState } from "react"
+import { useState } from "react";
 
 type Props = {
-  moveLeft?: () => void
-  moveUp?: () => void
-  moveRight?: () => void
-  moveDown?: () => void
-  zoomIn?: () => void
-  zoomOut?: () => void
-}
+  moveLeft?: () => void;
+  moveUp?: () => void;
+  moveRight?: () => void;
+  moveDown?: () => void;
+  zoomIn?: () => void;
+  zoomOut?: () => void;
+};
 
 const SonarControls = () => {
-  const [centerX, setCentreX] = useState(0)
-  const [centerY, setCentreY] = useState(0)
-  const [radius, setRadius] = useState(50)
+  const [centerX, setCentreX] = useState(0);
+  const [centerY, setCentreY] = useState(0);
+  const [radius, setRadius] = useState(50);
 
-  const moveLeft = () => setCentreX(Math.max(-100, centerX - 10))
-  const moveRight = () => setCentreX(Math.min(100, centerX + 10))
-  const moveUp = () => setCentreY(Math.max(-100, centerY - 10))
-  const moveDown = () => setCentreY(Math.min(100, centerY + 10))
-  const zoomIn = () => setRadius(Math.max(20, radius - 10))
-  const zoomOut = () => setRadius(Math.min(100, radius + 10))
+  const moveLeft = () => setCentreX(Math.max(-100, centerX - 10));
+  const moveRight = () => setCentreX(Math.min(100, centerX + 10));
+  const moveUp = () => setCentreY(Math.max(-100, centerY - 10));
+  const moveDown = () => setCentreY(Math.min(100, centerY + 10));
+  const zoomIn = () => setRadius(Math.max(20, radius - 10));
+  const zoomOut = () => setRadius(Math.min(100, radius + 10));
 
   return (
     <div className="shadow p-4 flex flex-col gap-3">
@@ -38,13 +38,13 @@ const SonarControls = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 type ButtonProps = {
-  onClick?: () => void
-  children: string
-}
+  onClick?: () => void;
+  children: string;
+};
 
 const Button = ({ onClick, children }: ButtonProps) => (
   <button
@@ -53,6 +53,6 @@ const Button = ({ onClick, children }: ButtonProps) => (
   >
     {children}
   </button>
-)
+);
 
-export default SonarControls
+export default SonarControls;

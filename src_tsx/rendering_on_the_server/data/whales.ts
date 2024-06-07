@@ -1,10 +1,10 @@
 export type Whale = {
-  id: string
-  name: string
-  species: string
-  weight: number
-  hasBaleen: boolean
-}
+  id: string;
+  name: string;
+  species: string;
+  weight: number;
+  hasBaleen: boolean;
+};
 
 export const whales: Whale[] = [
   {
@@ -112,4 +112,4 @@ export const whales: Whale[] = [
     weight: 60138,
     hasBaleen: true,
   },
-]
+];

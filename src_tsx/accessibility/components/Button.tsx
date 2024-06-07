@@ -1,4 +1,4 @@
-import type { ComponentProps } from "react"
+import type { ComponentProps } from "react";
 
 const Button = ({ onClick, children, ...rest }: ComponentProps<"button">) => (
   <button
@@ -8,6 +8,6 @@ const Button = ({ onClick, children, ...rest }: ComponentProps<"button">) => (
   >
     {children}
   </button>
-)
+);
 
-export default Button
+export default Button;

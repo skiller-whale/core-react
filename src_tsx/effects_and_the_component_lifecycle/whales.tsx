@@ -1,9 +1,9 @@
 export type WhaleProps = {
-  id: string
-  name: string
-  about: string
-  weight: number
-}
+  id: string;
+  name: string;
+  about: string;
+  weight: number;
+};
 
 export const searchForWhale = async (
   query: string,
@@ -16,13 +16,13 @@ export const searchForWhale = async (
             (x) =>
               x.id === query.toLowerCase() ||
               x.name.toLowerCase() === query.toLowerCase(),
-          )
+          );
 
-    const delay = Math.random() * (1000 - 300) + 300
+    const delay = Math.random() * (1000 - 300) + 300;
     setTimeout(() => {
-      resolve(whale)
-    }, delay)
-  })
+      resolve(whale);
+    }, delay);
+  });
 
 export const whales: WhaleProps[] = [
   {
@@ -95,4 +95,4 @@ export const whales: WhaleProps[] = [
       "The skiller whale, also known as Ada, is a species of sub-Arctic programmer. Known for its love of learning, the skiller whale is chiefly recognisable by its penchant for bad maritime puns.",
     weight: 3000,
   },
-]
+];

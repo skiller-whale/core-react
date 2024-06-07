@@ -1,5 +1,5 @@
-import Button from "../components/Button"
-import { pages } from "./state"
+import Button from "../components/Button";
+import { pages } from "./state";
 
 const Controls = ({
   visible,
@@ -36,6 +36,6 @@ const Controls = ({
       </Button>
     )}
   </div>
-)
+);
 
-export default Controls
+export default Controls;

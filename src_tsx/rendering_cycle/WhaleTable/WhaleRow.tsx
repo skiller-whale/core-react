@@ -1,12 +1,12 @@
-import type { Whale } from "../../lib/apiTypes"
+import type { Whale } from "../../lib/apiTypes";
 
 type Props = {
-  whale: Whale
-}
+  whale: Whale;
+};
 
 const WhaleRow = ({ whale }: Props) => {
   // artificially slow down rendering
-  const start = performance.now()
+  const start = performance.now();
   while (performance.now() < start + 20) {}
 
   return (
@@ -20,7 +20,7 @@ const WhaleRow = ({ whale }: Props) => {
         ({whale.location.x}, {whale.location.y})
       </td>
     </tr>
-  )
-}
+  );
+};
 
-export default WhaleRow
+export default WhaleRow;

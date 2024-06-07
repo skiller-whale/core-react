@@ -3,24 +3,25 @@ import {
   type RefObject,
   useRef,
   useState,
-} from "react"
-import { createPortal } from "react-dom"
-import type { WhaleProps } from "./whales"
+} from "react";
+import { createPortal } from "react-dom";
+import WhaleInput from "./WhaleInput";
+import type { WhaleProps } from "./whales";
 
-type Props = WhaleProps
+type Props = WhaleProps;
 
 const Whale = ({ name, weight: initialWeight, about }: Props) => {
-  const [fullscreen, setFullscreen] = useState(false)
+  const [fullscreen, setFullscreen] = useState(false);
   const toggleFullscreen = () =>
     setFullscreen((fullscreen) => {
       // TODO: show/hide dialog
-      return !fullscreen
-    })
+      return !fullscreen;
+    });
 
-  const [weight, setWeight] = useState(initialWeight)
+  const [weight, setWeight] = useState(initialWeight);
   const changeWeight: ChangeEventHandler<HTMLInputElement> = (event) => {
-    setWeight(parseInt(event.currentTarget.value))
-  }
+    setWeight(parseInt(event.currentTarget.value));
+  };
 
   return (
     <div className="flex flex-col gap-3 p-3 bg-white">
@@ -39,7 +40,7 @@ const Whale = ({ name, weight: initialWeight, about }: Props) => {
       </div>
       <p>{about}</p>
     </div>
-  )
-}
+  );
+};
 
-export default Whale
+export default Whale;

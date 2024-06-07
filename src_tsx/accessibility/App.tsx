@@ -1,32 +1,32 @@
-import { useRef, useState } from "react"
-import type { Whale } from "../lib/apiTypes"
-import Dropdown, { type DropdownRef } from "./components/Dropdown"
-import DropdownWrapper from "./components/DropdownWrapper"
-import Link from "./components/Link"
-import pages, { PageContext, type Page } from "./pages"
-import ReportSighting from "./pages/ReportSighting"
-import Tracker from "./pages/Tracker"
-import Whalepedia from "./pages/Whalepedia"
+import { useRef, useState } from "react";
+import type { Whale } from "../lib/apiTypes";
+import Dropdown, { type DropdownRef } from "./components/Dropdown";
+import DropdownWrapper from "./components/DropdownWrapper";
+import Link from "./components/Link";
+import pages, { type Page, PageContext } from "./pages";
+import ReportSighting from "./pages/ReportSighting";
+import Tracker from "./pages/Tracker";
+import Whalepedia from "./pages/Whalepedia";
 
 type Props = {
-  whales: Whale[]
-}
+  whales: Whale[];
+};
 
 const App = ({ whales }: Props) => {
   const cetaceans = [...new Set(whales.map((whale) => whale.species))].toSorted(
     (a, b) => a.localeCompare(b),
-  )
+  );
 
-  const [page, _setPage] = useState<Page>(pages[0])
-  const [cetacean, setCetacean] = useState<string | null>(null)
+  const [page, _setPage] = useState<Page>(pages[0]);
+  const [cetacean, setCetacean] = useState<string | null>(null);
   const setPage = (page: Page, cetacean?: string) => {
-    _setPage(page)
+    _setPage(page);
     if (cetacean) {
-      setCetacean(cetacean)
+      setCetacean(cetacean);
     }
-  }
+  };
 
-  const dropdownRef = useRef<DropdownRef>(null)
+  const dropdownRef = useRef<DropdownRef>(null);
 
   return (
     <PageContext.Provider value={setPage}>
@@ -63,7 +63,7 @@ const App = ({ whales }: Props) => {
         ) : null}
       </DropdownWrapper>
     </PageContext.Provider>
-  )
-}
+  );
+};
 
-export default App
+export default App;

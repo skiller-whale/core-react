@@ -22,6 +22,6 @@ const Searching = () => (
     </svg>
     <span>Searching...</span>
   </div>
-)
+);
 
-export default Searching
+export default Searching;

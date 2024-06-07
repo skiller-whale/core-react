@@ -1,37 +1,35 @@
-import { type FC, Suspense, lazy, useState } from "react"
-import { whales } from "../data/whales"
-import WhaleCard from "./WhaleCard"
-import Header from "./Header"
-import Sidebar from "./Sidebar"
-import Html from "./Html"
-import LoadingSpinner from "./LoadingSpinner"
+import { Suspense, lazy, useState } from "react";
+import { whales } from "../data/whales";
+import Header from "./Header";
+import Html from "./Html";
+import LoadingSpinner from "./LoadingSpinner";
+import Sidebar from "./Sidebar";
+import WhaleCard from "./WhaleCard";
 
-//
-// const lazyLoadingDelay = 0
-//
+// const lazyLoadingDelay = 0;
+
 // const WhaleCard = lazy(() =>
 //   import("./WhaleCard").then(async (module) => {
 //     if (typeof window === "undefined") {
-//       await new Promise((resolve) => setTimeout(resolve, lazyLoadingDelay))
+//       await new Promise((resolve) => setTimeout(resolve, lazyLoadingDelay));
 //     }
-//
-//     return module
-//   })
-// )
-//
 
-const oops = false
+//     return module;
+//   })
+// );
+
+const oops = false;
 
 export type Props = {
-  numberOfWhales: number
-}
+  numberOfWhales: number;
+};
 
-const App: FC<Props> = ({ numberOfWhales }) => {
+const App = ({ numberOfWhales }: Props) => {
   if (oops) {
-    throw new Error("Oops!")
+    throw new Error("Oops!");
   }
 
-  const [favoriteWhale, setFavoriteWhale] = useState<string | null>(null)
+  const [favoriteWhale, setFavoriteWhale] = useState<string | null>(null);
 
   return (
     <>
@@ -50,7 +48,7 @@ const App: FC<Props> = ({ numberOfWhales }) => {
           <div className="flex flex-col gap-6">
             <div className="grid grid-cols-2 gap-3 items-start">
               {whales.slice(0, numberOfWhales).map((whale, index) => {
-                const isFavorite = whale.id === favoriteWhale
+                const isFavorite = whale.id === favoriteWhale;
 
                 return (
                   <WhaleCard
@@ -62,14 +60,14 @@ const App: FC<Props> = ({ numberOfWhales }) => {
                     }
                     {...whale}
                   />
-                )
+                );
               })}
             </div>
           </div>
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;

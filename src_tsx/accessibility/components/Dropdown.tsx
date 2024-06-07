@@ -1,50 +1,50 @@
 import {
+  type ComponentProps,
+  type KeyboardEvent,
+  type MouseEvent,
   forwardRef,
   useImperativeHandle,
   useRef,
   useState,
-  type ComponentProps,
-  type KeyboardEvent,
-  type MouseEvent,
-} from "react"
+} from "react";
 
 export type DropdownRef = {
-  open: () => void
-  close: () => void
-}
+  open: () => void;
+  close: () => void;
+};
 
 type Props = ComponentProps<"button"> & {
-  name: string
-}
+  name: string;
+};
 
 const Dropdown = forwardRef<DropdownRef, Props>(
   ({ name, children }, dropdownRef) => {
-    const [expanded, setExpanded] = useState(false)
+    const [expanded, setExpanded] = useState(false);
 
-    const menuRef = useRef<HTMLElement>(null)
+    const menuRef = useRef<HTMLElement>(null);
     useImperativeHandle(dropdownRef, () => ({
       open: () => setExpanded(true),
       close: () => setExpanded(false),
-    }))
+    }));
 
     const toggleMenu = (event: MouseEvent) => {
-      event.stopPropagation()
-      setExpanded((expanded) => !expanded)
-    }
+      event.stopPropagation();
+      setExpanded((expanded) => !expanded);
+    };
 
     const enterMenu = (event: KeyboardEvent) => {
-      const firstChild = menuRef.current?.firstElementChild
+      const firstChild = menuRef.current?.firstElementChild;
       if (event.key === "ArrowDown" && firstChild instanceof HTMLElement) {
-        event.stopPropagation()
-        firstChild.focus()
+        event.stopPropagation();
+        firstChild.focus();
       }
-    }
+    };
 
     const moveUpOrDown = (event: KeyboardEvent) => {
-      const previous = document.activeElement?.previousElementSibling
-      const next = document.activeElement?.nextElementSibling
+      const previous = document.activeElement?.previousElementSibling;
+      const next = document.activeElement?.nextElementSibling;
       // complete this function
-    }
+    };
 
     return (
       <div className="relative flex flex-1" onKeyUp={moveUpOrDown}>
@@ -65,8 +65,8 @@ const Dropdown = forwardRef<DropdownRef, Props>(
           </nav>
         )}
       </div>
-    )
+    );
   },
-)
+);
 
-export default Dropdown
+export default Dropdown;

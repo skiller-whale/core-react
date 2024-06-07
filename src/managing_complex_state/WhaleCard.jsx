@@ -1,4 +1,4 @@
-import { useSetWhalesContext } from "./state/WhalesState"
+import { useSetWhalesContext } from "./state/WhalesState";
 
 const WhaleCard = ({ whale, setX, setY }) => {
   return (
@@ -30,7 +30,7 @@ const WhaleCard = ({ whale, setX, setY }) => {
         </label>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default WhaleCard
+export default WhaleCard;

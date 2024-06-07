@@ -1,53 +1,53 @@
-import { useState } from "react"
-import { setPageTitle } from "./hooks"
+import { useState } from "react";
+import { setPageTitle } from "./hooks";
 
 const NewWhaleForm = ({ addWhale, numberOfWhales }) => {
   // name
-  const [name, setName] = useState("")
+  const [name, setName] = useState("");
   const changeName = (event) => {
-    setName(event.currentTarget.value)
-  }
+    setName(event.currentTarget.value);
+  };
 
   // weight
-  const [weight, setWeight] = useState(0)
+  const [weight, setWeight] = useState(0);
   const changeWeight = (event) => {
-    setWeight(parseInt(event.currentTarget.value) || 0)
-  }
+    setWeight(parseInt(event.currentTarget.value) || 0);
+  };
 
   // about
-  const [about, setAbout] = useState("")
+  const [about, setAbout] = useState("");
   const changeAbout = (event) => {
-    setAbout(event.currentTarget.value)
-  }
+    setAbout(event.currentTarget.value);
+  };
 
   // position
-  const [position, _setPosition] = useState(numberOfWhales)
+  const [position, _setPosition] = useState(numberOfWhales);
   const loopValue = (value) => {
-    if (value < 0) return numberOfWhales
-    if (value > numberOfWhales) return 0
+    if (value < 0) return numberOfWhales;
+    if (value > numberOfWhales) return 0;
 
-    return value
-  }
+    return value;
+  };
 
   const setPosition = (valueOrFunction) => {
     if (typeof valueOrFunction === "function") {
-      _setPosition((value) => loopValue(valueOrFunction(value)))
+      _setPosition((value) => loopValue(valueOrFunction(value)));
     } else {
-      _setPosition(loopValue(valueOrFunction))
+      _setPosition(loopValue(valueOrFunction));
     }
-  }
+  };
 
   const incrementPosition = () => {
-    setPosition((value) => value + 1)
-  }
+    setPosition((value) => value + 1);
+  };
 
   const decrementPosition = () => {
-    setPosition((value) => value - 1)
-  }
+    setPosition((value) => value - 1);
+  };
 
   const changePosition = (event) => {
-    setPosition(parseInt(event.currentTarget.value))
-  }
+    setPosition(parseInt(event.currentTarget.value));
+  };
 
   // form submit handler
   const createNewWhale = () => {
@@ -59,13 +59,13 @@ const NewWhaleForm = ({ addWhale, numberOfWhales }) => {
         about,
       },
       position,
-    )
-    setName("")
-    setWeight(0)
-    setAbout("")
-    setPosition(0)
-    setPageTitle(`New Whale: ${name}`)
-  }
+    );
+    setName("");
+    setWeight(0);
+    setAbout("");
+    setPosition(0);
+    setPageTitle(`New Whale: ${name}`);
+  };
 
   return (
     <div className="flex flex-col gap-3 border border-gray-300 p-3 bg-gray-100">
@@ -121,7 +121,7 @@ const NewWhaleForm = ({ addWhale, numberOfWhales }) => {
         New Whale
       </button>
     </div>
-  )
-}
+  );
+};
 
-export default NewWhaleForm
+export default NewWhaleForm;

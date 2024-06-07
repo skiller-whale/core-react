@@ -1,6 +1,4 @@
-import type { FC } from "react"
-
-const Mascot: FC = () => (
+const Mascot = () => (
   <div>
     <svg x="0px" y="0px">
       <path
@@ -33,6 +31,6 @@ const Mascot: FC = () => (
       alt="Skillerwhale"
     />
   </div>
-)
+);
 
-export default Mascot
+export default Mascot;

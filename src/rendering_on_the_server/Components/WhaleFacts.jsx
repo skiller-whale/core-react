@@ -1,5 +1,5 @@
-import WhaleFact from "./WhaleFact"
-import Header from "./Header"
+import WhaleFact from "./WhaleFact";
+import Header from "./Header";
 
 const WhaleFacts = ({ facts }) => (
   <div className="flex flex-col gap-6">
@@ -12,6 +12,6 @@ const WhaleFacts = ({ facts }) => (
       ))}
     </div>
   </div>
-)
+);
 
-export default WhaleFacts
+export default WhaleFacts;

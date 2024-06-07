@@ -1,13 +1,13 @@
-import { useContext } from "react"
-import Filter from "./Filters/Filter"
-import { ColorContext } from "./state/ColorContext"
+import { useContext } from "react";
+import Filter from "./Filters/Filter";
+import { ColorContext } from "./state/ColorContext";
 
 const DepthSonar = ({ whale }) => {
-  const { depth } = whale.location
-  const Icon = whale.species.includes("Dolphin") ? "🐬" : "🐋"
+  const { depth } = whale.location;
+  const Icon = whale.species.includes("Dolphin") ? "🐬" : "🐋";
   const animal = (
     <div className={`absolute left-[55%] top-[${depth}%] text-3xl`}>{Icon}</div>
-  )
+  );
 
   return (
     <div className="shadow p-4 flex flex-col">
@@ -21,13 +21,13 @@ const DepthSonar = ({ whale }) => {
         </div>
       </Filter>
     </div>
-  )
-}
+  );
+};
 
 const markers = [...Array(11).keys()].map((depth) => {
-  const depthInMeters = depth * 100
+  const depthInMeters = depth * 100;
 
-  return <div key={depthInMeters}>{depthInMeters}m</div>
-})
+  return <div key={depthInMeters}>{depthInMeters}m</div>;
+});
 
-export default DepthSonar
+export default DepthSonar;

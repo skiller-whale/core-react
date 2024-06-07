@@ -1,22 +1,22 @@
-import { useRef, useState, type FormEvent } from "react"
+import { type FormEvent, useRef, useState } from "react";
 
 type Props = {
-  cetaceans: string[]
-}
+  cetaceans: string[];
+};
 
 const ReportSighting = ({ cetaceans }: Props) => {
-  const alertRef = useRef<HTMLDivElement>(null)
-  const [submitted, setSubmitted] = useState(false)
+  const alertRef = useRef<HTMLDivElement>(null);
+  const [submitted, setSubmitted] = useState(false);
   const submitHandler = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault()
-    setSubmitted(true)
-  }
+    event.preventDefault();
+    setSubmitted(true);
+  };
 
-  const [error, setError] = useState("")
+  const [error, setError] = useState("");
   const validate = (event: FormEvent<HTMLInputElement>) => {
-    const name = event.currentTarget.value
-    setError(name === "" ? "Name is required" : "")
-  }
+    const name = event.currentTarget.value;
+    setError(name === "" ? "Name is required" : "");
+  };
 
   return (
     <>
@@ -94,7 +94,7 @@ const ReportSighting = ({ cetaceans }: Props) => {
         </form>
       </main>
     </>
-  )
-}
+  );
+};
 
-export default ReportSighting
+export default ReportSighting;

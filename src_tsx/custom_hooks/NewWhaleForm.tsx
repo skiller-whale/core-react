@@ -1,63 +1,63 @@
-import { type ChangeEventHandler, type FC, useState } from "react"
-import type { WhaleProps } from "./whales"
-import { setPageTitle } from "./hooks"
+import { type ChangeEventHandler, useState } from "react";
+import { setPageTitle } from "./hooks";
+import type { WhaleProps } from "./whales";
 
 type Props = {
-  addWhale: (whale: WhaleProps, position: number) => void
-  numberOfWhales: number
-}
+  addWhale: (whale: WhaleProps, position: number) => void;
+  numberOfWhales: number;
+};
 
-const NewWhaleForm: FC<Props> = ({ addWhale, numberOfWhales }) => {
+const NewWhaleForm = ({ addWhale, numberOfWhales }: Props) => {
   // name
-  const [name, setName] = useState("")
+  const [name, setName] = useState("");
 
   const changeName: ChangeEventHandler<HTMLInputElement> = (event) => {
-    setName(event.currentTarget.value)
-  }
+    setName(event.currentTarget.value);
+  };
 
   // weight
-  const [weight, setWeight] = useState(0)
+  const [weight, setWeight] = useState(0);
 
   const changeWeight: ChangeEventHandler<HTMLInputElement> = (event) => {
-    setWeight(parseInt(event.currentTarget.value) || 0)
-  }
+    setWeight(parseInt(event.currentTarget.value) || 0);
+  };
 
   // about
-  const [about, setAbout] = useState("")
+  const [about, setAbout] = useState("");
 
   const changeAbout: ChangeEventHandler<HTMLTextAreaElement> = (event) => {
-    setAbout(event.currentTarget.value)
-  }
+    setAbout(event.currentTarget.value);
+  };
 
   // position
-  const [position, _setPosition] = useState(numberOfWhales)
+  const [position, _setPosition] = useState(numberOfWhales);
 
   const loopValue = (value: number) => {
-    if (value < 0) return numberOfWhales
-    if (value > numberOfWhales) return 0
+    if (value < 0) return numberOfWhales;
+    if (value > numberOfWhales) return 0;
 
-    return value
-  }
+    return value;
+  };
 
   const setPosition: typeof _setPosition = (valueOrFunction) => {
     if (typeof valueOrFunction === "function") {
-      _setPosition((value) => loopValue(valueOrFunction(value)))
+      _setPosition((value) => loopValue(valueOrFunction(value)));
     } else {
-      _setPosition(loopValue(valueOrFunction))
+      _setPosition(loopValue(valueOrFunction));
     }
-  }
+  };
 
   const incrementPosition = () => {
-    setPosition((value) => value + 1)
-  }
+    setPosition((value) => value + 1);
+  };
 
   const decrementPosition = () => {
-    setPosition((value) => value - 1)
-  }
+    setPosition((value) => value - 1);
+  };
 
   const changePosition: ChangeEventHandler<HTMLInputElement> = (event) => {
-    setPosition(parseInt(event.currentTarget.value))
-  }
+    setPosition(parseInt(event.currentTarget.value));
+  };
 
   // form submit handler
   const createNewWhale = () => {
@@ -69,14 +69,14 @@ const NewWhaleForm: FC<Props> = ({ addWhale, numberOfWhales }) => {
         about,
       },
       position,
-    )
+    );
 
-    setName("")
-    setWeight(0)
-    setAbout("")
-    setPosition(0)
-    setPageTitle(`New Whale: ${name}`)
-  }
+    setName("");
+    setWeight(0);
+    setAbout("");
+    setPosition(0);
+    setPageTitle(`New Whale: ${name}`);
+  };
 
   return (
     <div className="flex flex-col gap-3 border border-gray-300 p-3 bg-gray-100">
@@ -132,7 +132,7 @@ const NewWhaleForm: FC<Props> = ({ addWhale, numberOfWhales }) => {
         New Whale
       </button>
     </div>
-  )
-}
+  );
+};
 
-export default NewWhaleForm
+export default NewWhaleForm;

@@ -1,41 +1,45 @@
-import { useState } from "react"
-import Button from "./Button"
+import { useState } from "react";
+import Button from "./Button";
 
 const Sonar = ({ whales }) => {
-  const [centerX, setCentreX] = useState(0)
-  const moveLeft = () => setCentreX((centerX) => Math.max(-100, centerX - 10))
-  const moveRight = () => setCentreX((centerX) => Math.min(100, centerX + 10))
+  const [centerX, setCentreX] = useState(0);
+  const moveLeft = () => setCentreX((centerX) => Math.max(-100, centerX - 10));
+  const moveRight = () => setCentreX((centerX) => Math.min(100, centerX + 10));
 
-  const [centerY, setCentreY] = useState(0)
-  const moveUp = () => setCentreY((centerY) => Math.max(-100, centerY - 10))
-  const moveDown = () => setCentreY((centerY) => Math.min(100, centerY + 10))
+  const [centerY, setCentreY] = useState(0);
+  const moveUp = () => setCentreY((centerY) => Math.max(-100, centerY - 10));
+  const moveDown = () => setCentreY((centerY) => Math.min(100, centerY + 10));
 
-  const [radius, setRadius] = useState(50)
-  const zoomIn = () => setRadius((radius) => Math.max(20, radius - 10))
-  const zoomOut = () => setRadius((radius) => Math.min(100, radius + 10))
+  const [radius, setRadius] = useState(50);
+  const zoomIn = () => setRadius((radius) => Math.max(20, radius - 10));
+  const zoomOut = () => setRadius((radius) => Math.min(100, radius + 10));
 
   const visibleWhales = whales.filter(
     (whale) =>
       (whale.location.x - centerX) ** 2 + (whale.location.y - centerY) ** 2 <=
       radius ** 2,
-  )
+  );
 
   const animals = visibleWhales.map((whale) => {
     const Icon = (
-      <span className={`text-[${100 / radius}rem]`}>
+      <span style={{ fontSize: `${100 / radius}rem` }}>
         {whale.species.includes("Dolphin") ? "🐬" : "🐋"}
       </span>
-    )
+    );
 
-    const x = ((-(centerX - whale.location.x) * 100) / radius + 100) / 2
-    const y = ((-(centerY - whale.location.y) * 100) / radius + 100) / 2
+    const x = ((-(centerX - whale.location.x) * 100) / radius + 100) / 2;
+    const y = ((-(centerY - whale.location.y) * 100) / radius + 100) / 2;
 
     return (
-      <div key={whale.id} className={`absolute left-[${x}%] top-[${y}%]`}>
+      <div
+        key={whale.id}
+        className="absolute"
+        style={{ left: `${x}%`, top: `${y}%` }}
+      >
         <span>{Icon}</span>
       </div>
-    )
-  })
+    );
+  });
 
   return (
     <div className="flex flex-col gap-3 w-96 mx-auto my-6">
@@ -73,7 +77,7 @@ const Sonar = ({ whales }) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Sonar
+export default Sonar;

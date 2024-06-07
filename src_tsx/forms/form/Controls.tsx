@@ -1,14 +1,14 @@
-import Button from "../components/Button"
-import { pages } from "./state"
+import Button from "../components/Button";
+import { pages } from "./state";
 
 type Props = {
-  visible: boolean
-  page: (typeof pages)[number]
-  pageStatus: string
-  formStatus: string
-  nextPage: () => void
-  previousPage: () => void
-}
+  visible: boolean;
+  page: (typeof pages)[number];
+  pageStatus: string;
+  formStatus: string;
+  nextPage: () => void;
+  previousPage: () => void;
+};
 
 const Controls = ({
   visible,
@@ -45,6 +45,6 @@ const Controls = ({
       </Button>
     )}
   </div>
-)
+);
 
-export default Controls
+export default Controls;

@@ -1,8 +1,8 @@
-import type { ComponentProps } from "react"
+import type { ComponentProps } from "react";
 
 type Props = ComponentProps<"select"> & {
-  options: string[]
-}
+  options: string[];
+};
 
 const Select = ({ options, ...rest }: Props) => (
   <select {...rest}>
@@ -12,6 +12,6 @@ const Select = ({ options, ...rest }: Props) => (
       </option>
     ))}
   </select>
-)
+);
 
-export default Select
+export default Select;

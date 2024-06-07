@@ -1,48 +1,51 @@
-import { type FormEvent, useState } from "react"
-import type { Whale } from "../../lib/apiTypes"
-import cetaceans from "../cetaceans"
-import Button from "../components/Button"
-import Input from "../components/Input"
-import Select from "../components/Select"
+import { type FormEvent, useState } from "react";
+import type { Whale } from "../../lib/apiTypes";
+import cetaceans from "../cetaceans";
+import Button from "../components/Button";
+import Input from "../components/Input";
+import Select from "../components/Select";
 
 type Props = {
-  addWhale: (whale: Whale) => void
-  removeLastWhale: () => void
-  whalesHaveBeenAdded: boolean
-}
+  addWhale: (whale: Whale) => void;
+  removeLastWhale: () => void;
+  whalesHaveBeenAdded: boolean;
+};
 
 const WhaleForm = ({
   addWhale,
   removeLastWhale,
   whalesHaveBeenAdded,
 }: Props) => {
-  const [formColour] = useState("blue")
+  const [formColour] = useState("blue");
 
   const createWhale = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault()
-    const formData = new FormData(event.currentTarget)
-    const name = formData.get("name") as string
-    const species = formData.get("species") as string
-    const x = parseFloat(formData.get("x") as string)
-    const y = parseFloat(formData.get("y") as string)
-    if (name !== "" && species !== "" && !isNaN(x) && !isNaN(y)) {
-      const id = crypto.randomUUID()
-      const weight = 0
-      const hasBaleen = species.includes("Dolphin") || species.includes("Sperm")
-      const location = { x, y, depth: 0 }
-      addWhale({ id, name, species, weight, hasBaleen, location })
-    }
-  }
+    event.preventDefault();
 
-  const [isValid, setIsValid] = useState(false)
+    const formData = new FormData(event.currentTarget);
+    const name = formData.get("name") as string;
+    const species = formData.get("species") as string;
+    const x = parseFloat(formData.get("x") as string);
+    const y = parseFloat(formData.get("y") as string);
+    if (name !== "" && species !== "" && !isNaN(x) && !isNaN(y)) {
+      const id = crypto.randomUUID();
+      const weight = 0;
+      const hasBaleen =
+        species.includes("Dolphin") || species.includes("Sperm");
+
+      const location = { x, y, depth: 0 };
+      addWhale({ id, name, species, weight, hasBaleen, location });
+    }
+  };
+
+  const [isValid, setIsValid] = useState(false);
   const validate = (event: FormEvent<HTMLFormElement>) => {
-    const formData = new FormData(event.currentTarget)
-    const name = formData.get("name") as string
-    const species = formData.get("species") as string
-    const x = parseFloat(formData.get("x") as string)
-    const y = parseFloat(formData.get("y") as string)
-    setIsValid(name !== "" && species !== "" && !isNaN(x) && !isNaN(y))
-  }
+    const formData = new FormData(event.currentTarget);
+    const name = formData.get("name") as string;
+    const species = formData.get("species") as string;
+    const x = parseFloat(formData.get("x") as string);
+    const y = parseFloat(formData.get("y") as string);
+    setIsValid(name !== "" && species !== "" && !isNaN(x) && !isNaN(y));
+  };
 
   return (
     <div className={`flex flex-col gap-3 p-3 shadow-md bg-${formColour}-100`}>
@@ -84,7 +87,7 @@ const WhaleForm = ({
         </div>
       </form>
     </div>
-  )
-}
+  );
+};
 
-export default WhaleForm
+export default WhaleForm;

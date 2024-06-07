@@ -1,4 +1,4 @@
-import { FaXmark } from "react-icons/fa6"
+import { FaXmark } from "react-icons/fa6";
 
 const ErrorDisplay = ({ component, error }) => (
   <div className="shadow">
@@ -13,6 +13,6 @@ const ErrorDisplay = ({ component, error }) => (
       <p className="p-3 border bg-gray-100 monospace">{error.message}</p>
     </div>
   </div>
-)
+);
 
-export default ErrorDisplay
+export default ErrorDisplay;

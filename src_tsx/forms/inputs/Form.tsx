@@ -4,34 +4,34 @@ import {
   useEffect,
   useImperativeHandle,
   useRef,
-} from "react"
+} from "react";
 
 type Props = FormHTMLAttributes<HTMLFormElement> & {
-  onFormData?: (event: FormDataEvent) => void
-}
+  onFormData?: (event: FormDataEvent) => void;
+};
 
 const Form = forwardRef<HTMLFormElement, Props>(
   ({ children, onFormData, ...rest }, ref) => {
-    const formRef = useRef<HTMLFormElement>(null)
+    const formRef = useRef<HTMLFormElement>(null);
 
-    useImperativeHandle(ref, () => formRef.current as HTMLFormElement)
+    useImperativeHandle(ref, () => formRef.current as HTMLFormElement);
 
     useEffect(() => {
       if (onFormData) {
-        formRef.current?.addEventListener("formdata", onFormData)
+        formRef.current?.addEventListener("formdata", onFormData);
 
         return () => {
-          formRef.current?.removeEventListener("formdata", onFormData)
-        }
+          formRef.current?.removeEventListener("formdata", onFormData);
+        };
       }
-    }, [])
+    }, []);
 
     return (
       <form ref={formRef} {...rest}>
         {children}
       </form>
-    )
+    );
   },
-)
+);
 
-export default Form
+export default Form;

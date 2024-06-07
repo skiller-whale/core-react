@@ -1,13 +1,13 @@
-import type { Whale } from "../lib/apiTypes"
+import type { Whale } from "../lib/apiTypes";
 
 type Props = {
-  whale: Whale
-  setX: (x: number) => void
-  setY: (y: number) => void
-}
+  whale: Whale;
+  setX: (x: number) => void;
+  setY: (y: number) => void;
+};
 
 const WhaleCard = ({ whale, setX, setY }: Props) => {
-  const { name, species, location } = whale
+  const { name, species, location } = whale;
 
   return (
     <div className="shadow p-4 flex flex-col gap-3">
@@ -38,7 +38,7 @@ const WhaleCard = ({ whale, setX, setY }: Props) => {
         </label>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default WhaleCard
+export default WhaleCard;

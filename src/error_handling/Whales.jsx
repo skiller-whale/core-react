@@ -1,13 +1,13 @@
-import { useState } from "react"
-import { ErrorBoundary } from "react-error-boundary"
-import ErrorDisplay from "./components/ErrorDisplay"
-import WhalesSonar from "./components/WhalesSonar"
-import WhalesTable from "./components/WhalesTable"
+import { useState } from "react";
+import { ErrorBoundary } from "react-error-boundary";
+import ErrorDisplay from "./components/ErrorDisplay";
+import WhalesSonar from "./components/WhalesSonar";
+import WhalesTable from "./components/WhalesTable";
 
 const Whales = ({ loading, whales }) => {
-  const [tab, setTab] = useState("table")
-  const showTable = () => setTab("table")
-  const showSonar = () => setTab("sonar")
+  const [tab, setTab] = useState("table");
+  const showTable = () => setTab("table");
+  const showSonar = () => setTab("sonar");
 
   return (
     <div className="shadow">
@@ -37,7 +37,7 @@ const Whales = ({ loading, whales }) => {
         )}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Whales
+export default Whales;

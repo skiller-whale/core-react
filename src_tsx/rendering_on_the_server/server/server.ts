@@ -1,20 +1,20 @@
-import { type RequestHandler, Router } from "express"
-import { loadSSR, loadTemplateFile } from "./serverHelpers.js"
+import { type RequestHandler, Router } from "express";
+import { loadSSR, loadTemplateFile } from "./serverHelpers.js";
 
-const router = Router()
+const router = Router();
 
 const removeTrailingSlash: RequestHandler = (req, res, next) => {
   if (req.originalUrl.endsWith("/")) {
-    return res.redirect(req.originalUrl.slice(0, -1))
+    return res.redirect(req.originalUrl.slice(0, -1));
   }
-  next()
-}
+  next();
+};
 
-router.get("*", removeTrailingSlash)
+router.get("*", removeTrailingSlash);
 
 router.get("/facts", async (req, res, next) => {
   try {
-    const template = await loadTemplateFile("../static/static.html", req, res)
+    const template = await loadTemplateFile("../static/static.html", req, res);
     // const { render } = await loadSSR("../static/entry-static", template, res)
     // const appHtml = render()
     //
@@ -23,26 +23,26 @@ router.get("/facts", async (req, res, next) => {
     //   appHtml
     // )
 
-    res.status(200)
-    res.send(template)
+    res.status(200);
+    res.send(template);
   } catch (error) {
-    next(error)
+    next(error);
   }
-})
+});
 
-const defaultWhales = 5
+const defaultWhales = 5;
 
 router.get("/", async (req, res, next) => {
   if (req.query.whales === undefined || typeof req.query.whales !== "string") {
-    return res.redirect(`?whales=${defaultWhales}`)
+    return res.redirect(`?whales=${defaultWhales}`);
   }
 
   const initialProps = {
     numberOfWhales: parseInt(req.query.whales) || defaultWhales,
-  }
+  };
 
   try {
-    const template = await loadTemplateFile("./index.html", req, res)
+    const template = await loadTemplateFile("./index.html", req, res);
 
     // const { render } = await loadSSR("./entry-server", template, res)
     //
@@ -53,11 +53,11 @@ router.get("/", async (req, res, next) => {
     //   appHtml
     // )
 
-    res.status(200)
-    res.send(template)
+    res.status(200);
+    res.send(template);
   } catch (error) {
-    next(error)
+    next(error);
   }
-})
+});
 
-export default router
+export default router;

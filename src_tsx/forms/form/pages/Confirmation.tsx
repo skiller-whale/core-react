@@ -1,18 +1,18 @@
-import camelCaseToString from "../../utils/camelCaseToString"
+import camelCaseToString from "../../utils/camelCaseToString";
 import {
   type DestinationAndDatesData,
   type PersonalDetailsData,
   type PreferredActivitiesData,
   getDataFromFormData,
   getDataFromProps,
-} from "../data"
+} from "../data";
 
 type Props = {
-  visible: boolean
-  personalDetails: PersonalDetailsData
-  destinationAndDates: DestinationAndDatesData
-  preferredActivities: PreferredActivitiesData
-}
+  visible: boolean;
+  personalDetails: PersonalDetailsData;
+  destinationAndDates: DestinationAndDatesData;
+  preferredActivities: PreferredActivitiesData;
+};
 
 const Confirmation = ({
   visible,
@@ -24,7 +24,7 @@ const Confirmation = ({
     personalDetails,
     destinationAndDates,
     preferredActivities,
-  )
+  );
 
   return (
     <div className={visible ? "flex flex-col gap-4" : "hidden"}>
@@ -79,7 +79,7 @@ const Confirmation = ({
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Confirmation
+export default Confirmation;

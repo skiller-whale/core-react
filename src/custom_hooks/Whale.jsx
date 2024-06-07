@@ -1,15 +1,15 @@
-import { forwardRef } from "react"
-import WhaleRating from "./WhaleRating"
+import { forwardRef } from "react";
+import WhaleRating from "./WhaleRating";
 
 const Whale = forwardRef(({ name, weight, about, firstTimeSeen }, ref) => {
   const onKeyboardRating = (event) => {
     switch (event.key) {
       case "ArrowRight":
-        break
+        break;
       case "ArrowLeft":
-        break
+        break;
     }
-  }
+  };
 
   return (
     <div
@@ -29,7 +29,7 @@ const Whale = forwardRef(({ name, weight, about, firstTimeSeen }, ref) => {
       <p>{about}</p>
       <WhaleRating rating={5} max={10} onClick={console.log} />
     </div>
-  )
-})
+  );
+});
 
-export default Whale
+export default Whale;

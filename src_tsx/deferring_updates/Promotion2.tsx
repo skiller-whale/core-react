@@ -1,6 +1,4 @@
-import type { FC } from "react"
-
-const Promotion2: FC = () => (
+const Promotion2 = () => (
   <div className="flex flex-col h-full w-full">
     <div className="align-self-center text-3xl font-semibold">
       20% off on Go
@@ -16,6 +14,6 @@ const Promotion2: FC = () => (
       </button>
     </div>
   </div>
-)
+);
 
-export default Promotion2
+export default Promotion2;

@@ -1,13 +1,12 @@
-import type { FC } from "react"
-import type { WhaleFactsProps } from "../data/facts"
-import WhaleFact from "./WhaleFact"
-import Header from "./Header"
+import type { WhaleFactsProps } from "../data/facts";
+import Header from "./Header";
+import WhaleFact from "./WhaleFact";
 
 export type Props = {
-  facts: WhaleFactsProps[]
-}
+  facts: WhaleFactsProps[];
+};
 
-const WhaleFacts: FC<Props> = ({ facts }) => (
+const WhaleFacts = ({ facts }: Props) => (
   <div className="flex flex-col gap-6">
     <Header href="../rendering_on_the_server" callToAction="Go back home">
       Fun (?) facts (?) about whales (?)
@@ -18,6 +17,6 @@ const WhaleFacts: FC<Props> = ({ facts }) => (
       ))}
     </div>
   </div>
-)
+);
 
-export default WhaleFacts
+export default WhaleFacts;

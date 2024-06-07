@@ -1,14 +1,14 @@
-import { useState } from "react"
-import Whale from "./Whale"
-import NewWhaleForm from "./NewWhaleForm"
+import { useState } from "react";
+import NewWhaleForm from "./NewWhaleForm";
+import Whale from "./Whale";
 
 const App = ({ whales: initialWhales }) => {
-  const [whales, setWhales] = useState(initialWhales)
+  const [whales, setWhales] = useState(initialWhales);
   const addWhale = (whale) => {
     if (whale.id) {
-      setWhales((whales) => [...whales, whale])
+      setWhales((whales) => [...whales, whale]);
     }
-  }
+  };
 
   return (
     <div className="flex flex-col gap-6">
@@ -22,7 +22,7 @@ const App = ({ whales: initialWhales }) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;

@@ -104,4 +104,4 @@ export const whales = [
     weight: 60138,
     hasBaleen: true,
   },
-]
+];

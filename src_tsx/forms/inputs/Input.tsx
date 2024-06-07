@@ -1,8 +1,8 @@
-import type { FocusEvent, InputHTMLAttributes } from "react"
+import type { FocusEvent, InputHTMLAttributes } from "react";
 
 type Props = InputHTMLAttributes<HTMLInputElement> & {
-  label: string
-}
+  label: string;
+};
 
 const Input = ({ label, id, ...rest }: Props) => (
   <div className="flex-1 flex flex-col gap-2">
@@ -11,6 +11,6 @@ const Input = ({ label, id, ...rest }: Props) => (
     </label>
     <input id={id} {...rest} />
   </div>
-)
+);
 
-export default Input
+export default Input;

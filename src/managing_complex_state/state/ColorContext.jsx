@@ -1,11 +1,11 @@
-import { createContext, useContext, useState } from "react"
+import { createContext, useContext, useState } from "react";
 
-export const ColorContext = null
+export const ColorContext = null;
 
-export const SetColorContext = null
+export const SetColorContext = null;
 
 const ColorProvider = ({ children }) => {
-  return <>{children}</>
-}
+  return <>{children}</>;
+};
 
-export default ColorProvider
+export default ColorProvider;

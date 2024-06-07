@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState } from "react";
 
 const usePrefersReducedMotion = () => {
-  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false)
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
 
-  return prefersReducedMotion
-}
+  return prefersReducedMotion;
+};
 
-export default usePrefersReducedMotion
+export default usePrefersReducedMotion;

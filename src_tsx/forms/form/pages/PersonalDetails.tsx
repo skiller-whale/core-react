@@ -1,20 +1,20 @@
-import type { ChangeEventHandler } from "react"
-import Fieldset from "../../components/Fieldset"
-import Input from "../../inputs/Input"
-import TextArea from "../../inputs/TextArea"
-import type { PersonalDetailsData } from "../data"
-import { initialFormData } from "../state"
+import type { ChangeEventHandler } from "react";
+import Fieldset from "../../components/Fieldset";
+import Input from "../../inputs/Input";
+import TextArea from "../../inputs/TextArea";
+import type { PersonalDetailsData } from "../data";
+import { initialFormData } from "../state";
 
 type Props = {
-  visible: boolean
-  personalDetails: PersonalDetailsData
+  visible: boolean;
+  personalDetails: PersonalDetailsData;
   setPersonalDetails: Record<
     keyof PersonalDetailsData,
     ChangeEventHandler<
       HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
     >
-  >
-}
+  >;
+};
 
 const PersonalDetails = ({
   visible,
@@ -82,6 +82,6 @@ const PersonalDetails = ({
       </div>
     </Fieldset>
   </div>
-)
+);
 
-export default PersonalDetails
+export default PersonalDetails;

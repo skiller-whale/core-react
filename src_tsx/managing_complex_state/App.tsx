@@ -1,31 +1,31 @@
-import { useEffect, useState } from "react"
-import type { Whale } from "../lib/apiTypes"
-import DepthSonar from "./DepthSonar"
-import SonarDashboard from "./SonarDashboard"
-import ColorProvider from "./state/ColorContext"
+import { useEffect, useState } from "react";
+import type { Whale } from "../lib/apiTypes";
+import DepthSonar from "./DepthSonar";
+import SonarDashboard from "./SonarDashboard";
+import ColorProvider from "./state/ColorContext";
 import WhalesProvider, {
   updateWhaleCoordinate,
   useWhalesContext,
-} from "./state/WhalesState"
+} from "./state/WhalesState";
 
 const App = () => (
   <ColorProvider>
     <Panel />
   </ColorProvider>
-)
+);
 
 const Panel = () => {
   // state values
-  const [initialising, setInitialising] = useState(true)
-  const [whales, setWhales] = useState<Whale[]>([])
-  const [selectedWhaleId, setSelectedWhaleId] = useState<Whale["id"]>("")
+  const [initialising, setInitialising] = useState(true);
+  const [whales, setWhales] = useState<Whale[]>([]);
+  const [selectedWhaleId, setSelectedWhaleId] = useState<Whale["id"]>("");
 
   // state update functions
   const initialise = (whales: Whale[]) => {
-    setInitialising(false)
-    setWhales(whales)
-    setSelectedWhaleId(whales[0].id)
-  }
+    setInitialising(false);
+    setWhales(whales);
+    setSelectedWhaleId(whales[0].id);
+  };
 
   const setSelectedWhaleX = (x: number) => {
     setWhales(
@@ -34,8 +34,8 @@ const Panel = () => {
           ? updateWhaleCoordinate(whale, "x", x)
           : whale,
       ),
-    )
-  }
+    );
+  };
 
   const setSelectedWhaleY = (y: number) => {
     setWhales(
@@ -44,18 +44,18 @@ const Panel = () => {
           ? updateWhaleCoordinate(whale, "y", y)
           : whale,
       ),
-    )
-  }
+    );
+  };
 
   // fetch whales from server on mount
   useEffect(() => {
     const fetchWhales = async () => {
-      const response = await fetch("/api/aquatic-animals/whales/")
-      const { animals } = await response.json()
-      initialise(animals)
-    }
-    fetchWhales()
-  }, [])
+      const response = await fetch("/api/aquatic-animals/whales/");
+      const { animals } = await response.json();
+      initialise(animals);
+    };
+    fetchWhales();
+  }, []);
 
   // render placeholder until initialisation is complete
   if (initialising) {
@@ -63,11 +63,11 @@ const Panel = () => {
       <div className="flex justify-center">
         <p>Initialising...</p>
       </div>
-    )
+    );
   }
 
   // render the panel when initialisation is complete
-  const selectedWhale = whales.find((whale) => whale.id === selectedWhaleId)!
+  const selectedWhale = whales.find((whale) => whale.id === selectedWhaleId)!;
 
   return (
     <div className="flex justify-center gap-3">
@@ -80,7 +80,7 @@ const Panel = () => {
       />
       {/* <DepthSonar whale={selectedWhale} /> */}
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;

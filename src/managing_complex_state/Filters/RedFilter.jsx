@@ -7,6 +7,6 @@ const RedFilter = ({ children }) => (
   >
     {children}
   </span>
-)
+);
 
-export default RedFilter
+export default RedFilter;

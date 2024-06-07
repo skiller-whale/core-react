@@ -1,25 +1,25 @@
-import type { ChangeEventHandler } from "react"
-import Fieldset from "../../components/Fieldset"
-import Checkbox from "../../inputs/Checkbox"
-import Input from "../../inputs/Input"
-import Select from "../../inputs/Select"
+import type { ChangeEventHandler } from "react";
+import Fieldset from "../../components/Fieldset";
+import Checkbox from "../../inputs/Checkbox";
+import Input from "../../inputs/Input";
+import Select from "../../inputs/Select";
 import {
   type DestinationAndDatesData,
   accommodationTypes,
   locations,
-} from "../data"
-import { initialFormData } from "../state"
+} from "../data";
+import { initialFormData } from "../state";
 
 type Props = {
-  visible: boolean
-  destinationAndDates: DestinationAndDatesData
+  visible: boolean;
+  destinationAndDates: DestinationAndDatesData;
   setDestinationAndDates: Record<
     keyof DestinationAndDatesData,
     ChangeEventHandler<
       HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
     >
-  >
-}
+  >;
+};
 
 const DestinationAndDates = ({
   visible,
@@ -72,6 +72,6 @@ const DestinationAndDates = ({
       />
     </Fieldset>
   </div>
-)
+);
 
-export default DestinationAndDates
+export default DestinationAndDates;

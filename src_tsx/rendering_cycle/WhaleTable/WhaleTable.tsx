@@ -1,12 +1,12 @@
-import type { Whale } from "../../lib/apiTypes"
-import WhaleRow from "./WhaleRow"
+import type { Whale } from "../../lib/apiTypes";
+import WhaleRow from "./WhaleRow";
 
 type Props = {
-  whales: Whale[]
-}
+  whales: Whale[];
+};
 
 const WhaleTable = ({ whales }: Props) => {
-  const orderedWhales = whales.toSorted((a, b) => a.name.localeCompare(b.name))
+  const orderedWhales = whales.toSorted((a, b) => a.name.localeCompare(b.name));
 
   return (
     <div className="flex flex-col gap-3 p-3 shadow-md">
@@ -27,7 +27,7 @@ const WhaleTable = ({ whales }: Props) => {
         </tbody>
       </table>
     </div>
-  )
-}
+  );
+};
 
-export default WhaleTable
+export default WhaleTable;

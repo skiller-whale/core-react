@@ -1,33 +1,33 @@
-import { memo, useCallback, useMemo, useState } from "react"
-import doSomethingThatTakesAges from "../lib/doSomethingThatTakesAges"
-import type { AquaticAnimal } from "./whales"
-import AnimalRow from "./AquaticAnimalRow"
-import { BestFriend } from "./BestFriend"
-import useSpeechSynthesisVoices from "./useSpeechSynthesisVoices"
+import { memo, useCallback, useMemo, useState } from "react";
+import doSomethingThatTakesAges from "../lib/doSomethingThatTakesAges";
+import AnimalRow from "./AquaticAnimalRow";
+import { BestFriend } from "./BestFriend";
+import useSpeechSynthesisVoices from "./useSpeechSynthesisVoices";
+import type { AquaticAnimal } from "./whales";
 
-const ARTIFICIALLY_SLOW = true
+const ARTIFICIALLY_SLOW = true;
 
 type Props = {
-  animals: AquaticAnimal[]
-}
+  animals: AquaticAnimal[];
+};
 
 const AquaticAnimalTable = ({ animals }: Props) => {
-  const [bestFriend, setBestFriend] = useState(animals[0])
+  const [bestFriend, setBestFriend] = useState(animals[0]);
 
-  const [voices, voice, setVoice] = useSpeechSynthesisVoices()
+  const [voices, voice, setVoice] = useSpeechSynthesisVoices();
 
   const setBestFriendAndSayHello = (animal: AquaticAnimal) => {
-    setBestFriend(animal)
+    setBestFriend(animal);
 
     const utterance = new SpeechSynthesisUtterance(
       `Hello ${animal.name} the ${animal.species}`,
-    )
-    utterance.voice = voice
-    speechSynthesis.speak(utterance)
-  }
+    );
+    utterance.voice = voice;
+    speechSynthesis.speak(utterance);
+  };
 
   if (ARTIFICIALLY_SLOW) {
-    doSomethingThatTakesAges(1000)
+    doSomethingThatTakesAges(1000);
   }
 
   return (
@@ -61,7 +61,7 @@ const AquaticAnimalTable = ({ animals }: Props) => {
         </table>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default memo(AquaticAnimalTable)
+export default memo(AquaticAnimalTable);

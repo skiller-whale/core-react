@@ -1,6 +1,4 @@
-import type { FC } from "react"
-
-const Searching: FC = () => (
+const Searching = () => (
   <div className="flex items-center p-2">
     <svg
       className="animate-spin -ml-1 mr-3 h-5 w-5 text-black"
@@ -24,6 +22,6 @@ const Searching: FC = () => (
     </svg>
     <span>Searching...</span>
   </div>
-)
+);
 
-export default Searching
+export default Searching;

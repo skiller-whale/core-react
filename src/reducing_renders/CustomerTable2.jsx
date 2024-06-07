@@ -1,4 +1,4 @@
-import CustomerRow from "./CustomerRow2"
+import CustomerRow from "./CustomerRow2";
 
 const CustomerTable = ({ customers }) => {
   const rows = customers.map((customer) => {
@@ -7,10 +7,10 @@ const CustomerTable = ({ customers }) => {
       lastName: customer.name.last,
       email: customer.email,
       amountSpent: customer.amountSpent,
-    }
+    };
 
-    return <CustomerRow key={customer.email} customer={customerRowProp} />
-  })
+    return <CustomerRow key={customer.email} customer={customerRowProp} />;
+  });
 
   return (
     <table className="min-w-full">
@@ -23,7 +23,7 @@ const CustomerTable = ({ customers }) => {
       </thead>
       <tbody>{rows}</tbody>
     </table>
-  )
-}
+  );
+};
 
-export default CustomerTable
+export default CustomerTable;

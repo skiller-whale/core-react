@@ -1,8 +1,10 @@
 {
   "extends": "../tsconfig.json",
-  "include": ["./*.ts", "./*.tsx"],
+  "include": ["./**/*.ts", "./**/*.tsx"],
   "compilerOptions": {
     "noEmit": true,
+    "allowJs": true,
+    "checkJs": true,
     "allowImportingTsExtensions": true
   }
 }

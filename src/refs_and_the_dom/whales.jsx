@@ -34,4 +34,4 @@ export const whales = [
       "The orca, or killer whale, is a species of toothed whale, recognizable by its black-and-white patterned body.",
     weight: 3000,
   },
-]
+];

@@ -1,19 +1,19 @@
-import { type FC, useState } from "react"
-import type { WhaleProps } from "./whales"
-import Whale from "./Whale"
-import NewWhaleForm from "./NewWhaleForm"
+import { useState } from "react";
+import NewWhaleForm from "./NewWhaleForm";
+import Whale from "./Whale";
+import type { WhaleProps } from "./whales";
 
 type Props = {
-  whales: WhaleProps[]
-}
+  whales: WhaleProps[];
+};
 
-const App: FC<Props> = ({ whales: initialWhales }) => {
-  const [whales, setWhales] = useState(initialWhales)
+const App = ({ whales: initialWhales }: Props) => {
+  const [whales, setWhales] = useState(initialWhales);
   const addWhale = (whale: WhaleProps) => {
     if (whale.id) {
-      setWhales((whales) => [...whales, whale])
+      setWhales((whales) => [...whales, whale]);
     }
-  }
+  };
 
   return (
     <div className="flex flex-col gap-6">
@@ -27,7 +27,7 @@ const App: FC<Props> = ({ whales: initialWhales }) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;

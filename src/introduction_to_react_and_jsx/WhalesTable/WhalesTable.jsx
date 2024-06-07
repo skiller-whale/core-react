@@ -1,4 +1,4 @@
-import WhalesTableRow from "./WhalesTableRow"
+import WhalesTableRow from "./WhalesTableRow";
 
 const WhalesTable = ({ whales }) => (
   <table className="min-w-full">
@@ -16,6 +16,6 @@ const WhalesTable = ({ whales }) => (
       )}
     </tbody>
   </table>
-)
+);
 
-export default WhalesTable
+export default WhalesTable;

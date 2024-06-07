@@ -1,7 +1,7 @@
-import WhaleRow from "./WhaleRow"
+import WhaleRow from "./WhaleRow";
 
 const WhaleTable = ({ whales }) => {
-  const orderedWhales = whales.toSorted((a, b) => a.name.localeCompare(b.name))
+  const orderedWhales = whales.toSorted((a, b) => a.name.localeCompare(b.name));
 
   return (
     <div className="flex flex-col gap-3 p-3 shadow-md">
@@ -22,7 +22,7 @@ const WhaleTable = ({ whales }) => {
         </tbody>
       </table>
     </div>
-  )
-}
+  );
+};
 
-export default WhaleTable
+export default WhaleTable;

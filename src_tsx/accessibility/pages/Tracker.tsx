@@ -1,16 +1,16 @@
-import { useState } from "react"
-import type { Whale } from "../../lib/apiTypes"
-import WhalesSonar from "../components/WhalesSonar"
-import WhalesTable from "../components/WhalesTable"
+import { useState } from "react";
+import type { Whale } from "../../lib/apiTypes";
+import WhalesSonar from "../components/WhalesSonar";
+import WhalesTable from "../components/WhalesTable";
 
 type Props = {
-  whales: Whale[]
-}
+  whales: Whale[];
+};
 
-const tabs = ["Table View", "Sonar View"] as const
+const tabs = ["Table View", "Sonar View"] as const;
 
 const Tracker = ({ whales }: Props) => {
-  const [tab, setTab] = useState<(typeof tabs)[number]>("Table View")
+  const [tab, setTab] = useState<(typeof tabs)[number]>("Table View");
 
   return (
     <main className="shadow">
@@ -34,7 +34,7 @@ const Tracker = ({ whales }: Props) => {
         ) : null}
       </div>
     </main>
-  )
-}
+  );
+};
 
-export default Tracker
+export default Tracker;

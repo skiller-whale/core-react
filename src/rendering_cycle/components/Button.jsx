@@ -1,6 +1,6 @@
 const Button = ({ children, ...rest }) => {
   // artificially slow down rendering
-  const start = performance.now()
+  const start = performance.now();
   while (performance.now() < start + 20) {}
 
   return (
@@ -10,7 +10,7 @@ const Button = ({ children, ...rest }) => {
     >
       {children}
     </button>
-  )
-}
+  );
+};
 
-export default Button
+export default Button;

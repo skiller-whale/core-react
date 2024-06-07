@@ -1,40 +1,39 @@
 import {
-  type FC,
   type PropsWithChildren,
   type RefObject,
   useLayoutEffect,
   useRef,
   useState,
-} from "react"
+} from "react";
 
 type Props = {
-  buttonRef: RefObject<HTMLButtonElement>
-}
+  buttonRef: RefObject<HTMLButtonElement>;
+};
 
-const Tooltip: FC<PropsWithChildren<Props>> = ({ children }) => {
-  const ref = useRef<HTMLDivElement>(null)
-  const anchorRef = useRef<HTMLDivElement>(null)
-  const [x, setX] = useState(0)
-  const [y, setY] = useState(0)
+const Tooltip = ({ children }: PropsWithChildren<Props>) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const anchorRef = useRef<HTMLDivElement>(null);
+  const [x, setX] = useState(0);
+  const [y, setY] = useState(0);
 
   useLayoutEffect(() => {
-    const height = ref.current?.getBoundingClientRect().height ?? 0
+    const height = ref.current?.getBoundingClientRect().height ?? 0;
 
-    const boundingRect = anchorRef.current?.getBoundingClientRect()
+    const boundingRect = anchorRef.current?.getBoundingClientRect();
     if (boundingRect) {
-      setX(boundingRect.right)
+      setX(boundingRect.right);
       if (boundingRect.top > height) {
-        setY(boundingRect.top + window.scrollY - height)
+        setY(boundingRect.top + window.scrollY - height);
       } else {
-        setY(boundingRect.bottom + window.scrollY)
+        setY(boundingRect.bottom + window.scrollY);
       }
     }
-  }, [])
+  }, []);
 
   const style = {
     left: x,
     top: y,
-  }
+  };
 
   return (
     <div ref={anchorRef}>
@@ -46,7 +45,7 @@ const Tooltip: FC<PropsWithChildren<Props>> = ({ children }) => {
         <div className="p-3">{children}</div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Tooltip
+export default Tooltip;

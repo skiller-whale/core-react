@@ -1,15 +1,14 @@
-import type { FC } from "react"
-import type { Whale } from "../lib/apiTypes"
-import doSomethingThatTakesAges from "../lib/doSomethingThatTakesAges"
+import type { Whale } from "../lib/apiTypes";
+import doSomethingThatTakesAges from "../lib/doSomethingThatTakesAges";
 
 type Props = {
-  whale: Whale
-}
+  whale: Whale;
+};
 
-const WhaleRow: FC<Props> = ({ whale }) => {
-  doSomethingThatTakesAges(100)
+const WhaleRow = ({ whale }: Props) => {
+  doSomethingThatTakesAges(100);
 
-  const profilePicture = whale.species.includes("Dolphin") ? "🐬" : "🐳"
+  const profilePicture = whale.species.includes("Dolphin") ? "🐬" : "🐳";
 
   return (
     <tr className="border-b even:bg-gray-100">
@@ -20,7 +19,7 @@ const WhaleRow: FC<Props> = ({ whale }) => {
         {whale.hasBaleen ? "❌" : "✅"}
       </td>
     </tr>
-  )
-}
+  );
+};
 
-export default WhaleRow
+export default WhaleRow;

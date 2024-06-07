@@ -1,9 +1,9 @@
-import Fieldset from "../../components/Fieldset"
-import Checkbox from "../../inputs/Checkbox"
-import Input from "../../inputs/Input"
-import Select from "../../inputs/Select"
-import { accommodationTypes, locations } from "../data"
-import { initialFormData } from "../state"
+import Fieldset from "../../components/Fieldset";
+import Checkbox from "../../inputs/Checkbox";
+import Input from "../../inputs/Input";
+import Select from "../../inputs/Select";
+import { accommodationTypes, locations } from "../data";
+import { initialFormData } from "../state";
 
 const DestinationAndDates = ({
   visible,
@@ -56,6 +56,6 @@ const DestinationAndDates = ({
       />
     </Fieldset>
   </div>
-)
+);
 
-export default DestinationAndDates
+export default DestinationAndDates;

@@ -1,8 +1,8 @@
-import { useState } from "react"
+import { useState } from "react";
 
 const WhaleRating = ({ rating, onClick, max = 10 }) => {
-  const [hoverRating, setHoverRating] = useState(null)
-  const currentRating = hoverRating ?? rating
+  const [hoverRating, setHoverRating] = useState(null);
+  const currentRating = hoverRating ?? rating;
 
   return (
     <div
@@ -27,10 +27,10 @@ const WhaleRating = ({ rating, onClick, max = 10 }) => {
           >
             {i < currentRating ? "🐳" : <span className="grayscale">🐋</span>}{" "}
           </span>
-        )
+        );
       })}
     </div>
-  )
-}
+  );
+};
 
-export default WhaleRating
+export default WhaleRating;

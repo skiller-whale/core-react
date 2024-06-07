@@ -1,11 +1,11 @@
-import { useState } from "react"
-import WhalesSonar from "../components/WhalesSonar"
-import WhalesTable from "../components/WhalesTable"
+import { useState } from "react";
+import WhalesSonar from "../components/WhalesSonar";
+import WhalesTable from "../components/WhalesTable";
 
-const tabs = ["Table View", "Sonar View"]
+const tabs = ["Table View", "Sonar View"];
 
 const Tracker = ({ whales }) => {
-  const [tab, setTab] = useState("Table View")
+  const [tab, setTab] = useState("Table View");
 
   return (
     <main className="shadow">
@@ -29,7 +29,7 @@ const Tracker = ({ whales }) => {
         ) : null}
       </div>
     </main>
-  )
-}
+  );
+};
 
-export default Tracker
+export default Tracker;

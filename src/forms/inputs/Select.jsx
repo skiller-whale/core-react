@@ -1,4 +1,4 @@
-import camelCaseToString from "../utils/camelCaseToString"
+import camelCaseToString from "../utils/camelCaseToString";
 
 const Select = ({ label, id, options, ...rest }) => (
   <div className="flex-1 flex flex-col gap-2">
@@ -13,6 +13,6 @@ const Select = ({ label, id, options, ...rest }) => (
       ))}
     </select>
   </div>
-)
+);
 
-export default Select
+export default Select;

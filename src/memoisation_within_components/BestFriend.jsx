@@ -1,10 +1,10 @@
-import { useEffect, useMemo } from "react"
+import { useEffect, useMemo } from "react";
 
 export const BestFriend = ({ animal, voices, voice, setVoice }) => {
   const utterance = new SpeechSynthesisUtterance(
     `Hello ${animal.name} the ${animal.species}`,
-  )
-  utterance.voice = voice
+  );
+  utterance.voice = voice;
 
   // uncomment this code when instructed
   // -----------------------------------
@@ -38,7 +38,7 @@ export const BestFriend = ({ animal, voices, voice, setVoice }) => {
                 voices.find(
                   (voice) => voice.name === event.currentTarget.value,
                 ),
-              )
+              );
             }}
           >
             {voices.length > 0 ? (
@@ -54,5 +54,5 @@ export const BestFriend = ({ animal, voices, voice, setVoice }) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};

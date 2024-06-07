@@ -1,12 +1,12 @@
-import { type ChangeEventHandler, type FC, useState } from "react"
-import SearchResult from "./SearchResult"
+import { type ChangeEventHandler, useState } from "react";
+import SearchResult from "./SearchResult";
 
-const App: FC = () => {
-  const [query, setQuery] = useState("")
+const App = () => {
+  const [query, setQuery] = useState("");
 
   const changeQuery: ChangeEventHandler<HTMLInputElement> = (event) => {
-    setQuery(event.currentTarget.value)
-  }
+    setQuery(event.currentTarget.value);
+  };
 
   return (
     <div>
@@ -21,7 +21,7 @@ const App: FC = () => {
       </div>
       <SearchResult query={query} />
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;

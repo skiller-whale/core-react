@@ -15,4 +15,4 @@ export default {
   memoisation_within_components: "Memoisation within Components",
   code_splitting_and_lazy_loading: "Code Splitting and Lazy Loading",
   rendering_on_the_server: "Rendering on the Server",
-}
+};

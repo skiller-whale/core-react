@@ -1,4 +1,4 @@
-const Sonar = ({ zoomIn, zoomOut, moveLeft, moveUp, moveRight, moveDown }) => (
+const SonarControls = ({ zoomIn, zoomOut, moveLeft, moveUp, moveRight, moveDown }) => (
   <div className="shadow p-4 flex flex-col gap-3">
     <div className="flex justify-around mt-3">
       <div className="flex flex-col gap-3">
@@ -15,7 +15,7 @@ const Sonar = ({ zoomIn, zoomOut, moveLeft, moveUp, moveRight, moveDown }) => (
       </div>
     </div>
   </div>
-)
+);
 
 const Button = ({ onClick, children }) => (
   <button
@@ -24,6 +24,6 @@ const Button = ({ onClick, children }) => (
   >
     {children}
   </button>
-)
+);
 
-export default Sonar
+export default SonarControls;

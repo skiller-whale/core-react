@@ -1,5 +1,6 @@
-import { renderToString } from "react-dom/server"
-import App from "./App"
+import { renderToString } from "react-dom/server";
+import App from "./App";
+
 // fetch whales data from the server
 const response = await fetch("/api/aquatic-animals/whales/", {
   method: "GET",
@@ -7,10 +8,11 @@ const response = await fetch("/api/aquatic-animals/whales/", {
     Accept: "application/json",
     "Content-Type": "application/json",
   },
-})
+});
 
-const { animals } = await response.json()
+const { animals } = await response.json();
+
 // initialise the app
-const root = document.getElementById("root")
-const appHTML = renderToString(<App whales={animals} />)
-root.innerHTML = appHTML
+const root = document.getElementById("root");
+const appHTML = renderToString(<App whales={animals} />);
+root.innerHTML = appHTML;

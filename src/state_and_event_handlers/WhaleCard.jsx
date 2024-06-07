@@ -1,5 +1,5 @@
 const WhaleCard = ({ whale, setX, setY }) => {
-  const { name, species, location } = whale
+  const { name, species, location } = whale;
 
   return (
     <div className="shadow p-4 flex flex-col gap-3">
@@ -30,7 +30,7 @@ const WhaleCard = ({ whale, setX, setY }) => {
         </label>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default WhaleCard
+export default WhaleCard;

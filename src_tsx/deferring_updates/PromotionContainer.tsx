@@ -1,28 +1,27 @@
 import {
-  type FC,
   Suspense,
   lazy,
   useDeferredValue,
   useEffect,
   useState,
   useTransition,
-} from "react"
-import { ErrorBoundary } from "react-error-boundary"
-import LoadingSpinner from "./LoadingSpinner"
-import Promotion1 from "./Promotion1"
+} from "react";
+import { ErrorBoundary } from "react-error-boundary";
+import LoadingSpinner from "./LoadingSpinner";
+import Promotion1 from "./Promotion1";
 
-const Promotion2 = lazy(() => import("./Promotion2"))
+const Promotion2 = lazy(() => import("./Promotion2"));
 
-const PromotionContainer: FC = () => {
-  const [promotion, setPromotion] = useState(1)
+const PromotionContainer = () => {
+  const [promotion, setPromotion] = useState(1);
   useEffect(() => {
     const timer = setInterval(
       () => setPromotion((current) => (current + 1) % 2),
       5000,
-    )
+    );
 
-    return () => clearInterval(timer)
-  }, [])
+    return () => clearInterval(timer);
+  }, []);
 
   return (
     <div className="flex rounded-md bg-cyan-500 text-white p-4 h-[22rem]">
@@ -32,7 +31,7 @@ const PromotionContainer: FC = () => {
         </Suspense>
       </ErrorBoundary>
     </div>
-  )
-}
+  );
+};
 
-export default PromotionContainer
+export default PromotionContainer;

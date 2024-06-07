@@ -1,33 +1,33 @@
-import { useMemo, useState } from "react"
-import doSomethingThatTakesAges from "../lib/doSomethingThatTakesAges"
-import { generateAquaticAnimals } from "./whales"
-import AquaticAnimalTable from "./AquaticAnimalTable"
-import { Search } from "./Search"
+import { useMemo, useState } from "react";
+import doSomethingThatTakesAges from "../lib/doSomethingThatTakesAges";
+import AquaticAnimalTable from "./AquaticAnimalTable";
+import { Search } from "./Search";
+import { generateAquaticAnimals } from "./whales";
 
-const aquaticAnimals = generateAquaticAnimals(100)
-const ARTIFICIALLY_SLOW = true
+const aquaticAnimals = generateAquaticAnimals(100);
+const ARTIFICIALLY_SLOW = true;
 const purposefullySlowFilter = (aquaticAnimals, searchTerm) =>
   aquaticAnimals.filter((animal) => {
     if (ARTIFICIALLY_SLOW) {
-      doSomethingThatTakesAges(5)
+      doSomethingThatTakesAges(5);
     }
     if (searchTerm === "") {
-      return true
+      return true;
     }
-    const name = animal.name.toLowerCase()
-    const species = animal.species.toLowerCase()
-    const searchTermLower = searchTerm.toLowerCase()
+    const name = animal.name.toLowerCase();
+    const species = animal.species.toLowerCase();
+    const searchTermLower = searchTerm.toLowerCase();
 
-    return name.includes(searchTermLower) || species.includes(searchTermLower)
-  })
+    return name.includes(searchTermLower) || species.includes(searchTermLower);
+  });
 
 const App = () => {
-  const [aquaticMode, setAquaticMode] = useState(false)
-  const [searchTerm, setSearchTerm] = useState("")
+  const [aquaticMode, setAquaticMode] = useState(false);
+  const [searchTerm, setSearchTerm] = useState("");
   const filteredAquaticAnimals = purposefullySlowFilter(
     aquaticAnimals,
     searchTerm,
-  )
+  );
 
   return (
     <div
@@ -54,7 +54,7 @@ const App = () => {
         <AquaticAnimalTable animals={filteredAquaticAnimals} />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;

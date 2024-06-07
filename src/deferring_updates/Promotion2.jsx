@@ -14,6 +14,6 @@ const Promotion2 = () => (
       </button>
     </div>
   </div>
-)
+);
 
-export default Promotion2
+export default Promotion2;

@@ -1,8 +1,8 @@
-import Button from "./components/Button"
+import Button from "./components/Button";
 
 type Props = {
-  fetchWhales: (path: string) => void
-}
+  fetchWhales: (path: string) => void;
+};
 
 const DataControls = ({ fetchWhales }: Props) => (
   <div className="flex gap-3 space-around">
@@ -31,6 +31,6 @@ const DataControls = ({ fetchWhales }: Props) => (
       Fetch Over Bad Connection
     </Button>
   </div>
-)
+);
 
-export default DataControls
+export default DataControls;

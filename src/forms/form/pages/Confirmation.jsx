@@ -1,5 +1,5 @@
-import camelCaseToString from "../../utils/camelCaseToString"
-import { getDataFromFormData, getDataFromProps } from "../data"
+import camelCaseToString from "../../utils/camelCaseToString";
+import { getDataFromFormData, getDataFromProps } from "../data";
 
 const Confirmation = ({
   visible,
@@ -11,7 +11,7 @@ const Confirmation = ({
     personalDetails,
     destinationAndDates,
     preferredActivities,
-  )
+  );
 
   return (
     <div className={visible ? "flex flex-col gap-4" : "hidden"}>
@@ -66,7 +66,7 @@ const Confirmation = ({
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Confirmation
+export default Confirmation;
