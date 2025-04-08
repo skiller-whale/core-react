@@ -25,7 +25,11 @@ const WhaleRating = ({ rating, onClick, max = 10 }) => {
             onClick={() => onClick(i + 1)}
             onMouseOver={() => setHoverRating(i + 1)}
           >
-            {i < currentRating ? "🐳" : <span className="grayscale">🐋</span>}{" "}
+            {i < currentRating ? (
+              "🐳"
+            ) : (
+              <span className="grayscale">🐋</span>
+            )}{" "}
           </span>
         );
       })}

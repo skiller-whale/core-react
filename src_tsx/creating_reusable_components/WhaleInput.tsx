@@ -1,13 +1,6 @@
-import type {
-  DetailedHTMLProps,
-  InputHTMLAttributes,
-  PropsWithChildren,
-} from "react";
+import type { ComponentProps, PropsWithChildren } from "react";
 
-type Props = DetailedHTMLProps<
-  InputHTMLAttributes<HTMLInputElement>,
-  HTMLInputElement
->;
+type Props = ComponentProps<"input">;
 
 const WhaleInput = (props: Props) => (
   <div className="relative pl-20 pb-12">

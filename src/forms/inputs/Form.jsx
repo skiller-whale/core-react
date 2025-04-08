@@ -1,8 +1,10 @@
-import { forwardRef, useEffect, useImperativeHandle, useRef } from "react";
+import { useEffect, useImperativeHandle, useRef } from "react";
 
-const Form = forwardRef(({ children, onFormData, ...rest }, ref) => {
+const Form = ({ children, onFormData, ref, ...rest }) => {
   const formRef = useRef(null);
+
   useImperativeHandle(ref, () => formRef.current);
+
   useEffect(() => {
     if (onFormData) {
       formRef.current?.addEventListener("formdata", onFormData);
@@ -18,6 +20,6 @@ const Form = forwardRef(({ children, onFormData, ...rest }, ref) => {
       {children}
     </form>
   );
-});
+};
 
 export default Form;

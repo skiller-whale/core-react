@@ -1,4 +1,4 @@
-import { type ChangeEventHandler, forwardRef } from "react";
+import type { ChangeEventHandler, RefObject } from "react";
 
 type Props = {
   type: string;

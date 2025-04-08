@@ -2,7 +2,7 @@ import type { ComponentProps, RefObject } from "react";
 import type { DropdownRef } from "./Dropdown";
 
 type Props = ComponentProps<"div"> & {
-  dropdownRef: RefObject<DropdownRef>;
+  dropdownRef: RefObject<DropdownRef | null>;
 };
 
 const DropdownWrapper = ({ dropdownRef, children, ...rest }: Props) => (
