@@ -11,8 +11,8 @@ Then:
   (Note: if you are familiar with Dev Containers, you can use that instead of docker compose.)
 - Point your browser at http://localhost:3500.
   You should see a page with a banner saying, "Hello Whale! It looks like you're all set up."
-- Open up the `src` directory in your code editor of choice.
-  When you edit and save any of the files in this directory, the local development server should reload automatically, and your coach should be able to see your changes.
+- Open up the `src_js` or `src_ts` directory in your code editor of choice.
+  When you edit and save any of the files in these directories, the local development server should reload automatically, and your coach should be able to see your changes.
 - If you are using TypeScript and VSCode, you might find that the TypeScript highlighting for non-install dependencies is distracting.
   There are two options:
   - You can open a Dev Container and complete the exercises from there, where the dependencies will be installed.

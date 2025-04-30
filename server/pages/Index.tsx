@@ -1,11 +1,12 @@
-import modules from "../modules.ts";
+import { renderToStaticMarkup } from "react-dom/server";
+import { modules } from "../types.ts";
 
 const Index = () => (
   <>
     <header className="bg-blue-200 p-6">
       <div className="mx-auto max-w-6xl flex items-center px-3 gap-6">
         <img
-          src="/server/images/ada.png"
+          src="/server/static/ada.png"
           alt="Skiller Whale logo"
           className="w-12"
         />
@@ -44,3 +45,5 @@ const Index = () => (
 );
 
 export default Index;
+
+export const render = () => renderToStaticMarkup(<Index />);

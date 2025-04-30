@@ -17,3 +17,6 @@ dist
 
 # Vite timestamps
 vite.config.ts.timestamp*
+
+# Solutions folder
+_complete

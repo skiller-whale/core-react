@@ -1,19 +1,7 @@
 {
-  "include": [
-    "server/**/*.ts",
-    "server/**/*.tsx",
-    "src_tsx/**/*.ts",
-    "src_tsx/**/*.tsx"
-  ],
-  "compilerOptions": {
-    "outDir": "src/",
-    "allowSyntheticDefaultImports": true,
-    "jsx": "react-jsx",
-    "target": "esnext",
-    "module": "es2022",
-    "moduleResolution": "node",
-    "verbatimModuleSyntax": true,
-    "noImplicitAny": true,
-    "strict": true
-  }
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" }
+  ]
 }

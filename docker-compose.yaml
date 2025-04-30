@@ -11,8 +11,8 @@ services:
       WATCHED_EXTS: ".js .jsx .ts .tsx .html"
       IGNORE_MATCH: ".git"
     volumes:
-      - ./src:/app/exercises/src:ro
-      - ./src_tsx:/app/exercises/src_tsx:ro
+      - ./src_js:/app/exercises/src_js:ro
+      - ./src_ts:/app/exercises/src_ts:ro
       - ./attendance_id:/app/sync/attendance_id:ro
     tty: true
     stdin_open: true
@@ -25,9 +25,8 @@ services:
     ports:
       - "3500:3500" # used by learners to see the exercises in the browser
       - "3501:3501" # hot module reload websocket
-      - "3502:3502" # used by learners to preview the build for the code splitting module
     volumes:
-      - ./dist:/app/exercises/dist
+      - ./lib:/app/exercises/lib
       - ./server:/app/exercises/server
-      - ./src:/app/exercises/src
-      - ./src_tsx:/app/exercises/src_tsx
+      - ./src_js:/app/exercises/src_js
+      - ./src_ts:/app/exercises/src_ts
