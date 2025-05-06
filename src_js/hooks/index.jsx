@@ -2,7 +2,7 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import App from "./App";
 
-const response = await fetch("/api/aquatic-animals/whales/", {
+const response = await fetch("/api/whales", {
   method: "GET",
   headers: {
     Accept: "application/json",

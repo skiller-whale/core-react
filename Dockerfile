@@ -1,4 +1,4 @@
-FROM node:20.13.0
+FROM node:23.11.0
 
 WORKDIR /app/exercises
 EXPOSE 3500

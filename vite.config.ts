@@ -3,9 +3,11 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 
-// https://vite.dev/config/
+const hostedEnvHost = process.env.SW_HOSTNAME_PORT_3500;
+
 export default defineConfig({
   server: {
+    allowedHosts: hostedEnvHost ? [hostedEnvHost] : undefined,
     hmr: {
       port: 3501,
     },
