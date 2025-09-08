@@ -1,5 +1,5 @@
 import { render } from "@testing-library/react";
-import { initialise, mockedApiResponse, whales, whalesProps } from "./utils";
+import { initialise, mockedApiResponse, whales, whalesProps, users } from "./utils";
 
 import IntroductionAppJS from "../src_js/introduction/App";
 import RenderingCycleAppJS from "../src_js/rendering_cycle/App";
@@ -10,6 +10,7 @@ import ErrorsAppJS from "../src_js/errors/App";
 import RefsAppJS from "../src_js/refs/App";
 import EffectsAppJS from "../src_js/effects/App";
 import ComplexStateAppJS from "../src_js/complex_state/App";
+import InputsAppJS from "../src_js/inputs/App";
 import FormsAppJS from "../src_js/forms/App";
 import AccessibilityAppJS from "../src_js/accessibility/App";
 import DeferredUpdatesAppJS from "../src_js/deferred_updates/App";
@@ -25,6 +26,7 @@ import ErrorsAppTS from "../src_ts/errors/App";
 import RefsAppTS from "../src_ts/refs/App";
 import EffectsAppTS from "../src_ts/effects/App";
 import ComplexStateAppTS from "../src_ts/complex_state/App";
+import InputsAppTS from "../src_ts/inputs/App";
 import FormsAppTS from "../src_ts/forms/App";
 import AccessibilityAppTS from "../src_ts/accessibility/App";
 import DeferredUpdatesAppTS from "../src_ts/deferred_updates/App";
@@ -130,11 +132,21 @@ describe("JavaScript initial state is the same as TypeScript", () => {
     expect(complexStateContainerJS).toEqual(complexStateContainerTS);
   });
 
+  test("InputsAppJS", async () => {
+    const { container: inputsContainerJS } = render(<InputsAppJS />);
+    await initialise(inputsContainerJS, "inputs");
+
+    const { container: inputsContainerTS } = render(<InputsAppTS />);
+    await initialise(inputsContainerTS, "inputs");
+
+    expect(inputsContainerJS).toEqual(inputsContainerTS);
+  });
+
   test("FormsAppJS", async () => {
-    const { container: formsContainerJS } = render(<FormsAppJS />);
+    const { container: formsContainerJS } = render(<FormsAppJS initialUsers={users} />);
     await initialise(formsContainerJS, "forms");
 
-    const { container: formsContainerTS } = render(<FormsAppTS />);
+    const { container: formsContainerTS } = render(<FormsAppTS initialUsers={users} />);
     await initialise(formsContainerTS, "forms");
 
     expect(formsContainerJS).toEqual(formsContainerTS);

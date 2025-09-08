@@ -1,6 +1,6 @@
 import { type Request, type Response, Router } from "express";
 import { whales, fish, setupData } from "./data.ts";
-import type { Fish, Whale } from "lib/apiTypes.ts";
+import type { Fish, Whale, User } from "lib/apiTypes.ts";
 
 const createApiRouter = () => {
   const api = Router();
@@ -11,6 +11,8 @@ const createApiRouter = () => {
   api.get("/whales/bad", getBadWhales);
   api.get("/whales/invalid", getInvalidWhales);
   api.get("/whales/events", getWhalesEvents);
+  api.get("/users", (req, res) => getUsers(req, res));
+  api.post("/users", (req, res) => postUsers(req, res));
 
   return api;
 };
@@ -81,3 +83,35 @@ const getWhalesEvents = (req: Request, res: Response) => {
     res.end();
   });
 };
+
+const users: User[] = [
+  { username: "ada", species: "Skiller Whale" },
+];
+
+const getUsers = (_req: Request, res: Response) => {
+  res.json({ data: users });
+};
+
+const postUsers = async (req: Request, res: Response) => {
+  await delay(1000);
+  const { username, species } = req.body;
+  if (
+    typeof username !== "string" || username.length === 0 ||
+    typeof species !== "string" || species.length === 0
+  ) {
+    res.status(400).json({ error: "Invalid user data" });
+    return;
+  }
+
+  if (users.find((u) => u.username === username)) {
+    res.status(409).json({ error: "Username already exists" });
+    return;
+  }
+
+  const newUser = { username, species };
+  users.push(newUser);
+  res.status(201).json({ data: newUser });
+};
+
+const delay = (ms: number) =>
+  new Promise((resolve) => setTimeout(resolve, ms));

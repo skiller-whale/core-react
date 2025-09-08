@@ -11,12 +11,12 @@ const SonarDashboard = ({
   setSelectedWhaleX,
   setSelectedWhaleY,
 }) => {
-  const [centerX, setCentreX] = useState(0);
-  const moveLeft = () => setCentreX(Math.max(-100, centerX - 10));
-  const moveRight = () => setCentreX(Math.min(100, centerX + 10));
-  const [centerY, setCentreY] = useState(0);
-  const moveUp = () => setCentreY(Math.max(-100, centerY - 10));
-  const moveDown = () => setCentreY(Math.min(100, centerY + 10));
+  const [centerX, setCenterX] = useState(0);
+  const moveLeft = () => setCenterX(Math.max(-100, centerX - 10));
+  const moveRight = () => setCenterX(Math.min(100, centerX + 10));
+  const [centerY, setCenterY] = useState(0);
+  const moveUp = () => setCenterY(Math.max(-100, centerY - 10));
+  const moveDown = () => setCenterY(Math.min(100, centerY + 10));
   const [radius, setRadius] = useState(50);
   const zoomIn = () => setRadius(Math.max(20, radius - 10));
   const zoomOut = () => setRadius(Math.min(100, radius + 10));

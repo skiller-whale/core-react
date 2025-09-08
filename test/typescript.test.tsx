@@ -1,6 +1,6 @@
 import { render, screen, waitFor, waitForElementToBeRemoved } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { initialise, mockedApiResponse, whales, whalesProps } from "./utils";
+import { initialise, mockedApiResponse, whales, whalesProps, users } from "./utils";
 
 import IntroductionAppTS from "../src_ts/introduction/App";
 import RenderingCycleAppTS from "../src_ts/rendering_cycle/App";
@@ -11,6 +11,7 @@ import ErrorsAppTS from "../src_ts/errors/App";
 import RefsAppTS from "../src_ts/refs/App";
 import EffectsAppTS from "../src_ts/effects/App";
 import ComplexStateAppTS from "../src_ts/complex_state/App";
+import InputsAppTS from "../src_ts/inputs/App";
 import FormsAppTS from "../src_ts/forms/App";
 import AccessibilityAppTS from "../src_ts/accessibility/App";
 import DeferredUpdatesAppTS from "../src_ts/deferred_updates/App";
@@ -80,8 +81,14 @@ describe("TypeScript initial state is unchanged", () => {
     expect(complexStateContainer).toMatchSnapshot();
   });
 
+  test("InputsAppTS", async () => {
+    const { container: inputsContainer } = render(<InputsAppTS />);
+    await initialise(inputsContainer, "inputs");
+    expect(inputsContainer).toMatchSnapshot();
+  });
+
   test("FormsAppTS", async () => {
-    const { container: formsContainer } = render(<FormsAppTS />);
+    const { container: formsContainer } = render(<FormsAppTS initialUsers={users} />);
     await initialise(formsContainer, "forms");
     expect(formsContainer).toMatchSnapshot();
   });

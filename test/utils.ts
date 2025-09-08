@@ -2,6 +2,7 @@ import { waitFor, waitForElementToBeRemoved, within } from "@testing-library/rea
 import userEvent from "@testing-library/user-event";
 import type { ModuleKey } from "../server/types"
 import type { Whale } from "../lib/apiTypes";
+import { use } from "react";
 
 export const whales: Whale[] = [
   {
@@ -53,3 +54,7 @@ export const initialise = async (container: HTMLElement, module: ModuleKey) => {
     }
   }
 };
+
+export const users = [
+  { username: "ada", species: "Skiller Whale" },
+];

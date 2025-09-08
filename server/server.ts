@@ -11,6 +11,7 @@ const vite = await createViteServer({
 });
 
 app.use(vite.middlewares);
+app.use(express.json());
 app.use("/api", createApiRouter());
 app.use(createModulesRouter(vite));
 

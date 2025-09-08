@@ -9,8 +9,8 @@ type Props = {
 };
 
 const Sonar = ({ whales }: Props) => {
-  const [centerX, setCentreX] = useState(0);
-  const [centerY, setCentreY] = useState(0);
+  const [centerX, setCenterX] = useState(0);
+  const [centerY, setCenterY] = useState(0);
   const [radius, setRadius] = useState(50);
 
   const isVisible = (whale: Whale) =>
@@ -50,21 +50,21 @@ const Sonar = ({ whales }: Props) => {
         <div className="flex gap-3 items-center">
           <Button
             icon="⇐"
-            onClick={() => setCentreX(Math.max(-100, centerX - 10))}
+            onClick={() => setCenterX(Math.max(-100, centerX - 10))}
           />
           <div className="flex flex-col gap-3">
             <Button
               icon="⇑"
-              onClick={() => setCentreY(Math.max(-100, centerY - 10))}
+              onClick={() => setCenterY(Math.max(-100, centerY - 10))}
             />
             <Button
               icon="⇓"
-              onClick={() => setCentreY(Math.min(100, centerY + 10))}
+              onClick={() => setCenterY(Math.min(100, centerY + 10))}
             />
           </div>
           <Button
             icon="⇒"
-            onClick={() => setCentreX(Math.min(100, centerX + 10))}
+            onClick={() => setCenterX(Math.min(100, centerX + 10))}
           />
         </div>
       </div>

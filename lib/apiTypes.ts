@@ -1,3 +1,5 @@
+export type Optimistic<Type> = Type & { isOptimistic?: boolean };
+
 export type Whale = {
   id: string;
   name: string;
@@ -18,4 +20,9 @@ export type Location = {
   x: number;
   y: number;
   depth: number;
+};
+
+export type User = {
+  username: string;
+  species: string;
 };

@@ -801,56 +801,167 @@ exports[`TypeScript initial state is unchanged > FormsAppTS 1`] = `
   <div
     class="flex flex-col gap-4"
   >
+    <form
+      class="flex flex-col shadow-md p-6 gap-3"
+    >
+      <h2
+        class="text-lg font-semibold"
+      >
+        Add New User
+      </h2>
+      <div
+        class="flex gap-3 items-end"
+      >
+        <div
+          class="flex-1 flex flex-col gap-2"
+        >
+          <label
+            class="font-semibold cursor-pointer"
+            for="username"
+          >
+            Username
+          </label>
+          <input
+            id="username"
+            name="username"
+            required=""
+            type="text"
+          />
+        </div>
+        <div
+          class="flex-1 flex flex-col gap-2"
+        >
+          <label
+            class="font-semibold cursor-pointer"
+            for="species"
+          >
+            Species
+          </label>
+          <select
+            id="species"
+            name="species"
+            required=""
+          >
+            <option
+              value="Skiller Whale"
+            >
+              Skiller Whale
+            </option>
+            <option
+              value="Blue Whale"
+            >
+              Blue Whale
+            </option>
+            <option
+              value="Humpback Whale"
+            >
+              Humpback Whale
+            </option>
+            <option
+              value="Orca"
+            >
+              Orca
+            </option>
+            <option
+              value="Sperm Whale"
+            >
+              Sperm Whale
+            </option>
+          </select>
+        </div>
+        <button
+          class="w-32 bg-blue-500 hover:bg-blue-700 disabled:bg-gray-300 text-white font-bold py-2 px-4 rounded whitespace-nowrap cursor-pointer disabled:cursor-not-allowed"
+          type="submit"
+        >
+          Add User
+        </button>
+      </div>
+    </form>
+    <div
+      class="flex flex-col shadow-md p-6 gap-3"
+    >
+      <h2
+        class="text-lg font-semibold"
+      >
+        Existing Users
+      </h2>
+      <table>
+        <tbody>
+          <tr
+            class="odd:bg-gray-100"
+          >
+            <td
+              class="p-2"
+            >
+              ada
+              @skillerwhale.com
+            </td>
+            <td
+              class="p-2"
+            >
+              Skiller Whale
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`TypeScript initial state is unchanged > InputsAppTS 1`] = `
+<div>
+  <div
+    class="flex flex-col gap-4"
+  >
     <div
       class="flex flex-col gap-6"
     >
       <h1
-        class="font-semibold text-2xl"
+        class="font-semibold text-3xl"
       >
         Whaven Holidays
       </h1>
-      <p
-        class="italics"
-      >
+      <p>
         Welcome to Whaven Holidays, where the magic of the sea meets the joy of unforgettable getaways. Immerse yourself in a world of seaside bliss as we tailor your dream holiday experience. Discover breathtaking destinations, from charming coastal retreats to luxurious beachfront escapes. Dive into a sea of activities, including thrilling whale watching, serene snorkelling, and lively beach volleyball. Your preferences shape the journey, from accommodation with mesmerizing ocean views to personalized activities for every member of your group. Whaven Holidays is not just a vacation; it's a tailor-made adventure crafted just for you. Let the waves of excitement begin!
       </p>
     </div>
     <form
-      class="flex flex-col gap-4"
+      class="flex flex-col shadow-md"
+      novalidate=""
     >
       <div
-        class="flex gap-3 items-center"
+        class="block"
       >
-        <progress
-          class="flex-1 color-white"
-          max="3"
-          value="0"
-        />
-        <button
-          class="min-w-32 bg-blue-500 hover:bg-blue-700 disabled:bg-gray-300 text-white font-bold py-2 px-4 rounded whitespace-nowrap"
-          disabled=""
-          type="button"
+        <div
+          class="flex justify-between bg-blue-100 px-6 py-3"
         >
-          Previous
-        </button>
-        <button
-          class="min-w-32 bg-blue-500 hover:bg-blue-700 disabled:bg-gray-300 text-white font-bold py-2 px-4 rounded whitespace-nowrap"
-          type="button"
-        >
-          Next
-        </button>
-      </div>
-      <div
-        class=""
-      >
-        <fieldset
-          class="flex flex-col gap-4"
-        >
-          <legend
-            class="text-2xl font-semibold mb-6"
+          <h2
+            class="text-2xl font-semibold"
           >
             Personal Details
-          </legend>
+          </h2>
+          <div
+            class="flex gap-3"
+          >
+            <button
+              class="min-w-32 bg-blue-500 hover:bg-blue-700 disabled:bg-gray-300 text-white font-bold py-2 px-4 rounded whitespace-nowrap cursor-pointer disabled:cursor-not-allowed"
+              disabled=""
+              type="button"
+            >
+              Previous
+            </button>
+            <button
+              class="min-w-32 bg-blue-500 hover:bg-blue-700 disabled:bg-gray-300 text-white font-bold py-2 px-4 rounded whitespace-nowrap cursor-pointer disabled:cursor-not-allowed"
+              type="button"
+            >
+              Next
+            </button>
+          </div>
+        </div>
+        <div
+          class="flex flex-col gap-3 p-6"
+        >
           <div
             class="flex-1 flex flex-col gap-2"
           >
@@ -862,61 +973,28 @@ exports[`TypeScript initial state is unchanged > FormsAppTS 1`] = `
             </label>
             <input
               id="fullName"
+              name="fullName"
               required=""
               type="text"
-              value="Ada the Skiller Whale"
+              value=""
             />
-          </div>
-          <div
-            class="flex gap-4"
-          >
-            <div
-              class="flex-1 flex flex-col gap-2"
-            >
-              <label
-                class="font-semibold cursor-pointer"
-                for="email"
-              >
-                Email
-              </label>
-              <input
-                id="email"
-                required=""
-                type="email"
-                value="ada@skillerwhale.com"
-              />
-            </div>
-            <div
-              class="flex-1 flex flex-col gap-2"
-            >
-              <label
-                class="font-semibold cursor-pointer"
-                for="phoneNumber"
-              >
-                Phone Number
-              </label>
-              <input
-                id="phoneNumber"
-                type="tel"
-                value=""
-              />
-            </div>
           </div>
           <div
             class="flex-1 flex flex-col gap-2"
           >
             <label
-              class="font-semibold"
-              for="address"
+              class="font-semibold cursor-pointer"
+              for="email"
             >
-              Address
+              Email
             </label>
-            <textarea
-              id="address"
-              rows="4"
-            >
-              The Sea
-            </textarea>
+            <input
+              id="email"
+              name="email"
+              required=""
+              type="email"
+              value=""
+            />
           </div>
           <div
             class="flex gap-4"
@@ -933,6 +1011,7 @@ exports[`TypeScript initial state is unchanged > FormsAppTS 1`] = `
               <input
                 id="numberOfAdults"
                 min="1"
+                name="numberOfAdults"
                 required=""
                 type="number"
                 value="1"
@@ -950,25 +1029,46 @@ exports[`TypeScript initial state is unchanged > FormsAppTS 1`] = `
               <input
                 id="numberOfChildren"
                 min="0"
+                name="numberOfChildren"
                 required=""
                 type="number"
                 value="0"
               />
             </div>
           </div>
-        </fieldset>
+        </div>
       </div>
       <div
         class="hidden"
       >
-        <fieldset
-          class="flex flex-col gap-4"
+        <div
+          class="flex justify-between bg-blue-100 px-6 py-3"
         >
-          <legend
-            class="text-2xl font-semibold mb-6"
+          <h2
+            class="text-2xl font-semibold"
           >
             Destination and Dates
-          </legend>
+          </h2>
+          <div
+            class="flex gap-3"
+          >
+            <button
+              class="min-w-32 bg-blue-500 hover:bg-blue-700 disabled:bg-gray-300 text-white font-bold py-2 px-4 rounded whitespace-nowrap cursor-pointer disabled:cursor-not-allowed"
+              type="button"
+            >
+              Previous
+            </button>
+            <button
+              class="min-w-32 bg-blue-500 hover:bg-blue-700 disabled:bg-gray-300 text-white font-bold py-2 px-4 rounded whitespace-nowrap cursor-pointer disabled:cursor-not-allowed"
+              type="button"
+            >
+              Next
+            </button>
+          </div>
+        </div>
+        <div
+          class="flex flex-col gap-3 p-6"
+        >
           <div
             class="flex-1 flex flex-col gap-2"
           >
@@ -980,60 +1080,61 @@ exports[`TypeScript initial state is unchanged > FormsAppTS 1`] = `
             </label>
             <select
               id="location"
+              name="location"
               required=""
             >
               <option
-                value="capeCod"
+                value="Cape Cod"
               >
                 Cape Cod
               </option>
               <option
-                value="carpenhagen"
+                value="Carpenhagen"
               >
                 Carpenhagen
               </option>
               <option
-                value="charborough"
+                value="Charborough"
               >
                 Charborough
               </option>
               <option
-                value="clamsterdam"
+                value="Clamsterdam"
               >
                 Clamsterdam
               </option>
               <option
-                value="coralifornia"
+                value="Coralifornia"
               >
                 Coralifornia
               </option>
               <option
-                value="costaDelSole"
+                value="Costa Del Sole"
               >
                 Costa Del Sole
               </option>
               <option
-                value="fishStockHolm"
+                value="Fish Stock Holm"
               >
                 Fish Stock Holm
               </option>
               <option
-                value="theMaldeels"
+                value="The Maldeels"
               >
                 The Maldeels
               </option>
               <option
-                value="salmonaco"
+                value="Salmonaco"
               >
                 Salmonaco
               </option>
               <option
-                value="squidney"
+                value="Squidney"
               >
                 Squidney
               </option>
               <option
-                value="whales"
+                value="Whales"
               >
                 Whales
               </option>
@@ -1044,31 +1145,32 @@ exports[`TypeScript initial state is unchanged > FormsAppTS 1`] = `
           >
             <label
               class="font-semibold cursor-pointer"
-              for="accommodation"
+              for="accommodationType"
             >
               Accommodation
             </label>
             <select
-              id="accommodation"
+              id="accommodationType"
+              name="accommodationType"
               required=""
             >
               <option
-                value="beachHouse"
+                value="Beach House"
               >
                 Beach House
               </option>
               <option
-                value="bedAndBreakfast"
+                value="Bed and Breakfast"
               >
-                Bed And Breakfast
+                Bed and Breakfast
               </option>
               <option
-                value="campSite"
+                value="Camp Site"
               >
                 Camp Site
               </option>
               <option
-                value="hotel"
+                value="Hotel"
               >
                 Hotel
               </option>
@@ -1088,9 +1190,10 @@ exports[`TypeScript initial state is unchanged > FormsAppTS 1`] = `
               </label>
               <input
                 id="checkIn"
+                name="checkIn"
                 required=""
                 type="date"
-                value="2022-02-05"
+                value=""
               />
             </div>
             <div
@@ -1104,184 +1207,65 @@ exports[`TypeScript initial state is unchanged > FormsAppTS 1`] = `
               </label>
               <input
                 id="checkOut"
+                name="checkOut"
                 required=""
                 type="date"
-                value="2022-02-12"
+                value=""
               />
             </div>
           </div>
-          <label
-            class="flex-1 flex gap-2 items-center border border-slate-800 px-3 py-2 font-semibold cursor-pointer"
-            for="flexibleOnDates"
-          >
-            <input
-              class="flex-none"
-              id="flexibleOnDates"
-              type="checkbox"
-            />
-            Flexible on Dates
-          </label>
-        </fieldset>
+        </div>
       </div>
       <div
         class="hidden"
       >
-        <fieldset
-          class="flex flex-col gap-4"
-        >
-          <legend
-            class="text-2xl font-semibold mb-6"
-          >
-            Preferred Activities
-          </legend>
-          <label
-            class="flex-1 flex gap-2 items-center border border-slate-800 px-3 py-2 font-semibold cursor-pointer"
-            for="whaleWatching"
-          >
-            <input
-              class="flex-none"
-              id="whaleWatching"
-              type="checkbox"
-            />
-            Whale Watching
-          </label>
-          <label
-            class="flex-1 flex gap-2 items-center border border-slate-800 px-3 py-2 font-semibold cursor-pointer"
-            for="snorkelling"
-          >
-            <input
-              class="flex-none"
-              id="snorkelling"
-              type="checkbox"
-            />
-            Snorkelling
-          </label>
-          <label
-            class="flex-1 flex gap-2 items-center border border-slate-800 px-3 py-2 font-semibold cursor-pointer"
-            for="beachVolleyball"
-          >
-            <input
-              class="flex-none"
-              id="beachVolleyball"
-              type="checkbox"
-            />
-            Beach Volleyball
-          </label>
-          <label
-            class="flex-1 flex gap-2 items-center border border-slate-800 px-3 py-2 font-semibold cursor-pointer"
-            for="kayaking"
-          >
-            <input
-              class="flex-none"
-              id="kayaking"
-              type="checkbox"
-            />
-            Kayaking
-          </label>
-          <label
-            class="flex-1 flex gap-2 items-center border border-slate-800 px-3 py-2 font-semibold cursor-pointer"
-            for="sandcastleBuilding"
-          >
-            <input
-              class="flex-none"
-              id="sandcastleBuilding"
-              type="checkbox"
-            />
-            Sandcastle Building
-          </label>
-          <label
-            class="flex-1 flex gap-2 items-center border border-slate-800 px-3 py-2 font-semibold cursor-pointer"
-            for="coastalHikes"
-          >
-            <input
-              class="flex-none"
-              id="coastalHikes"
-              type="checkbox"
-            />
-            Coastal Hikes
-          </label>
-          <label
-            class="flex-1 flex gap-2 items-center border border-slate-800 px-3 py-2 font-semibold cursor-pointer"
-            for="dolphinCruises"
-          >
-            <input
-              class="flex-none"
-              id="dolphinCruises"
-              type="checkbox"
-            />
-            Dolphin Cruises
-          </label>
-          <label
-            class="flex-1 flex gap-2 items-center border border-slate-800 px-3 py-2 font-semibold cursor-pointer"
-            for="underwaterPhotography"
-          >
-            <input
-              class="flex-none"
-              id="underwaterPhotography"
-              type="checkbox"
-            />
-            Underwater Photography
-          </label>
-          <label
-            class="flex-1 flex gap-2 items-center border border-slate-800 px-3 py-2 font-semibold cursor-pointer"
-            for="seasideYoga"
-          >
-            <input
-              class="flex-none"
-              id="seasideYoga"
-              type="checkbox"
-            />
-            Seaside Yoga
-          </label>
-          <label
-            class="flex-1 flex gap-2 items-center border border-slate-800 px-3 py-2 font-semibold cursor-pointer"
-            for="surfingLessons"
-          >
-            <input
-              class="flex-none"
-              id="surfingLessons"
-              type="checkbox"
-            />
-            Surfing Lessons
-          </label>
-        </fieldset>
-      </div>
-      <div
-        class="hidden"
-      >
-        <h1
-          class="text-3xl font-semibold"
-        >
-          Confirmation
-        </h1>
         <div
-          class="flex gap-4"
+          class="flex justify-between bg-blue-100 px-6 py-3"
+        >
+          <h2
+            class="text-2xl font-semibold"
+          >
+            Confirmation
+          </h2>
+          <div
+            class="flex gap-3"
+          >
+            <button
+              class="min-w-32 bg-blue-500 hover:bg-blue-700 disabled:bg-gray-300 text-white font-bold py-2 px-4 rounded whitespace-nowrap cursor-pointer disabled:cursor-not-allowed"
+              type="button"
+            >
+              Previous
+            </button>
+            <button
+              class="min-w-32 bg-blue-500 hover:bg-blue-700 disabled:bg-gray-300 text-white font-bold py-2 px-4 rounded whitespace-nowrap cursor-pointer disabled:cursor-not-allowed"
+              type="submit"
+            >
+              Submit
+            </button>
+          </div>
+        </div>
+        <div
+          class="flex gap-3 p-6"
         >
           <div
             class="flex-1 flex flex-col gap-3"
           >
             <h2
-              class="text-2xl font-semibold"
+              class="text-xl font-semibold"
             >
               Personal Details
             </h2>
             <p>
               Full Name: 
-              Ada the Skiller Whale
+              <i>
+                missing
+              </i>
             </p>
             <p>
               Email: 
-              ada@skillerwhale.com
-            </p>
-            <p>
-              Phone Number:
-               
-              none
-            </p>
-            <p>
-              Address:
-               
-              The Sea
+              <i>
+                missing
+              </i>
             </p>
             <p>
               Number of Adults: 
@@ -1291,61 +1275,32 @@ exports[`TypeScript initial state is unchanged > FormsAppTS 1`] = `
               Number of Children: 
               0
             </p>
-            <h2
-              class="text-2xl font-semibold"
-            >
-              Destination and Dates
-            </h2>
-            <p>
-              Location: 
-            </p>
-            <p>
-              Accommodation:
-               
-            </p>
-            <p>
-              Dates: 
-              2022-02-05
-               to
-               
-              2022-02-12
-            </p>
-            <p>
-              Flexible on Dates:
-               
-              No
-            </p>
           </div>
           <div
             class="flex-1 flex flex-col gap-3"
           >
             <h2
-              class="text-2xl font-semibold"
+              class="text-xl font-semibold"
             >
-              Preferred Activities
+              Destination and Dates
             </h2>
-            <ul>
-              <li>
-                None
-              </li>
-            </ul>
+            <p>
+              Location: 
+              Cape Cod
+            </p>
+            <p>
+              Accommodation: 
+              Beach House
+            </p>
+            <p>
+              Dates:
+               
+              <i>
+                missing
+              </i>
+            </p>
           </div>
         </div>
-      </div>
-      <div
-        class="hidden"
-      >
-        <p
-          class="text-4xl text-green-600 mt-32"
-        >
-          Thanks! We'll be in touch with your holiday options soon.
-        </p>
-        <button
-          class="min-w-32 bg-blue-500 hover:bg-blue-700 disabled:bg-gray-300 text-white font-bold py-2 px-4 rounded whitespace-nowrap"
-          type="reset"
-        >
-          Make Another Enquiry
-        </button>
       </div>
     </form>
   </div>
