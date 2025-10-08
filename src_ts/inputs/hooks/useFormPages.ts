@@ -1,4 +1,6 @@
 import { useState } from "react";
+import type { RefObject } from "react";
+import { getInputElements, isVisibleElement } from "../utils";
 
 const useFormPages = <Page extends string>(pages: readonly Page[]) => {
   const [page, setPage] = useState(pages[0]);

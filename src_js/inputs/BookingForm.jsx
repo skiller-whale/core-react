@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Confirmation from "./BookingForm/ConfirmationWithObjectData";
 // import Confirmation from "./BookingForm/ConfirmationWithFormData";
 import DestinationAndDates, {
