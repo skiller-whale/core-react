@@ -15,6 +15,7 @@ export const modules = {
   inputs: "Working with Inputs",
   forms: "Working with Forms",
   accessibility: "Writing Accessible Web Apps",
+  suspense: "Suspending Components",
   deferred_updates: "Deferring Updates",
   reducing_renders: "Reducing Renders",
   memoisation: "Memoisation within Components",
