@@ -23,7 +23,7 @@ const TermsAndConditions = () => {
     <>
       <p className="text-sm text-right">
         By using this service you agree to our{" "}
-        <Anchor onClick={openTsAndCs}>terms and condititions</Anchor>.
+        <Anchor onClick={openTsAndCs}>terms and conditions</Anchor>.
       </p>
       <dialog
         ref={dialogRef}
