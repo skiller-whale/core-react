@@ -1,6 +1,7 @@
 import { Suspense, useState } from "react";
 import { getWhales } from "./api";
 import ErrorSuspenseBoundary from "./Suspense/ErrorSuspenseBoundary";
+import LoadingSpinner from "./Suspense/LoadingSpinner";
 import Checkbox from "./Inputs/Checkbox";
 import Input from "./Inputs/Input";
 import TermsAndConditions from "./TermsAndConditions/TermsAndConditions";
