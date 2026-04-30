@@ -37,31 +37,3 @@ export const generateAquaticAnimals = (amount: number): AquaticAnimal[] => {
 
   return sortAquaticAnimals(aquaticAnimals);
 };
-
-export const addAquaticAnimal = (
-  aquaticAnimals: AquaticAnimal[],
-  name: string,
-  species: string,
-  isWhale: boolean,
-): AquaticAnimal[] => {
-  return sortAquaticAnimals([
-    ...aquaticAnimals,
-    {
-      id: faker.string.uuid(),
-      name,
-      species,
-      isWhale,
-    },
-  ]);
-};
-
-export const deleteAquaticAnimal = (
-  aquaticAnimal: AquaticAnimal[],
-  id: string,
-): AquaticAnimal[] => {
-  const index = aquaticAnimal.findIndex((animal) => animal.id === id);
-
-  return index > -1
-    ? [...aquaticAnimal.slice(0, index), ...aquaticAnimal.slice(index + 1)]
-    : aquaticAnimal;
-};
