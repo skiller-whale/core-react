@@ -17,5 +17,5 @@ export const modules = {
   accessibility: "Writing Accessible Web Apps",
   suspense: "Suspending Components",
   deferred_updates: "Deferring Updates",
-  memoisation: "Optimizing Rendering",
+  optimization: "Optimizing Rendering",
 };

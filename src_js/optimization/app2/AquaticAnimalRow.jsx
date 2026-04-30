@@ -1,11 +1,14 @@
-import { memo } from "react";
+import { memo, useCallback, useMemo } from "react";
 import doSomethingThatTakesAges from "lib/doSomethingThatTakesAges";
 
-const ARTIFICIALLY_SLOW = false;
-const AquaticAnimalRow = ({ animal, isBestFriend, setBestFriend }) => {
-  if (ARTIFICIALLY_SLOW) {
-    doSomethingThatTakesAges(10);
-  }
+const AquaticAnimalRow = ({
+  animal,
+  isBestFriend,
+  makeBestFriendAndSayHello,
+}) => {
+  // artificially slow down rendering
+  doSomethingThatTakesAges(50);
+
   const profilePicture = animal.isWhale
     ? animal.species.includes("Dolphin")
       ? "🐬"
@@ -23,7 +26,7 @@ const AquaticAnimalRow = ({ animal, isBestFriend, setBestFriend }) => {
         ) : (
           <button
             className="py-2 px-3 text-white bg-blue-600 hover:bg-blue-800"
-            onClick={() => setBestFriend(animal)}
+            onClick={() => makeBestFriendAndSayHello(animal)}
           >
             Make best friend
           </button>
