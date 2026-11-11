@@ -6,6 +6,7 @@ import Select from "../components/Select";
 
 const WhaleForm = ({ addWhale, removeLastWhale, whalesHaveBeenAdded }) => {
   const [formColour] = useState("blue");
+
   const createWhale = (event) => {
     event.preventDefault();
 

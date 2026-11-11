@@ -2,6 +2,7 @@ import { waitFor, waitForElementToBeRemoved, within } from "@testing-library/rea
 import userEvent from "@testing-library/user-event";
 import type { ModuleKey } from "../server/types"
 import type { Whale } from "../lib/apiTypes";
+import type { AquaticAnimal } from "../src_ts/optimization/whales";
 import { use } from "react";
 
 export const whales: Whale[] = [
@@ -21,6 +22,7 @@ export const whalesProps = whales.map((whale) => ({
 }));
 
 export const mockedApiResponse = {
+  ok: true,
   json: () => Promise.resolve({ animals: whales }),
 } as Response;
 
@@ -52,8 +54,20 @@ export const initialise = async (container: HTMLElement, module: ModuleKey) => {
       });
       break;
     }
+    case "suspense": {
+      // the suspense api artificially delays responses by 1.5 seconds
+      await within(container).findByText(whales[0].name, {}, { timeout: 3000 });
+      break;
+    }
   }
 };
+
+// fixed data for the optimization module (which otherwise generates random animals)
+export const aquaticAnimals: AquaticAnimal[] = [
+  { id: "1", name: "Ada", species: "Bottlenose Dolphin", isWhale: true },
+  { id: "2", name: "Bob", species: "Blue Whale", isWhale: true },
+  { id: "3", name: "Cat", species: "Clownfish", isWhale: false },
+];
 
 export const users = [
   { username: "ada", species: "Skiller Whale" },

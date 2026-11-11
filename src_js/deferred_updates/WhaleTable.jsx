@@ -4,6 +4,7 @@ import WhaleRow from "./WhaleRow";
 
 const WhaleTable = ({ whales }) => {
   const [hideDolphins, setHideDolphins] = useState(false);
+
   const whalesToDisplay = hideDolphins
     ? whales.filter((whale) => !whale.species.includes("Dolphin"))
     : whales;

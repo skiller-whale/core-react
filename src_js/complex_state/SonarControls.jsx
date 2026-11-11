@@ -1,4 +1,11 @@
-const SonarControls = ({ zoomIn, zoomOut, moveLeft, moveUp, moveRight, moveDown }) => (
+const SonarControls = ({
+  zoomIn,
+  zoomOut,
+  moveLeft,
+  moveUp,
+  moveRight,
+  moveDown,
+}) => (
   <div className="shadow p-4 flex flex-col gap-3">
     <div className="flex justify-around mt-3">
       <div className="flex flex-col gap-3">

@@ -4,8 +4,6 @@ import ErrorFallback from "./ErrorFallback";
 import LoadingSpinner from "./LoadingSpinner";
 
 // TODO: implement this component
-const ErrorSuspenseBoundary = ({ children }) => (
-  <></>
-);
+const ErrorSuspenseBoundary = ({ children }) => <></>;
 
 export default ErrorSuspenseBoundary;

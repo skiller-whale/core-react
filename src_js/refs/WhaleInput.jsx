@@ -1,5 +1,3 @@
-import { forwardRef } from "react";
-
 const WhaleInput = ({ type, value, onInput }) => (
   <div className="relative pl-20 pb-12">
     <div className="absolute left-8 top-0 h-24 w-12 bg-sky-900 rounded-tl-full"></div>

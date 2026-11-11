@@ -6,7 +6,9 @@ const AquaticAnimalRow = ({ animal, isBestFriend }) => {
   doSomethingThatTakesAges(50);
 
   const profilePicture = animal.isWhale
-    ? animal.species.includes("Dolphin") ? "🐬" : "🐳"
+    ? animal.species.includes("Dolphin")
+      ? "🐬"
+      : "🐳"
     : "🐠";
 
   return (

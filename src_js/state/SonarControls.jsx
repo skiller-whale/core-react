@@ -4,6 +4,7 @@ const SonarControls = () => {
   const [centerX, setCenterX] = useState(0);
   const [centerY, setCenterY] = useState(0);
   const [radius, setRadius] = useState(50);
+
   const moveLeft = () => setCenterX(Math.max(-100, centerX - 10));
   const moveRight = () => setCenterX(Math.min(100, centerX + 10));
   const moveUp = () => setCenterY(Math.max(-100, centerY - 10));

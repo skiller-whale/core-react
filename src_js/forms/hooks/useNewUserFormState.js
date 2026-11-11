@@ -1,4 +1,4 @@
-import { useActionState, useEffect, useOptimistic, useState } from "react";
+import { useActionState, useOptimistic, useState } from "react";
 import { createUser, getUserFromFormData } from "../api";
 
 const useNewUserFormState = (initialUsers) => {
@@ -20,7 +20,8 @@ const useNewUserFormState = (initialUsers) => {
         setUsers((prevUsers) => [...prevUsers, response.data]);
       }
     } catch (error) {
-      setError(error.message);
+      const { message } = error;
+      setError(message);
     } finally {
       setIsSubmitting(false);
     }

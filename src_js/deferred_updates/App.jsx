@@ -16,17 +16,14 @@ const App = () => {
       try {
         setFetching(true);
 
-        const response = await fetch(
-          `/api/whales?term=${term}`,
-          {
-            signal: abortController.signal,
-            method: "GET",
-            headers: {
-              Accept: "application/json",
-              "Content-Type": "application/json",
-            },
+        const response = await fetch(`/api/whales?term=${term}`, {
+          signal: abortController.signal,
+          method: "GET",
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
           },
-        );
+        });
 
         const { animals } = await response.json();
         setWhales(animals);

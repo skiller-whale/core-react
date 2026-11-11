@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const useCursor = <Type,>(initialValues: Type[]) => {
+const useCursor = <Type>(initialValues: Type[]) => {
   // TODO
 };
 

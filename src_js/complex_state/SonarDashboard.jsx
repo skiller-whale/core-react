@@ -14,12 +14,15 @@ const SonarDashboard = ({
   const [centerX, setCenterX] = useState(0);
   const moveLeft = () => setCenterX(Math.max(-100, centerX - 10));
   const moveRight = () => setCenterX(Math.min(100, centerX + 10));
+
   const [centerY, setCenterY] = useState(0);
   const moveUp = () => setCenterY(Math.max(-100, centerY - 10));
   const moveDown = () => setCenterY(Math.min(100, centerY + 10));
+
   const [radius, setRadius] = useState(50);
   const zoomIn = () => setRadius(Math.max(20, radius - 10));
   const zoomOut = () => setRadius(Math.min(100, radius + 10));
+
   const visibleWhales = whales.filter(
     (whale) =>
       (whale.location.x - centerX) ** 2 + (whale.location.y - centerY) ** 2 <=

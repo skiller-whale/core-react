@@ -52,6 +52,7 @@ const reducer = (state, action) => {
 };
 
 const WhalesContext = createContext(initialState);
+
 const SetWhalesContext = createContext(() => {});
 
 export const useWhalesContext = () => useContext(WhalesContext);

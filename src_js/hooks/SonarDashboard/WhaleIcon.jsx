@@ -1,11 +1,4 @@
-const WhaleIcon = ({
-  whale,
-  selected,
-  radius,
-  centerX,
-  centerY,
-  onClick,
-}) => {
+const WhaleIcon = ({ whale, selected, radius, centerX, centerY, onClick }) => {
   const x = ((-(centerX - whale.location.x) * 100) / radius + 100) / 2;
   const y = ((-(centerY - whale.location.y) * 100) / radius + 100) / 2;
 

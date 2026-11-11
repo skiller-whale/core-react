@@ -17,5 +17,5 @@ const root = createRoot(container);
 root.render(
   <StrictMode>
     <App initialWhales={animals} />
-  </StrictMode>
+  </StrictMode>,
 );

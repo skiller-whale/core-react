@@ -1,5 +1,5 @@
 import { render } from "@testing-library/react";
-import { initialise, mockedApiResponse, whales, whalesProps, users } from "./utils";
+import { aquaticAnimals, initialise, mockedApiResponse, whales, whalesProps, users } from "./utils";
 
 import IntroductionAppJS from "../src_js/introduction/App";
 import RenderingCycleAppJS from "../src_js/rendering_cycle/App";
@@ -13,9 +13,10 @@ import ComplexStateAppJS from "../src_js/complex_state/App";
 import InputsAppJS from "../src_js/inputs/App";
 import FormsAppJS from "../src_js/forms/App";
 import AccessibilityAppJS from "../src_js/accessibility/App";
+import SuspenseAppJS from "../src_js/suspense/App";
 import DeferredUpdatesAppJS from "../src_js/deferred_updates/App";
-import ReducingRendersAppJS from "../src_js/reducing_renders/App";
-import MemoisationAppJS from "../src_js/memoisation/App";
+import OptimizationApp1JS from "../src_js/optimization/app1/App";
+import OptimizationApp2JS from "../src_js/optimization/app2/App";
 
 import IntroductionAppTS from "../src_ts/introduction/App";
 import RenderingCycleAppTS from "../src_ts/rendering_cycle/App";
@@ -29,9 +30,10 @@ import ComplexStateAppTS from "../src_ts/complex_state/App";
 import InputsAppTS from "../src_ts/inputs/App";
 import FormsAppTS from "../src_ts/forms/App";
 import AccessibilityAppTS from "../src_ts/accessibility/App";
+import SuspenseAppTS from "../src_ts/suspense/App";
 import DeferredUpdatesAppTS from "../src_ts/deferred_updates/App";
-import ReducingRendersAppTS from "../src_ts/reducing_renders/App";
-import MemoisationAppTS from "../src_ts/memoisation/App";
+import OptimizationApp1TS from "../src_ts/optimization/app1/App";
+import OptimizationApp2TS from "../src_ts/optimization/app2/App";
 
 beforeAll(() => {
   vi.spyOn(window, "fetch").mockResolvedValue(mockedApiResponse);
@@ -162,6 +164,16 @@ describe("JavaScript initial state is the same as TypeScript", () => {
     expect(accessibilityContainerJS).toEqual(accessibilityContainerTS);
   });
 
+  test("SuspenseAppJS", async () => {
+    const { container: suspenseContainerJS } = render(<SuspenseAppJS />);
+    await initialise(suspenseContainerJS, "suspense");
+
+    const { container: suspenseContainerTS } = render(<SuspenseAppTS />);
+    await initialise(suspenseContainerTS, "suspense");
+
+    expect(suspenseContainerJS).toEqual(suspenseContainerTS);
+  }, 10000);
+
   test("DeferredUpdatesAppJS", async () => {
     const { container: deferredUpdatesContainerJS } = render(<DeferredUpdatesAppJS />);
     await initialise(deferredUpdatesContainerJS, "deferred_updates");
@@ -172,23 +184,23 @@ describe("JavaScript initial state is the same as TypeScript", () => {
     expect(deferredUpdatesContainerJS).toEqual(deferredUpdatesContainerTS);
   });
 
-  test.skip("ReducingRendersAppJS", async () => {
-    const { container: reducingRendersContainerJS } = render(<ReducingRendersAppJS />);
-    await initialise(reducingRendersContainerJS, "reducing_renders");
+  test("OptimizationApp1JS", async () => {
+    const { container: optimizationContainerJS } = render(<OptimizationApp1JS aquaticAnimals={aquaticAnimals} />);
+    await initialise(optimizationContainerJS, "optimization");
 
-    const { container: reducingRendersContainerTS } = render(<ReducingRendersAppTS />);
-    await initialise(reducingRendersContainerTS, "reducing_renders");
+    const { container: optimizationContainerTS } = render(<OptimizationApp1TS aquaticAnimals={aquaticAnimals} />);
+    await initialise(optimizationContainerTS, "optimization");
 
-    expect(reducingRendersContainerJS).toEqual(reducingRendersContainerTS);
+    expect(optimizationContainerJS).toEqual(optimizationContainerTS);
   });
 
-  test.skip("MemoisationAppJS", async () => {
-    const { container: memoisationContainerJS } = render(<MemoisationAppJS />);
-    await initialise(memoisationContainerJS, "memoisation");
+  test("OptimizationApp2JS", async () => {
+    const { container: optimizationContainerJS } = render(<OptimizationApp2JS aquaticAnimals={aquaticAnimals} />);
+    await initialise(optimizationContainerJS, "optimization");
 
-    const { container: memoisationContainerTS } = render(<MemoisationAppTS />);
-    await initialise(memoisationContainerTS, "memoisation");
+    const { container: optimizationContainerTS } = render(<OptimizationApp2TS aquaticAnimals={aquaticAnimals} />);
+    await initialise(optimizationContainerTS, "optimization");
 
-    expect(memoisationContainerJS).toEqual(memoisationContainerTS);
+    expect(optimizationContainerJS).toEqual(optimizationContainerTS);
   });
 });

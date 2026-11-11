@@ -4,6 +4,7 @@ import SonarDashboard from "./SonarDashboard";
 const App = ({ initialWhales }) => {
   const [whales, setWhales] = useState(initialWhales);
   const [selectedWhale, setSelectedWhale] = useState(whales[0]);
+
   const updateWhaleCoordinate = (whale, coordinate, value) => ({
     ...whale,
     location: {

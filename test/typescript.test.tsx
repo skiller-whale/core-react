@@ -1,6 +1,6 @@
 import { render, screen, waitFor, waitForElementToBeRemoved } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { initialise, mockedApiResponse, whales, whalesProps, users } from "./utils";
+import { aquaticAnimals, initialise, mockedApiResponse, whales, whalesProps, users } from "./utils";
 
 import IntroductionAppTS from "../src_ts/introduction/App";
 import RenderingCycleAppTS from "../src_ts/rendering_cycle/App";
@@ -14,9 +14,10 @@ import ComplexStateAppTS from "../src_ts/complex_state/App";
 import InputsAppTS from "../src_ts/inputs/App";
 import FormsAppTS from "../src_ts/forms/App";
 import AccessibilityAppTS from "../src_ts/accessibility/App";
+import SuspenseAppTS from "../src_ts/suspense/App";
 import DeferredUpdatesAppTS from "../src_ts/deferred_updates/App";
-import ReducingRendersAppTS from "../src_ts/reducing_renders/App";
-import MemoisationAppTS from "../src_ts/memoisation/App";
+import OptimizationApp1TS from "../src_ts/optimization/app1/App";
+import OptimizationApp2TS from "../src_ts/optimization/app2/App";
 
 beforeAll(() => {
   vi.spyOn(window, "fetch").mockResolvedValue(mockedApiResponse);
@@ -99,21 +100,27 @@ describe("TypeScript initial state is unchanged", () => {
     expect(accessibilityContainer).toMatchSnapshot();
   });
 
+  test("SuspenseAppTS", async () => {
+    const { container: suspenseContainer } = render(<SuspenseAppTS />);
+    await initialise(suspenseContainer, "suspense");
+    expect(suspenseContainer).toMatchSnapshot();
+  }, 10000);
+
   test("DeferredUpdatesAppTS", async () => {
     const { container: deferredUpdatesContainer } = render(<DeferredUpdatesAppTS />);
     await initialise(deferredUpdatesContainer, "deferred_updates");
     expect(deferredUpdatesContainer).toMatchSnapshot();
   });
 
-  test.skip("ReducingRendersAppTS", async () => {
-    const { container: reducingRendersContainer } = render(<ReducingRendersAppTS />);
-    await initialise(reducingRendersContainer, "reducing_renders");
-    expect(reducingRendersContainer).toMatchSnapshot();
+  test("OptimizationApp1TS", async () => {
+    const { container: optimizationContainer } = render(<OptimizationApp1TS aquaticAnimals={aquaticAnimals} />);
+    await initialise(optimizationContainer, "optimization");
+    expect(optimizationContainer).toMatchSnapshot();
   });
 
-  test.skip("MemoisationAppTS", async () => {
-    const { container: memoisationContainer } = render(<MemoisationAppTS />);
-    await initialise(memoisationContainer, "memoisation");
-    expect(memoisationContainer).toMatchSnapshot();
+  test("OptimizationApp2TS", async () => {
+    const { container: optimizationContainer } = render(<OptimizationApp2TS aquaticAnimals={aquaticAnimals} />);
+    await initialise(optimizationContainer, "optimization");
+    expect(optimizationContainer).toMatchSnapshot();
   });
 });

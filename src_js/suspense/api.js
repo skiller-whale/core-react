@@ -1,4 +1,4 @@
-export const getWhales = async (term, simulateNetworkError) => {
+export const getWhales = async (term, simulateNetworkError = false) => {
   // artificially slow things down to make it easier to see what's happening
   await new Promise((resolve) => setTimeout(resolve, 1500));
 

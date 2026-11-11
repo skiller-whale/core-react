@@ -18,6 +18,7 @@ const Panel = () => {
   const [initialising, setInitialising] = useState(true);
   const [whales, setWhales] = useState([]);
   const [selectedWhaleId, setSelectedWhaleId] = useState("");
+
   // state update functions
   const initialise = (whales) => {
     setInitialising(false);
@@ -44,6 +45,7 @@ const Panel = () => {
       ),
     );
   };
+
   // fetch whales from server on mount
   useEffect(() => {
     const fetchWhales = async () => {
@@ -53,6 +55,7 @@ const Panel = () => {
     };
     fetchWhales();
   }, []);
+
   // render placeholder until initialisation is complete
   if (initialising) {
     return (
@@ -61,6 +64,7 @@ const Panel = () => {
       </div>
     );
   }
+
   // render the panel when initialisation is complete
   const selectedWhale = whales.find((whale) => whale.id === selectedWhaleId);
 

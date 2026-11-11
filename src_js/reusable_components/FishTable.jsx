@@ -3,6 +3,7 @@ import useFetchJson from "./useFetchJson";
 
 const FishTable = ({ term }) => {
   const [fish, setFish] = useState([]);
+
   const fetchFish = async () => {
     const response = await fetch(`/api/fish?term=${term}`, {
       method: "GET",
@@ -15,6 +16,7 @@ const FishTable = ({ term }) => {
     const { animals } = await response.json();
     setFish(animals);
   };
+
   useEffect(() => {
     setFish([]);
     fetchFish();

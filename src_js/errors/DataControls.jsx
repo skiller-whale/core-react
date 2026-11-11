@@ -2,16 +2,10 @@ import Button from "./components/Button";
 
 const DataControls = ({ fetchWhales }) => (
   <div className="flex gap-3 space-around">
-    <Button
-      className="flex-1"
-      onClick={() => fetchWhales("/api/whales")}
-    >
+    <Button className="flex-1" onClick={() => fetchWhales("/api/whales")}>
       Fetch Good Data
     </Button>
-    <Button
-      className="flex-1"
-      onClick={() => fetchWhales("/api/whales/bad")}
-    >
+    <Button className="flex-1" onClick={() => fetchWhales("/api/whales/bad")}>
       Fetch Bad Data
     </Button>
     <Button
@@ -20,10 +14,7 @@ const DataControls = ({ fetchWhales }) => (
     >
       Fetch Invalid JSON
     </Button>
-    <Button
-      className="flex-1"
-      onClick={() => fetchWhales("/api/whales/poor")}
-    >
+    <Button className="flex-1" onClick={() => fetchWhales("/api/whales/poor")}>
       Fetch Over Bad Connection
     </Button>
   </div>

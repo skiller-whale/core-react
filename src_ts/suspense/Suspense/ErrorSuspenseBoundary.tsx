@@ -13,8 +13,6 @@ type Props = PropsWithChildren<
 >;
 
 // TODO: implement this component
-const ErrorSuspenseBoundary = ({ children }: Props) => (
-  <></>
-);
+const ErrorSuspenseBoundary = ({ children }: Props) => <></>;
 
 export default ErrorSuspenseBoundary;

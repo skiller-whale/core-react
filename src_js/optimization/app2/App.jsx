@@ -8,10 +8,10 @@ const App = ({ aquaticAnimals }) => {
   const [bestFriend, setBestFriend] = useState(aquaticAnimals[0]);
 
   const [maxRows, setMaxRows] = useState(20);
-  const animalsToShow = useMemo(() => aquaticAnimals.slice(0, maxRows), [
-    aquaticAnimals,
-    maxRows,
-  ]);
+  const animalsToShow = useMemo(
+    () => aquaticAnimals.slice(0, maxRows),
+    [aquaticAnimals, maxRows],
+  );
 
   return (
     <div

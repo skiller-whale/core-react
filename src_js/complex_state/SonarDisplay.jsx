@@ -12,6 +12,7 @@ const SonarDisplay = ({
   setSelectedWhaleId,
 }) => {
   const [color, setColor] = useState("green");
+
   const animals = whales.map((whale) => {
     const Icon = (
       <span

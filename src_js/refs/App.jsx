@@ -6,6 +6,7 @@ import WhaleInput from "./WhaleInput";
 
 const App = ({ whales: initialWhales }) => {
   const [whales, setWhales] = useState(initialWhales);
+
   const setWhaleName = (id, name) => {
     const index = whales.findIndex((whale) => whale.id === id);
     const newWhale = { ...whales[index], name };

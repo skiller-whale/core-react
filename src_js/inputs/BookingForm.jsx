@@ -22,7 +22,7 @@ const BookingForm = () => {
   const [numberOfChildren, setNumberOfChildren] = useState("0");
   const [location, setLocation] = useState(locations[0]);
   const [accommodationType, setAccommodationType] = useState(
-    accommodationTypes[0]
+    accommodationTypes[0],
   );
   const [checkInDate, setCheckInDate] = useState("");
   const [checkOutDate, setCheckOutDate] = useState("");
