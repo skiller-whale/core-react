@@ -1,5 +1,5 @@
-import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
+import { StrictMode } from "react";
 import App from "./App";
 
 const response = await fetch("/api/whales", {
@@ -17,5 +17,5 @@ const root = createRoot(container);
 root.render(
   <StrictMode>
     <App initialWhales={animals} />
-  </StrictMode>
+  </StrictMode>,
 );

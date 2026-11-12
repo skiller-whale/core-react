@@ -19,7 +19,11 @@ const App = ({ initialWhales }) => {
 
   const updateSelectedWhale = (whale) => {
     if (selectedWhale !== null) {
-      setWhales([...whales.slice(0, cursor), whale, ...whales.slice(cursor + 1)]);
+      setWhales([
+        ...whales.slice(0, cursor),
+        whale,
+        ...whales.slice(cursor + 1),
+      ]);
     }
   };
 

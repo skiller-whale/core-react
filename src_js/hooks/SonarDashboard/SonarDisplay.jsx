@@ -21,7 +21,10 @@ const SonarDisplay = ({
         Sonar readings for nearby whales
       </h1>
       <Filter color="green">
-        <div className="relative w-96 h-96 rounded-full overflow-hidden border-2" onClick={() => handleWhaleClick(null)}>
+        <div
+          className="relative w-96 h-96 rounded-full overflow-hidden border-2"
+          onClick={() => handleWhaleClick(null)}
+        >
           <div className="absolute top-0 bottom-0 w-full h-full bg-slate-100 opacity-30"></div>
           {whales.map((whale) => (
             <WhaleIcon

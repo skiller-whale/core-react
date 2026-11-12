@@ -3,6 +3,7 @@ import JsonFetcher from "./JsonFetcher";
 
 const WhaleTable = ({ term }) => {
   const [whales, setWhales] = useState([]);
+
   const fetchWhales = async () => {
     const response = await fetch(`/api/whales?term=${term}`, {
       method: "GET",
@@ -15,6 +16,7 @@ const WhaleTable = ({ term }) => {
     const { animals } = await response.json();
     setWhales(animals);
   };
+
   useEffect(() => {
     setWhales([]);
     fetchWhales();

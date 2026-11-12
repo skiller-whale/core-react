@@ -1,6 +1,9 @@
 import type { Whale } from "lib/apiTypes";
 
-export const getWhales = async (term?: string, simulateNetworkError = false) => {
+export const getWhales = async (
+  term?: string,
+  simulateNetworkError = false,
+) => {
   // artificially slow things down to make it easier to see what's happening
   await new Promise((resolve) => setTimeout(resolve, 1500));
 

@@ -2,10 +2,7 @@ export default (
   input: string | URL | Request,
   init?: RequestInit,
 ): Promise<Response> => {
-  if (
-    typeof input === "string" &&
-    input === "/api/whales/poor"
-  ) {
+  if (typeof input === "string" && input === "/api/whales/poor") {
     // simulate a network failure
     return new Promise((resolve, reject) => {
       const delay = Math.random() * (1000 - 300) + 300;

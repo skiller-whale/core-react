@@ -10,9 +10,7 @@ const InformationBoard = ({ whales }: Props) => {
 
   return (
     <div className="shadow p-4 flex-1 flex flex-col gap-3">
-      <h2 className="text-2xl font-semibold">
-        Information Board
-      </h2>
+      <h2 className="text-2xl font-semibold">Information Board</h2>
       <div className="flex justify-between">
         <span>Current time:</span>
         <span className="font-mono">{currentTime.toLocaleTimeString()}</span>

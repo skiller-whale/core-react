@@ -15,7 +15,10 @@ const SonarDisplay = ({ whales, centerX, centerY, radius }: Props) => {
   const sonarSize = Math.min(width - 180, height - 400);
 
   return (
-    <div className="shadow px-16 py-4 flex-1 flex flex-col gap-3 items-center justify-around" tabIndex={0}>
+    <div
+      className="shadow px-16 py-4 flex-1 flex flex-col gap-3 items-center justify-around"
+      tabIndex={0}
+    >
       <h1 className="font-semibold text-2xl">
         Sonar readings for nearby whales
       </h1>

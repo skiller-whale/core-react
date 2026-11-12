@@ -7,6 +7,7 @@ const Sonar = ({ whales }) => {
   const [centerX, setCenterX] = useState(0);
   const [centerY, setCenterY] = useState(0);
   const [radius, setRadius] = useState(50);
+
   const isVisible = (whale) =>
     (whale.location.x - centerX) ** 2 + (whale.location.y - centerY) ** 2 <=
     radius ** 2;

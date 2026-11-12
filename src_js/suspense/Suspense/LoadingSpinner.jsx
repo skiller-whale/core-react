@@ -33,12 +33,12 @@ const LoadingSpinner = () => {
 
   return (
     <>
-    <div className="relative h-24 flex flex-1 flex-col justify-center items-center pt-8 text-5xl overflow-hidden my-auto">
-      {sunset}
-      {dolphins}
-      {waves}
-    </div>
-    <p className="text-center text-gray-600">Loading...</p>
+      <div className="relative h-24 flex flex-1 flex-col justify-center items-center pt-8 text-5xl overflow-hidden my-auto">
+        {sunset}
+        {dolphins}
+        {waves}
+      </div>
+      <p className="text-center text-gray-600">Loading...</p>
     </>
   );
 };

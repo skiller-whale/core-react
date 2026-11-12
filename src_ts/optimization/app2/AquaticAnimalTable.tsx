@@ -1,5 +1,11 @@
 import doSomethingThatTakesAges from "lib/doSomethingThatTakesAges";
-import { type Dispatch, memo, type SetStateAction, useCallback, useMemo } from "react";
+import {
+  type Dispatch,
+  memo,
+  type SetStateAction,
+  useCallback,
+  useMemo,
+} from "react";
 import type { AquaticAnimal } from "../whales";
 import AnimalRow from "./AquaticAnimalRow";
 
@@ -9,9 +15,11 @@ type Props = {
   setBestFriend: Dispatch<SetStateAction<AquaticAnimal>>;
 };
 
-const AquaticAnimalTable = (
-  { aquaticAnimals, bestFriend, setBestFriend }: Props,
-) => {
+const AquaticAnimalTable = ({
+  aquaticAnimals,
+  bestFriend,
+  setBestFriend,
+}: Props) => {
   // artificially slow down rendering
   doSomethingThatTakesAges(500);
 

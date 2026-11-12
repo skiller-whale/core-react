@@ -12,7 +12,9 @@ const App = ({ aquaticAnimals }: Props) => {
   const [bestFriend, setBestFriend] = useState(aquaticAnimals[0]);
   const updateBestFriend = (event: ChangeEvent<HTMLSelectElement>) => {
     const selectedId = event.currentTarget.value;
-    const selectedAnimal = aquaticAnimals.find((animal) => animal.id === selectedId);
+    const selectedAnimal = aquaticAnimals.find(
+      (animal) => animal.id === selectedId,
+    );
     if (selectedAnimal) {
       setBestFriend(selectedAnimal);
     }
@@ -30,8 +32,14 @@ const App = ({ aquaticAnimals }: Props) => {
       <div className="flex justify-between gap-3">
         <h1 className="text-2xl font-semibold">Ada's friends</h1>
         <div className="flex gap-3 items-center">
-          <label className="cursor-pointer" htmlFor="bestFriend">Best Friend:</label>
-          <select id="bestFriend" value={bestFriend.id} onChange={updateBestFriend}>
+          <label className="cursor-pointer" htmlFor="bestFriend">
+            Best Friend:
+          </label>
+          <select
+            id="bestFriend"
+            value={bestFriend.id}
+            onChange={updateBestFriend}
+          >
             {aquaticAnimals.map((animal) => (
               <option key={animal.id} value={animal.id}>
                 {animal.name}
@@ -40,7 +48,9 @@ const App = ({ aquaticAnimals }: Props) => {
           </select>
         </div>
         <div className="flex gap-3 items-center">
-          <label className="cursor-pointer" htmlFor="maxRows">Friends to show:</label>
+          <label className="cursor-pointer" htmlFor="maxRows">
+            Friends to show:
+          </label>
           <input
             id="maxRows"
             className="w-16"
@@ -65,7 +75,10 @@ const App = ({ aquaticAnimals }: Props) => {
         </div>
       </div>
       <div className="flex flex-col gap-3">
-        <AquaticAnimalTable aquaticAnimals={animalsToShow} bestFriend={bestFriend} />
+        <AquaticAnimalTable
+          aquaticAnimals={animalsToShow}
+          bestFriend={bestFriend}
+        />
       </div>
     </div>
   );

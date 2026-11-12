@@ -17,7 +17,7 @@ const TermsAndConditions = () => {
   const closeTsAndCs = () => {
     dialogRef.current?.close();
     setShowTsAndCs(false);
-  }
+  };
 
   return (
     <>

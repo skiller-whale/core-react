@@ -2,6 +2,7 @@ import { forwardRef, useImperativeHandle, useRef } from "react";
 
 const ScrollableContainer = ({ children }) => {
   const divRef = useRef(null);
+
   const scrollToTop = () => {
     divRef.current?.scrollTo({
       top: 0,

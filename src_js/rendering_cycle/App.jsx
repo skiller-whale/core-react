@@ -36,15 +36,15 @@ const App = ({ whales: initialWhales }) => {
   // replace these two lines with the commented out code when instructed
   let isValid = true;
   const validate = () => {};
-  // const [isValid, setIsValid] = useState(false)
+  // const [isValid, setIsValid] = useState(false);
   // const validate = (event) => {
-  //   const formData = new FormData(event.currentTarget)
-  //   const name = formData.get("name")
-  //   const species = formData.get("species")
-  //   const x = parseFloat(formData.get("x"))
-  //   const y = parseFloat(formData.get("y"))
-  //   setIsValid(name !== "" && species !== "" && !isNaN(x) && !isNaN(y))
-  // }
+  //   const formData = new FormData(event.currentTarget);
+  //   const name = formData.get("name");
+  //   const species = formData.get("species");
+  //   const x = parseFloat(formData.get("x"));
+  //   const y = parseFloat(formData.get("y"));
+  //   setIsValid(name !== "" && species !== "" && !isNaN(x) && !isNaN(y));
+  // };
 
   return (
     <div className="flex flex-col gap-6">

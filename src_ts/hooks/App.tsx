@@ -24,7 +24,11 @@ const App = ({ initialWhales }: Props) => {
 
   const updateSelectedWhale = (whale: Whale) => {
     if (selectedWhale !== null) {
-      setWhales([...whales.slice(0, cursor), whale, ...whales.slice(cursor + 1)]);
+      setWhales([
+        ...whales.slice(0, cursor),
+        whale,
+        ...whales.slice(cursor + 1),
+      ]);
     }
   };
 

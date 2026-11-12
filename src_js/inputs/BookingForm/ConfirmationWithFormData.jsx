@@ -16,9 +16,7 @@ const Confirmation = ({ visible = true, previousPage, formData }) => (
     <div className="flex gap-3 p-6">
       <div className="flex-1 flex flex-col gap-3">
         <h2 className="text-xl font-semibold">Personal Details</h2>
-        <p>
-          Full Name: {formData.get("fullName") || <i>missing</i>}
-        </p>
+        <p>Full Name: {formData.get("fullName") || <i>missing</i>}</p>
         <p>Email: {formData.get("email") || <i>missing</i>}</p>
         <p>Number of Adults: {formData.get("numberOfAdults")}</p>
         <p>Number of Children: {formData.get("numberOfChildren")}</p>
